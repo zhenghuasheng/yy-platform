@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "businesssystemrequestpanel",
+        "designer|userClassName": "BusinessSystemRequestPanelViewModel"
+    },
+    "designerId": "3b2c9045-31f0-4a1b-b23e-2afa0a4f21af"
+}

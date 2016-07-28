@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "eticketrequestpanel",
+        "designer|userClassName": "eticketRequestPanelViewModel"
+    },
+    "designerId": "d4d9f5dc-3fba-4b30-9f4e-7e9ec18de354"
+}

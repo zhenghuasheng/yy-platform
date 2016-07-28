@@ -1,0 +1,520 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "closable": true,
+        "designer|userAlias": "sqdcbpanel",
+        "designer|userClassName": "SqdCallbackPanel",
+        "height": null,
+        "itemId": "sqdCallbackPanel",
+        "padding": null,
+        "title": "社区店回访列表",
+        "titleAlign": "center",
+        "titleCollapse": false,
+        "width": null
+    },
+    "name": "SqdStatusPanel1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "db62d1e3-fd84-4038-97f5-dbe7874def11",
+    "viewControllerInstanceId": "046a6365-0464-4ae5-9fd8-38c45b2a5231",
+    "viewModelInstanceId": "f4b3589f-53da-4994-83e7-1c21eb3a0c96",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "columnLines": true,
+                "itemId": "orderGrid",
+                "store": "SqdCallbackStore",
+                "title": "回访列表"
+            },
+            "name": "MyGridPanel1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "950ccd46-25d8-4ecb-a016-4916aeb268c4",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_carno",
+                        "text": "车牌号"
+                    },
+                    "name": "MyColumn11",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "bc2b34e5-db7e-480d-a725-04b31a657692"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_name",
+                        "text": "客户姓名"
+                    },
+                    "name": "MyColumn7",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "0e734c31-dcfe-465c-9fb5-066dacf53259"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_phone",
+                        "text": "电话"
+                    },
+                    "name": "MyColumn1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "9be107e5-515c-4c6f-97e2-0e9b3f2d1ca7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_cartype",
+                        "text": "车型"
+                    },
+                    "name": "MyColumn4",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "ebba1d89-2a2c-4d72-9ab0-84d03957352f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_initdate",
+                        "text": "创建时间",
+                        "width": 150
+                    },
+                    "name": "MyColumn8",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "cc97f0ec-d1bb-4344-b793-413c9391de47"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_status",
+                        "falseText": "未完结",
+                        "text": "状态",
+                        "trueText": "已完结",
+                        "undefinedText": "未知"
+                    },
+                    "name": "MyBooleanColumn",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6241bb11-a863-47f2-ac3b-3c0493180d59"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_total",
+                        "text": "订单总价"
+                    },
+                    "name": "MyColumn2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "967f8bb7-09f4-4651-a9e5-1d1476d7edab"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_rebate",
+                        "text": "折扣"
+                    },
+                    "name": "MyColumn5",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b8ef0c7b-2df4-420c-9c3b-6f4f5308a308"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_amount",
+                        "text": "结算金额"
+                    },
+                    "name": "MyColumn9",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "02c7a663-d817-49ee-982e-380aa379de7c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_deptname",
+                        "text": "店铺名称",
+                        "width": 150
+                    },
+                    "name": "MyColumn10",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d192a27d-c45b-4443-9e6f-99cbac1a4556"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "9e26fec9-f29a-43a5-9ccf-5924f273702e"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelectionChange",
+                        "implHandler": [
+                            "var sqdOrderStore = Ext.getStore('SqdOrderStore');",
+                            "sqdOrderStore.removeAll();",
+                            "",
+                            "if (selected.length < 1) {",
+                            "    return;",
+                            "}",
+                            "",
+                            "",
+                            "sqdOrderStore.add(selected[0].data.orderDetail);",
+                            "var orderGrid = this.view.down('#orderGrid');",
+                            "orderGrid.updateLayout();"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelSelectionChange",
+                    "designerId": "ddde1dcd-a232-43b1-9372-2e56a68c888c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "columnLines": true,
+                "designer|uiInterfaceName": "default",
+                "store": "SqdOrderStore",
+                "title": "订单详情"
+            },
+            "name": "MyGridPanel",
+            "designerId": "0dca5271-beb7-40c9-977c-d530dc9254c8",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_odid",
+                        "text": "编号"
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "a3fc9c2c-c3d6-4851-97a8-616659d733a8"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView",
+                    "designerId": "e60e5294-bce9-4fe4-ac24-56e0561203d9"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_sgname",
+                        "text": "项目名称"
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "2ec6ec00-2e8d-4d57-a5e1-9e2e64e04d05"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_price",
+                        "text": "价格"
+                    },
+                    "name": "MyColumn14",
+                    "designerId": "9d680baf-d92b-46d2-b4f7-5c63fea963ac"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_curoff",
+                        "text": "折扣"
+                    },
+                    "name": "MyColumn15",
+                    "designerId": "ec7b9f00-2754-429d-919f-da72d9ae3101"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_charge",
+                        "text": "结算"
+                    },
+                    "name": "MyColumn16",
+                    "designerId": "09333919-1c99-498c-b0bc-ae6581d4dcd4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "43665f07-9e99-4437-8b4f-0aa6fe741480",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "刷新"
+                    },
+                    "name": "MyButton8",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c37ed791-b49a-41fa-9821-0bc438622cc4",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "implHandler": [
+                                    "        var sqdCallbackStore = Ext.getStore('SqdCallbackStore');",
+                                    "        var ajaxProxy = sqdCallbackStore.getProxy();",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/action/sqd/callback/list.do?system=ytadmin@7788\");",
+                                    "        sqdCallbackStore.load();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "1267e4da-de81-4be8-94ef-3946f0264c9e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "exportBtn",
+                        "layout|flex": null,
+                        "text": "导出当前页"
+                    },
+                    "name": "MyButton",
+                    "designerId": "53398b08-372b-462b-b13f-0853f0d45449",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onExportBtnClick",
+                                "implHandler": [
+                                    "var page=Ext.getStore('SqdCallbackStore').currentPage;",
+                                    "var pageSize=Ext.getStore('SqdCallbackStore').getPageSize();",
+                                    "var start=(page-1)*pageSize;",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        window.location = url + '/action/ins/export.do?system=ytadmin@7788&start='+start+'&count='+pageSize;",
+                                    "//         var sqdCallbackStore = Ext.getStore('SqdCallbackStore');",
+                                    "//         var ajaxProxy = sqdCallbackStore.getProxy();",
+                                    "//         var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "//         ajaxProxy.setUrl(url + \"/action/sqd/callback/list.do?system=ytadmin@7788\");",
+                                    "//         sqdCallbackStore.load();",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onExportBtnClick",
+                            "designerId": "5da45984-1c46-4192-ae59-ca052369b45e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSqdCallbackPanelRender",
+                "implHandler": [
+                    "        this.onRefreshBtnClick(null, null, null);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onSqdCallbackPanelRender",
+            "designerId": "7e3f04e7-56ad-4f76-a646-6defafc307cc"
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "SqdCallbackStore",
+                "width": 360
+            },
+            "name": "MyPagingToolbar1",
+            "designerId": "a4c8d208-98df-4074-a180-a75259888060"
+        }
+    ]
+}

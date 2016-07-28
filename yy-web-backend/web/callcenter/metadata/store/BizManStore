@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BizManStore",
+        "model": "DeptBizmanModel",
+        "storeId": "BizManStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "b92f44a6-885a-4c10-a363-edf5aebcdeb6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy2",
+            "designerId": "d6e620a8-cc6e-4c2e-888b-1d447cd1bafa",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.departmentBizman"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "60d1c342-c2a7-4703-bc83-c19f7bdb2cc3"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,975 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "bodyBorder": true,
+        "closable": true,
+        "designer|userAlias": "eticketrequestpanel",
+        "designer|userClassName": "eticketRequestPanel",
+        "height": 969,
+        "id": "eticketRequestPanel",
+        "itemId": "eticketRequestPanel",
+        "margin": 10,
+        "title": "优惠券信息",
+        "width": 741
+    },
+    "name": "MyPanel12",
+    "designerId": "72b1b833-09d3-49f2-8e12-7529f2bd6b0e",
+    "viewControllerInstanceId": "79203e3c-0ef8-4f71-a517-f1a3f461ec60",
+    "viewModelInstanceId": "d4d9f5dc-3fba-4b30-9f4e-7e9ec18de354",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "标题",
+                "itemId": "eticketName",
+                "name": "eticketName"
+            },
+            "name": "MyTextField",
+            "designerId": "3600e249-3643-44f9-b0ff-eb6a8b9f2274"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "系统名称",
+                "itemId": "systemName"
+            },
+            "name": "MyTextField4",
+            "designerId": "baa79107-a0a5-4463-8801-e70b721b65c4"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "数量",
+                "itemId": "eticketCount",
+                "minValue": 0,
+                "name": "eticketCount"
+            },
+            "name": "MyNumberField",
+            "designerId": "bdccfaba-1ba9-4881-9aec-5ef8362b063a"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "displayField": "name",
+                "editable": false,
+                "fieldLabel": "类型",
+                "itemId": "eticketType",
+                "name": "eticketType",
+                "queryMode": "local",
+                "store": "EticketTypeStore",
+                "valueField": "id"
+            },
+            "name": "MyComboBox",
+            "designerId": "e9ccbea8-1baf-4290-8f66-3e767c580049",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onEticketTypeSelect",
+                        "implHandler": [
+                            "var eticketRequestPanel = combo.up('#eticketRequestPanel');",
+                            "var rebateField = eticketRequestPanel.down('#eticketRebate');",
+                            "var MoneyField = eticketRequestPanel.down('#eticketMoney');",
+                            "",
+                            "var id=records[0].data.id;",
+                            "",
+                            "if(id==='代金券'){",
+                            "    rebateField.hide();",
+                            "    MoneyField.show();",
+                            "}else if(id==='折扣券'){",
+                            "    rebateField.show();",
+                            "    MoneyField.hide();",
+                            "}else if(id==='普通券'){",
+                            "    rebateField.hide();",
+                            "    MoneyField.hide();",
+                            "}"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "onEticketTypeSelect",
+                    "designerId": "9bbdfd1b-a0da-4fda-8c74-be6defb79013"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "折扣",
+                "hidden": true,
+                "itemId": "eticketRebate",
+                "maxText": "最大值为1",
+                "maxValue": 1,
+                "minText": "最小值为0",
+                "minValue": 0,
+                "name": "eticketRebate",
+                "step": 0.01
+            },
+            "name": "MyNumberField7",
+            "designerId": "dcc82298-1f11-46ab-be8d-1b088e9c4c22"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "金额(元)",
+                "hidden": true,
+                "itemId": "eticketMoney",
+                "minValue": 0,
+                "name": "eticketMoney"
+            },
+            "name": "MyNumberField6",
+            "designerId": "4f80147d-17e6-41e0-a8dc-9d9817585bbf"
+        },
+        {
+            "type": "Ext.form.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "有效开始日期",
+                "format": null,
+                "itemId": "eticketStartDate",
+                "name": "eticketStartDate",
+                "submitFormat": null,
+                "submitValue": false
+            },
+            "name": "MyDateField",
+            "designerId": "29d54c99-8e4d-4547-997c-e08203c748d5"
+        },
+        {
+            "type": "Ext.form.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "fieldLabel": "有效截止日期",
+                "format": null,
+                "itemId": "eticketEndDate",
+                "name": "eticketEndDate",
+                "submitFormat": null,
+                "submitValue": false
+            },
+            "name": "MyDateField1",
+            "designerId": "916d5b57-7559-441d-bf7d-5244b8269b9f"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "单人单日限领",
+                "hidden": true,
+                "itemId": "eticketOneGet",
+                "minValue": 0,
+                "name": "eticketOneGet",
+                "value": [
+                    "0"
+                ]
+            },
+            "name": "MyNumberField1",
+            "designerId": "1d4e1b0b-9e95-4376-adc5-80b141b65763"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "单人单日限用",
+                "hidden": true,
+                "itemId": "eticketOneUse",
+                "minValue": 0,
+                "name": "eticketOneUse",
+                "value": [
+                    "0"
+                ]
+            },
+            "name": "MyNumberField2",
+            "designerId": "76b922f5-3a8a-45a3-a435-0e228d748da4"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "单人限领",
+                "hidden": true,
+                "itemId": "eticketGetLimit",
+                "minValue": 0,
+                "name": "eticketGetLimit",
+                "value": [
+                    "0"
+                ]
+            },
+            "name": "MyNumberField3",
+            "designerId": "101fbf9c-dc41-40d6-b177-d716ff93b0dd"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "最低消费额(元)",
+                "hidden": true,
+                "itemId": "eticketMinSpend",
+                "minValue": 0,
+                "name": "eticketMinSpend",
+                "value": [
+                    "0"
+                ]
+            },
+            "name": "MyNumberField5",
+            "designerId": "97fcdc0e-7baa-49af-b946-188cbefb6350"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": null,
+                "emptyText": "请输入优惠详情",
+                "fieldLabel": "优惠详情",
+                "height": 50,
+                "itemId": "eticketDetails",
+                "labelAlign": "top",
+                "name": "eticketDetails",
+                "preventScrollbars": true,
+                "width": 552
+            },
+            "name": "MyTextArea",
+            "designerId": "7107c8f6-368e-43b2-9f7a-0d225217f350"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "emptyText": "短信内容",
+                "fieldLabel": "短信内容",
+                "height": 62,
+                "itemId": "eticketMsgcontent",
+                "labelAlign": "top",
+                "name": "eticketMsgcontent",
+                "width": 554
+            },
+            "name": "MyTextArea1",
+            "designerId": "9a4760bd-03dc-4b64-b9e0-2ae8375e530e"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "emptyText": "提醒内容",
+                "fieldLabel": "提醒内容",
+                "height": 62,
+                "itemId": "eticketRemind",
+                "labelAlign": "top",
+                "name": "eticketMind",
+                "width": 554
+            },
+            "name": "MyTextArea2",
+            "designerId": "be392916-e1b6-4616-a746-7600dca85e56"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "形象图片",
+                "hidden": true,
+                "itemId": "eticketImage",
+                "name": "eticketImage"
+            },
+            "name": "MyTextField17",
+            "designerId": "b3e8bf40-e7f8-46da-a0c8-fc3412909e5f"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": true,
+                "height": 29,
+                "itemId": "limitRadioContainer",
+                "width": 362
+            },
+            "name": "MyContainer1",
+            "designerId": "cc31d4ce-ed15-4b82-ad47-d943d0b86003",
+            "cn": [
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "limitRadioGroup",
+                        "width": 228
+                    },
+                    "name": "MyRadioGroup9",
+                    "designerId": "6af3c479-3fd9-4e4c-8f0f-4e803f852a82",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "限制",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "itemId": "limitRadio",
+                                "name": "limitRadio"
+                            },
+                            "name": "MyRadio14",
+                            "designerId": "c6f7aaf1-c2bc-4aca-9cd6-0bd4b79c8329"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "不限制",
+                                "checked": true,
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "limitRadio"
+                            },
+                            "name": "MyRadio15",
+                            "designerId": "23add8fc-52dd-4c84-a558-cdc9f7ad802f"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLimitRadioGroupChange",
+                                "implHandler": [
+                                    "        var eticketRequestPanel = field.up('#eticketRequestPanel');",
+                                    "        var starttime = eticketRequestPanel.down('#starttime');",
+                                    "        var endtime = eticketRequestPanel.down('#endtime');",
+                                    "        var userule = eticketRequestPanel.down('#userule');",
+                                    "        var limitShop = eticketRequestPanel.down('#limitShop');",
+                                    "        var limitContainer=Ext.getCmp('limitContainer');",
+                                    "",
+                                    "",
+                                    "        if (newValue.limitRadio === '0') {",
+                                    "            limitContainer.show();",
+                                    "//             starttime.show();",
+                                    "//             endtime.show();",
+                                    "//             userule.show();",
+                                    "//             limitShop.show();",
+                                    "        } else if (newValue.limitRadio === '1') {",
+                                    "            limitContainer.hide();",
+                                    "//            starttime.hide();",
+                                    "//             endtime.hide();",
+                                    "//             userule.hide();",
+                                    "//             limitShop.hide();",
+                                    "        }",
+                                    "        var limitRadioContainer = eticketRequestPanel.down('#limitRadioContainer');",
+                                    "        limitRadioContainer.updateLayout();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onLimitRadioGroupChange",
+                            "designerId": "6a4a07c6-cf52-457c-9bee-04120a57f5f6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "frame": true,
+                "height": 433,
+                "hidden": true,
+                "id": "limitContainer",
+                "itemId": "limitContainer",
+                "width": 569
+            },
+            "name": "MyContainer22",
+            "designerId": "be1ca6a0-0a76-4670-b5a7-af053002b64c",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Time",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "使用开始时间段",
+                        "format": "H:i:s",
+                        "itemId": "starttime",
+                        "name": "starttime"
+                    },
+                    "name": "MyTimeField",
+                    "designerId": "f4ed2adf-b56f-4a5e-a10b-fef3d93dc745"
+                },
+                {
+                    "type": "Ext.form.field.Time",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "使用截止时间段",
+                        "format": "H:i:s",
+                        "itemId": "endtime",
+                        "name": "endtime"
+                    },
+                    "name": "MyTimeField1",
+                    "designerId": "f7637f7f-5874-499e-8079-618cbc84537b"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "使用规则",
+                        "fieldLabel": "使用规则",
+                        "grow": true,
+                        "height": 72,
+                        "itemId": "userule",
+                        "name": "userule",
+                        "validateOnBlur": false,
+                        "validateOnChange": false,
+                        "width": 530
+                    },
+                    "name": "MyTextArea3",
+                    "designerId": "fa2e7ef4-8539-4282-9439-fb84367de4d6"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "height": 258,
+                        "layout": "border"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "76101885-f44c-48c6-bab6-af860e9df1f2",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoad": true,
+                                "autoScroll": true,
+                                "id": "limitUseShopGridPanel",
+                                "itemId": "limitUseShopGridPanel",
+                                "layout|flex": 5,
+                                "layout|region": "center",
+                                "store": "limitUseShopStore",
+                                "title": "限制使用店铺"
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "56db660c-f49e-4654-b626-6ba960d8a698",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "shopName",
+                                        "text": "店铺名称"
+                                    },
+                                    "name": "MyColumn9",
+                                    "designerId": "e69d6b0f-403c-4874-902e-fa5274363fa7"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "shopId",
+                                        "text": "店铺编号"
+                                    },
+                                    "name": "MyColumn11",
+                                    "designerId": "60a8eb53-14b6-4719-b743-5e038d9f1a94"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "3daed23c-f87e-4d89-883c-74942b98fada"
+                                },
+                                {
+                                    "type": "Ext.selection.CheckboxModel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowDeselect": true,
+                                        "mode": "SIMPLE",
+                                        "showHeaderCheckbox": true
+                                    },
+                                    "name": "MyCheckboxSelectionModel",
+                                    "designerId": "346ba945-fb24-4703-b085-f98c998757fb"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLimitUseShopGridPanelSelect",
+                                        "implHandler": [
+                                            "var record=record.data;",
+                                            "var requestPanel=Ext.getCmp('eticketRequestPanel');",
+                                            "requestPanel.arr.push({shopId:record.shopId,content:[]});",
+                                            "",
+                                            "var limitUseServerStore=Ext.getStore('limitUseServerStore');",
+                                            "",
+                                            "// Success",
+                                            "var successCallback = function(resp, ops) {",
+                                            "    var result = Ext.JSON.decode(resp.responseText);",
+                                            "    limitUseServerStore.removeAll();",
+                                            "    limitUseServerStore.add(result.ROOT);",
+                                            "};",
+                                            "// Failure",
+                                            "var failureCallback = function(resp, ops) {",
+                                            "",
+                                            "    Ext.Msg.alert('Failure', resp);",
+                                            "",
+                                            "};",
+                                            "Ext.Ajax.request({",
+                                            "    url:'http://58.20.41.200:8099/g4studio/ServiceAction' ,",
+                                            "    /***'http://sqd.hg-rzzl.com/g4studio/ServiceAction',**/",
+                                            "    params:{",
+                                            "        f_deptid:record.deptid,",
+                                            "    },",
+                                            "    success: successCallback,",
+                                            "    failure: failureCallback",
+                                            "});",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLimitUseShopGridPanelSelect",
+                                    "designerId": "2d0bdf8d-5808-4b1d-816f-53ded41f6f45"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLimitUseShopGridPanelDeselect",
+                                        "implHandler": [
+                                            "var requestPanel=Ext.getCmp('eticketRequestPanel');",
+                                            "        for(var i=0;i<requestPanel.arr.length;i++){",
+                                            "            var item=requestPanel.arr[i];",
+                                            "var b=item.shopId===record.data.shopId;",
+                                            "            if(item.shopId===record.data.shopId){",
+                                            "",
+                                            "                Ext.Array.remove(requestPanel.arr,item);",
+                                            "            }",
+                                            "        }",
+                                            ""
+                                        ],
+                                        "name": "deselect",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLimitUseShopGridPanelDeselect",
+                                    "designerId": "1594c16f-7fad-48e3-8ac6-7264ef2ec94f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "LimitUseServerGrid",
+                                "itemId": "LimitUseServerGrid",
+                                "layout|region": "east",
+                                "store": "limitUseServerStore",
+                                "title": "店铺使用服务",
+                                "width": 237
+                            },
+                            "name": "MyGridPanel",
+                            "designerId": "65b942fe-587e-492d-932e-ca435d6795d6",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "fnameanddes",
+                                        "text": "服务名称"
+                                    },
+                                    "name": "MyColumn2",
+                                    "designerId": "bf983ef5-9344-4cfa-acbd-b0e3d098ad63"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView",
+                                    "designerId": "f5e96778-4146-4da9-80c9-66cc82a92edc"
+                                },
+                                {
+                                    "type": "Ext.selection.CheckboxModel",
+                                    "reference": {
+                                        "name": "selModel",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowDeselect": true,
+                                        "mode": "SIMPLE",
+                                        "showHeaderCheckbox": true
+                                    },
+                                    "name": "MyCheckboxSelectionModel1",
+                                    "designerId": "2ccc3ca2-a8ec-4ba2-841e-432c4382dc15"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLimitUseServerGridSelect",
+                                        "implHandler": [
+                                            "var limitUseShopGrid=Ext.getCmp('limitUseShopGridPanel');",
+                                            "var durrent=limitUseShopGrid.getSelectionModel().selected.items;",
+                                            "var durrentRecord=durrent[durrent.length-1];/**当前店铺对象**/",
+                                            "",
+                                            " var requestPanel=Ext.getCmp('eticketRequestPanel');",
+                                            "     for(var i=0;i<requestPanel.arr.length;i++){",
+                                            "         var item=requestPanel.arr[i];",
+                                            "",
+                                            "         if(item.shopId===durrentRecord.data.shopId){",
+                                            "             item.content.push({f_gsid:record.data.f_gsid,f_sid:record.data.f_sid});",
+                                            "         }",
+                                            "     }",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLimitUseServerGridSelect",
+                                    "designerId": "5fa5c53d-bc10-48fd-90db-d69cce04fba2"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLimitUseServerGridDeselect",
+                                        "implHandler": [
+                                            "var limitUseShopGrid=Ext.getCmp('limitUseShopGridPanel');",
+                                            "        var durrent=limitUseShopGrid.getSelectionModel().selected.items;",
+                                            "        var durrentRecord=durrent[durrent.length-1];/**当前店铺选中项**/",
+                                            "",
+                                            "var requestPanel=Ext.getCmp('eticketRequestPanel');",
+                                            "        for(var i=0;i<requestPanel.arr.length;i++){",
+                                            "            var item=requestPanel.arr[i];",
+                                            "",
+                                            "            if(item.shopId===durrentRecord.data.shopId){",
+                                            "                ",
+                                            "                for(var i=0;i<item.content.length;i++){",
+                                            "                    var contentItem=item.content[i];",
+                                            "                    if(contentItem.f_gsid===record.data.f_gsid){",
+                                            "                        ",
+                                            "                        Ext.Array.remove(item.content,contentItem);",
+                                            "                    }",
+                                            "                }",
+                                            "            }",
+                                            "        }",
+                                            ""
+                                        ],
+                                        "name": "deselect",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLimitUseServerGridDeselect",
+                                    "designerId": "ab4c822c-3add-4725-863d-6f296023c597"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 30,
+                "itemId": "submitEticketBtn",
+                "text": "提交",
+                "width": 104
+            },
+            "name": "MyButton2",
+            "designerId": "b36ee4dc-1c82-49f8-b743-0ff811576279",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onSubmitEticketBtnClick",
+                        "implHandler": [
+                            "",
+                            "/**获取页面元素值*/",
+                            "var eticketRequestPanel = button.up('#eticketRequestPanel');",
+                            "",
+                            "",
+                            "/**获取限制店铺信息*/",
+                            "var limitGrigPanel=eticketRequestPanel.down('#limitUseShopGridPanel');",
+                            "//var records=limitGrigPanel.getSelectionModel().selected.items;",
+                            "var jsonArray = eticketRequestPanel.arr;",
+                            "// if(jsonArray.length>0){",
+                            "//     Ext.each(records,function(item){",
+                            "//         var shopId=item.data.shopId;",
+                            "//         var shopName=item.data.shopName;",
+                            "//         jsonArray.push({shopId:shopId,shopName:shopName});",
+                            "//     });",
+                            "",
+                            "// }",
+                            "",
+                            "var jsonArrayStr=(jsonArray.length>0)? JSON.stringify(jsonArray):null;",
+                            "",
+                            "",
+                            "var nameField = eticketRequestPanel.down('#eticketName');",
+                            "var systemName=eticketRequestPanel.down('#systemName');",
+                            "var countField = eticketRequestPanel.down('#eticketCount');",
+                            "var typeField = eticketRequestPanel.down('#eticketType');",
+                            "",
+                            "var rebateField = eticketRequestPanel.down('#eticketRebate');",
+                            "var MoneyField = eticketRequestPanel.down('#eticketMoney');",
+                            "var startDateField = eticketRequestPanel.down('#eticketStartDate');",
+                            "var endDateField=eticketRequestPanel.down('#eticketEndDate');",
+                            "",
+                            "var oneGetField = eticketRequestPanel.down('#eticketOneGet');",
+                            "var oneUseField = eticketRequestPanel.down('#eticketOneUse');",
+                            "var getLimitField = eticketRequestPanel.down('#eticketGetLimit');",
+                            "",
+                            "var minSpendField = eticketRequestPanel.down('#eticketMinSpend');",
+                            "var detailsField = eticketRequestPanel.down('#eticketDetails');",
+                            "var msgcontentField = eticketRequestPanel.down('#eticketMsgcontent');",
+                            "var remaindField=eticketRequestPanel.down('#eticketRemind');",
+                            "var imageField=eticketRequestPanel.down('#eticketImage');",
+                            "var startTimeField = eticketRequestPanel.down('#starttime');",
+                            "var endTimeField = eticketRequestPanel.down('#endtime');",
+                            "var useruleField = eticketRequestPanel.down('#userule');",
+                            "var limitShopField=eticketRequestPanel.down('#limitShop');",
+                            "",
+                            "var starttime=startDateField.getValue();",
+                            "var endtime=endDateField.getValue();",
+                            "starttime=(starttime===null)? 0:starttime.getTime()/1000;",
+                            "endtime=(endtime===null)?0:endtime.getTime()/1000;",
+                            "",
+                            "var startLimit=(startTimeField.rawValue===\"\")?null:startTimeField.rawValue;",
+                            "var endLimit=(endTimeField.rawValue===\"\")?null:endTimeField.rawValue;",
+                            "",
+                            "if(systemName.getValue()===null||nameField.getValue()===null||countField.getValue()===null||typeField.getValue()===null){",
+                            "    Ext.Msg.alert('提示','请填写必要信息!');",
+                            "    return;",
+                            "}",
+                            "",
+                            "",
+                            "var data={",
+                            "    'f_name':nameField.getValue(),",
+                            "    'f_type':typeField.getValue(),",
+                            "    'f_starttime':starttime,",
+                            "    'f_endtime':endtime,",
+                            "    'f_oneuse':oneUseField.getValue(),",
+                            "    'f_oneget':oneGetField.getValue(),",
+                            "    'f_getlimite':getLimitField.getValue(),",
+                            "    'f_minspending':minSpendField.getValue(),",
+                            "    'f_money':MoneyField.getValue(),",
+                            "    'f_rebate':rebateField.getValue(),",
+                            "    'f_prenum':countField.getValue(),",
+                            "    'f_details':detailsField.getValue(),",
+                            "    'f_message':msgcontentField.getValue(),",
+                            "    'f_image':imageField.getValue(),",
+                            "    'f_remindmessage':remaindField.getValue(),",
+                            "    'f_usetime':startLimit+\";\"+endLimit,",
+                            "    'f_userule':useruleField.getValue(),",
+                            "    'f_useshop':jsonArrayStr,",
+                            "    'f_initnum':countField.getValue(),",
+                            "    'f_sysmid':systemName.getValue()",
+                            "",
+                            "};",
+                            "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    headers:{'Content-Type':'application/json'},",
+                            "    url: url + '/action/eticket/submit.do',",
+                            "    params: JSON.stringify(data),",
+                            "    success: function (response) {",
+                            "        var text = response.responseText;",
+                            "        var result = JSON.parse(text);",
+                            "",
+                            "        if (result === null) {",
+                            "            Ext.Msg.alert('提示', '保存出错了，结果：' + text);",
+                            "            return;",
+                            "        }",
+                            "",
+                            "        if (result.succeed === true) {",
+                            "            Ext.Msg.alert('提示', '保存成功');",
+                            "        } else {",
+                            "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.errMsg);",
+                            "        }",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onSubmitEticketBtnClick",
+                    "designerId": "b34a83cf-c648-48a7-8e3d-18d71a792816"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "customerstatuspanel",
+        "designer|userClassName": "CustomerStatusPanelViewModel"
+    },
+    "name": "EtcStatusPanelViewModel1",
+    "designerId": "93183db8-5e9d-478a-9b41-08a6f07827a5"
+}

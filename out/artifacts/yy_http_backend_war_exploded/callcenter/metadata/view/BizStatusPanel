@@ -1,0 +1,674 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "closable": true,
+        "designer|userAlias": "bizstatuspanel",
+        "designer|userClassName": "BizStatusPanel",
+        "height": null,
+        "itemId": "bizStatusPanel",
+        "padding": null,
+        "title": "客户业务查询",
+        "width": null
+    },
+    "name": "CustomerStatusPanel1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "1b2ec77f-531d-4417-9878-98821af0fcd4",
+    "viewControllerInstanceId": "301b8e79-04e6-40cf-b928-3b708c1a312a",
+    "viewModelInstanceId": "bca31249-31ff-4fcc-ba76-b4d7d40eeac4",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "itemId": "BizStatusConditionContainer",
+                "layout": "hbox"
+            },
+            "name": "MyContainer",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "e7d05c0e-0eea-4d4d-83ac-55ee9d815ecc",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseBodyCls": null,
+                        "cls": null,
+                        "emptyText": "输入手机号码",
+                        "fieldCls": null,
+                        "fieldLabel": "查询条件",
+                        "formItemCls": null,
+                        "itemId": "phoneField",
+                        "labelCls": null,
+                        "labelClsExtra": null,
+                        "labelWidth": 60,
+                        "requiredCls": null,
+                        "width": 233
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "21b15df9-4160-4ab1-9844-0e4fb565c386",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPhoneFieldKeypress",
+                                "implHandler": [
+                                    "        var bizStatusPanel = textfield.up('#bizStatusPanel');",
+                                    "        var btn = bizStatusPanel.down('#findBtn');",
+                                    "        bizStatusPanel.onFindBtnClick(btn, e, eOpts);"
+                                ],
+                                "name": "keypress",
+                                "scope": "me"
+                            },
+                            "name": "onPhoneFieldKeypress",
+                            "designerId": "064da861-29aa-4f94-94f7-c3b5e12be8a2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "findBtn",
+                        "text": "查询",
+                        "width": 62
+                    },
+                    "name": "MyButton",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e7835446-142e-43a1-8e6a-d2499e98ae3a",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFindBtnClick",
+                                "implHandler": [
+                                    "var bizStatusPanel = button.up('#bizStatusPanel');",
+                                    "var phoneField = bizStatusPanel.down('#phoneField');",
+                                    "",
+                                    "if (!phoneField.validate()) {",
+                                    "    Ext.Msg.alert('Status', '请正确填写信息.');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "var bizStatusStore = Ext.getStore('BizStatusStore');",
+                                    "bizStatusStore.removeAll();",
+                                    "var ajaxProxy = bizStatusStore.getProxy();",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "ajaxProxy.setUrl(url + '/action/hg/bizinfo.do?phone=' + phoneField.getValue());",
+                                    "bizStatusStore.load();",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onFindBtnClick",
+                            "designerId": "69171911-7a17-4683-a8cf-302acadfa4d6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 540,
+                "id": "BizStatusGridContainer",
+                "layout": "border"
+            },
+            "name": "MyContainer3",
+            "designerId": "267a4fbc-dc71-4523-b1af-808092741e09",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "collapsible": false,
+                        "itemId": "StatusGridPanel",
+                        "layout|flex": 12,
+                        "layout|region": "center",
+                        "store": "BizStatusStore",
+                        "title": ""
+                    },
+                    "name": "MyGridPanel1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6d51132e-c260-48da-823d-6f56e1be1f31",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "序号",
+                                "width": 69
+                            },
+                            "name": "MyRowNumberer3",
+                            "designerId": "11591322-3d62-4269-9a70-588a7af7a23a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "text": "姓名",
+                                "width": 108
+                            },
+                            "name": "MyColumn",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "0ad41d39-a930-407f-aeab-38c432a8c292"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "phone",
+                                "text": "电话",
+                                "width": 150
+                            },
+                            "name": "MyColumn1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "57fcf851-9635-4f5a-b887-cd06a0716192"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "status",
+                                "layout": null,
+                                "text": "状态"
+                            },
+                            "name": "MyColumn11",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3bfa9529-6641-490c-94bf-df9df76ee3ec"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "appletime",
+                                "text": "提交时间"
+                            },
+                            "name": "MyColumn3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "94b422bb-b2ac-4a6e-a918-c43f8057be1b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "type",
+                                "text": "业务类型"
+                            },
+                            "name": "MyColumn4",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "94bc1181-1aad-47a7-8881-ca770dd433b8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "source",
+                                "text": "来源"
+                            },
+                            "name": "MyColumn6",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "59f8af34-6699-4686-8292-3d3283d4bb7d"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "fd86c7d9-d224-4e19-95bb-8abf49a370f6"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusGridPanelRowDblClick",
+                                "implHandler": [
+                                    "        //this.onDetailBtnClick(null, e, eOpts);"
+                                ],
+                                "name": "rowdblclick",
+                                "scope": "me"
+                            },
+                            "name": "onStatusGridPanelRowDblClick",
+                            "designerId": "f1e2dc26-caae-46b8-8fe8-b5dba381ba10"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusGridPanelSelect",
+                                "implHandler": [
+                                    "var BizStatusPropertyPanel=Ext.getCmp('BizStatusPropertyPanel');",
+                                    "var type=record.data.type;",
+                                    "if(type==='ETC申请'){",
+                                    "    var s=record.data.source;",
+                                    "    var record=record.data.etcRequest;",
+                                    "    var sourceName=(record.f_sourcename===undefined)?'':record.f_sourcename;",
+                                    "    BizStatusPropertyPanel.setSource({",
+                                    "        f_etcid:record.f_etcid,",
+                                    "    f_name:record.f_name,",
+                                    "    f_phone:record.f_phone,",
+                                    "    f_source:s+sourceName,",
+                                    "    status:record.status,",
+                                    "    f_desc:record.f_desc,",
+                                    "    f_price:record.f_price,",
+                                    "    appletime:record.appletime,",
+                                    "    f_dealtime:(record.f_dealtime===undefined)?undefined:new Date(record.f_dealtime*1000).toLocaleString(),",
+                                    "},{",
+                                    "    f_etcid:{",
+                                    "        displayName:'ETC申请编码',",
+                                    "    },",
+                                    "    f_name:{",
+                                    "        displayName:'姓名',",
+                                    "    },",
+                                    "    f_phone:{",
+                                    "        displayName:'手机号码',",
+                                    "    },",
+                                    "    f_source:{",
+                                    "        displayName:'来源',",
+                                    "    },",
+                                    "    status:{",
+                                    "        displayName:'状态',",
+                                    "    },",
+                                    "    f_desc:{",
+                                    "        displayName:'备注',",
+                                    "    },",
+                                    "    f_price:{",
+                                    "        displayName:'金额',",
+                                    "    },",
+                                    "    appletime:{",
+                                    "        displayName:'提交时间',",
+                                    "    },",
+                                    "    f_dealtime:{",
+                                    "        displayName:'处理时间',",
+                                    "    },",
+                                    "",
+                                    "",
+                                    "    });",
+                                    "",
+                                    "}else if(type==='保险申请'){",
+                                    "",
+                                    "    var record=record.data.insRequest;",
+                                    "    /**指定专修判断*/",
+                                    "var f_repairdepot=record.f_repairdepot;",
+                                    "if(f_repairdepot===0){",
+                                    "    f_repairdepot='不购买';",
+                                    "}else if(f_repairdepot===1){",
+                                    "    f_repairdepot='国产';",
+                                    "}else{",
+                                    "    f_repairdepot='进口';",
+                                    "}",
+                                    "/**出单日期处理*/",
+                                    "var f_effecttime=(record.f_effecttime===undefined)?undefined:new Date(record.f_effecttime*1000);",
+                                    "/**初登日期**/",
+                                    "var f_vehicleregister=(record.f_vehicleregister===undefined)?undefined:new Date(record.f_vehicleregister*1000);",
+                                    "",
+                                    "    BizStatusPropertyPanel.setSource({",
+                                    "    f_name:record.f_name,",
+                                    "    f_phone:record.f_phone,",
+                                    "    f_idcard:record.f_idcard,",
+                                    "    f_platenum:record.f_platenum,",
+                                    "    f_engineno:record.f_engineno,",
+                                    "    f_source:record.f_source,",
+                                    "    f_sourcename:record.f_sourcename,",
+                                    "    status:record.status,",
+                                    "    f_desc:record.f_desc,",
+                                    "    appletime:record.appletime,",
+                                    "    f_system:record.f_system,",
+                                    "    f_insurer:record.f_insurer,",
+                                    "    f_safepackage:record.f_safepackage,",
+                                    "    f_effecttime:f_effecttime,",
+                                    "    f_vehicleregister:f_vehicleregister,",
+                                    "    f_vname:record.f_vname,",
+                                    "    f_cdw:(record.f_cdw==1)? '是':'否',",
+                                    "    f_tpli:(record.f_tpli===undefined)?undefined:record.f_tpli+'万',",
+                                    "    f_dsi:(record.f_dsi===0||record.f_dsi===undefined)?'不购买':record.f_dsi+'万/人',",
+                                    "    f_psi:(record.f_psi===0||record.f_psi===undefined)?'不购买':record.f_psi+'万/人',",
+                                    "    f_theftinsure:(record.f_theftinsure===1)? '是':'否',",
+                                    "    f_domesticglass:(record.f_domesticglass===1)? '是':'否',",
+                                    "    f_importglass:(record.f_importglass===1)? '是':'否',",
+                                    "    f_repairdepot:f_repairdepot,",
+                                    "    f_abatement:(record.f_abatement==1)? '是':'否',",
+                                    "    f_contactshop:(record.f_contactshop===true)? '是':'否',",
+                                    "    f_shopphone:record.f_shopphone",
+                                    "},{",
+                                    "    f_name:{",
+                                    "        displayName:'姓名',",
+                                    "    },",
+                                    "    f_phone:{",
+                                    "        displayName:'手机号码',",
+                                    "    },",
+                                    "    f_idcard:{",
+                                    "        displayName:'身份证',",
+                                    "    },",
+                                    "    f_platenum:{",
+                                    "        displayName:'车牌号',",
+                                    "    },",
+                                    "    f_engineno:{",
+                                    "        displayName:'发动机号',",
+                                    "    },",
+                                    "    f_source:{",
+                                    "        displayName:'来源',",
+                                    "    },",
+                                    "    f_sourcename:{",
+                                    "        displayName:'来源名称',",
+                                    "    },",
+                                    "    status:{",
+                                    "        displayName:'状态',",
+                                    "    },",
+                                    "    f_desc:{",
+                                    "        displayName:'备注',",
+                                    "    },",
+                                    "    appletime:{",
+                                    "        displayName:'提交时间',",
+                                    "    },",
+                                    "    f_system:{",
+                                    "        displayName:'系统时间',",
+                                    "    },",
+                                    "    f_insurer:{",
+                                    "        displayName:'保险公司',",
+                                    "    },",
+                                    "    f_safepackage:{",
+                                    "        displayName:'保险套餐',",
+                                    "    },",
+                                    "    f_effecttime:{",
+                                    "        displayName:'出单日期',",
+                                    "    },",
+                                    "    f_vehicleregister:{",
+                                    "        displayName:'初登日期',",
+                                    "    },",
+                                    "    f_vname:{",
+                                    "        displayName:'车辆型号',",
+                                    "    },",
+                                    "    f_cdw:{",
+                                    "        displayName:'车损险',",
+                                    "    },",
+                                    "    f_tpli:{",
+                                    "        displayName:'三责险',",
+                                    "    },",
+                                    "    f_dsi:{",
+                                    "        displayName:'司机座位险',",
+                                    "    },",
+                                    "    f_psi:{",
+                                    "        displayName:'乘客座位险',",
+                                    "    },",
+                                    "    f_theftinsure:{",
+                                    "        displayName:'盗抢险',",
+                                    "    },",
+                                    "    f_domesticglass:{",
+                                    "        displayName:'玻璃险(国产)',",
+                                    "    },",
+                                    "    f_importglass:{",
+                                    "        displayName:'玻璃险(进口)',",
+                                    "    },",
+                                    "    f_repairdepot:{",
+                                    "        displayName:'指定专修',",
+                                    "    },",
+                                    "    f_abatement:{",
+                                    "        displayName:'不计免赔',",
+                                    "    },",
+                                    "    f_contactshop:{",
+                                    "        displayName:'是否联系店主',",
+                                    "    },",
+                                    "    f_shopphone:{",
+                                    "        displayName:'店主电话',",
+                                    "    }",
+                                    "    });",
+                                    "",
+                                    "}else if(type==='融资申请'){",
+                                    "    var record=record.data.hgRequest;",
+                                    "",
+                                    "    /**性别判定**/",
+                                    "var sex;",
+                                    "if(record.f_sex===0){",
+                                    "    sex='男';",
+                                    "}else if(record.f_sex===1){",
+                                    "    sex='女';",
+                                    "}else{",
+                                    "    sex='未知';",
+                                    "}",
+                                    "",
+                                    "/**婚姻状况判定*/",
+                                    "var marriage;",
+                                    "if(record.f_marriage===0){",
+                                    "    marriage='未婚';",
+                                    "}else if(record.f_marriage===1){",
+                                    "    marriage='已婚';",
+                                    "}else{",
+                                    "    marriage='未知';",
+                                    "}",
+                                    "/**家庭住址**/",
+                                    "",
+                                    "var addressArray = (record.f_address===undefined)?null:record.f_address.split(';');",
+                                    "var address=(addressArray[5] === 'null')? undefined : addressArray[5];",
+                                    "",
+                                    "     BizStatusPropertyPanel.setSource({",
+                                    "",
+                                    "     f_name:record.f_name,",
+                                    "     f_phone:record.f_phone,",
+                                    "     f_idcard:record.f_idcard,",
+                                    "     f_sex:sex,",
+                                    "     f_marriage:marriage,",
+                                    "     f_address:address,",
+                                    "     f_mid:record.f_mid,",
+                                    "    f_company:record.f_company,",
+                                    "    f_matecompany:record.f_matecompany,",
+                                    "    f_mateidcard:record.f_mateidcard,",
+                                    "    f_matename:record.f_matename,",
+                                    "    f_matephone:record.f_matephone,",
+                                    "    f_status:record.status,",
+                                    "    appletime:record.appletime,",
+                                    "    f_source:record.f_source,",
+                                    "    f_price:(record.f_price===undefined)?undefined:record.f_price+'万',",
+                                    "    f_desc:record.f_desc,",
+                                    "",
+                                    "},{",
+                                    "    f_name:{",
+                                    "        displayName:'姓名',",
+                                    "    },",
+                                    "    f_phone:{",
+                                    "        displayName:'电话',",
+                                    "    },",
+                                    "    f_idcard:{",
+                                    "        displayName:'身份证',",
+                                    "    },",
+                                    "    f_sex:{",
+                                    "        displayName:'性别',",
+                                    "    },",
+                                    "    f_marriage:{",
+                                    "        displayName:'婚姻状况',",
+                                    "    },",
+                                    "    f_address:{",
+                                    "        displayName:'家庭住址',",
+                                    "    },",
+                                    "    f_mid:{",
+                                    "        displayName:'客户ID',",
+                                    "    },",
+                                    "    f_company:{",
+                                    "        displayName:'公司',",
+                                    "    },",
+                                    "    f_matecompany:{",
+                                    "        displayName:'配偶公司',",
+                                    "    },",
+                                    "    f_mateidcard:{",
+                                    "        displayName:'配偶身份证',",
+                                    "    },",
+                                    "    f_matename:{",
+                                    "        displayName:'配偶姓名',",
+                                    "    },",
+                                    "    f_matephone:{",
+                                    "        displayName:'配偶手机',",
+                                    "    },",
+                                    "    f_status:{",
+                                    "        displayName:'状态',",
+                                    "    },",
+                                    "    appletime:{",
+                                    "        displayName:'提交时间',",
+                                    "    },",
+                                    "    f_source:{",
+                                    "        displayName:'来源',",
+                                    "    },",
+                                    "    f_price:{",
+                                    "        displayName:'融资金额',",
+                                    "    },",
+                                    "    f_desc:{",
+                                    "        displayName:'备注',",
+                                    "    }",
+                                    "",
+                                    "",
+                                    "     });",
+                                    "",
+                                    "}else{",
+                                    "    /**社区店预约**/",
+                                    "     BizStatusPropertyPanel.setSource({",
+                                    "",
+                                    "     });",
+                                    "}"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onStatusGridPanelSelect",
+                            "designerId": "7df6c07f-9206-4f3f-8921-ae2752e69c88"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsible": true,
+                        "id": "BizStatusPropertyPanel",
+                        "itemId": "BizStatusPropertyPanel",
+                        "layout|flex": 5,
+                        "layout|region": "east",
+                        "layout|split": true,
+                        "source": null,
+                        "sourceConfig": [
+                            "{",
+                            "    name:{",
+                            "        displayName:'nameFiled',",
+                            "",
+                            "}",
+                            "",
+                            "}"
+                        ],
+                        "title": "属性",
+                        "titleCollapse": true,
+                        "width": 150
+                    },
+                    "name": "MyPropertyGrid3",
+                    "designerId": "98e678fe-efc6-4210-8150-e57ceb659e91"
+                }
+            ]
+        }
+    ]
+}

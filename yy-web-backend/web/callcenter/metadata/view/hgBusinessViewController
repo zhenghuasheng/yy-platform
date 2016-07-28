@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hgbusiness",
+        "designer|userClassName": "hgBusinessViewController"
+    },
+    "designerId": "900c6331-3218-4ce6-8848-0947bc7422e3"
+}

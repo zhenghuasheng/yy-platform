@@ -1,0 +1,47 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BizStatusStore",
+        "model": "BizStatusModel",
+        "storeId": "BizStatusStore"
+    },
+    "name": "HgStatusStore1",
+    "designerId": "4f497b1a-18d5-4d0c-92cb-285a510d965f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{'source': ''}"
+                ]
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "03ea2428-53fa-4614-bce9-d7c11567ef47",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": null
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "61ff35a1-8cc7-44f2-a35e-eed750c8c48c"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+2016-07-09 16:30:28,152-[ERROR] XMemcached network layout exception
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:323)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+2016-07-09 16:30:31,187-[ERROR] Exception occured in controller
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+2016-07-09 16:30:31,187-[ERROR] Reconnect to 127.0.0.1:11211 fail
+2016-07-09 16:30:31,189-[ERROR] Reactor dispatch events error
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)

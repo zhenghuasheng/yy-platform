@@ -1,0 +1,21 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "syrentbusiness",
+        "designer|userClassName": "syRentBusiness",
+        "itemId": "syRentBusiness",
+        "title": "随易租车业务"
+    },
+    "name": "MyPanel5",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "8f648e85-4d2c-49b2-bb5c-7607c9a68012",
+    "viewControllerInstanceId": "09f8e04e-33b0-47eb-8820-dea1731f6dbd",
+    "viewModelInstanceId": "1fa2eb79-0c43-4041-84a2-06ef314239ca"
+}

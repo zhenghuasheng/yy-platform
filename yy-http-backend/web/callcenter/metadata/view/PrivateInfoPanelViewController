@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "privateinfopanel",
+        "designer|userClassName": "PrivateInfoPanelViewController"
+    },
+    "designerId": "87f2b904-b99b-4b9b-87d1-013eb492e36d"
+}

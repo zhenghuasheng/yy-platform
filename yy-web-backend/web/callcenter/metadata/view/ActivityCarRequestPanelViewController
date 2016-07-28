@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "activitycarrequestpanel",
+        "designer|userClassName": "ActivityCarRequestPanelViewController"
+    },
+    "name": "ActivityRequestPanelViewController1",
+    "designerId": "609b3c4d-41f8-4d7b-b5f6-ed18e6380bad"
+}

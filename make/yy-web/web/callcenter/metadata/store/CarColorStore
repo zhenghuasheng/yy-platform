@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarColorStore",
+        "storeId": "CarColorStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "5c0104c3-c40f-4772-9ed2-cc5186b72c6b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy2",
+            "designerId": "8ef247e2-b404-4fac-86c2-5a1341f7c237",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.colorList"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "a65c6603-dea5-4ce7-9b3a-5202c7571faa"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "name": "MyField26",
+            "designerId": "49332031-6036-441b-8c42-b152027fc22e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField27",
+            "designerId": "c9bb8c66-c232-4439-a6a3-2b5c5339c155"
+        }
+    ]
+}

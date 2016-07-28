@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LimitUseServerModel"
+    },
+    "name": "MyModel",
+    "designerId": "69fe5c89-ace7-4821-8f92-1098e4f4763a",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fnameanddes"
+            },
+            "name": "MyField13",
+            "designerId": "48de486c-188b-4647-a542-106a3bea2ee8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_gsid"
+            },
+            "name": "MyField14",
+            "designerId": "6d12fd10-6d3c-4ac4-87a5-14369874afb0"
+        }
+    ]
+}

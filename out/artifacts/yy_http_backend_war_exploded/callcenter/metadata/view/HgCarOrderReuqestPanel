@@ -1,0 +1,1239 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "hgcarorderreuqestpanel",
+        "designer|userClassName": "HgCarOrderReuqestPanel",
+        "height": 622,
+        "id": "HgCarOrderReuqestPanel",
+        "itemId": "HgCarOrderReuqestPanel",
+        "layout": "border",
+        "title": "购车单报价",
+        "width": 743
+    },
+    "name": "MyPanel",
+    "designerId": "bfe92417-bdf6-4431-b9d7-2f77a0bc569a",
+    "viewControllerInstanceId": "1139fb9c-fc65-46be-952b-8d2de88783a3",
+    "viewModelInstanceId": "975f46fc-5d15-429d-b120-0c6e6f46d8fa",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "border",
+                "layout|flex": 4,
+                "layout|region": "center"
+            },
+            "name": "MyContainer2",
+            "designerId": "08cb5e96-6eb5-4465-a334-4decf75d7f62",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDeselect": true,
+                        "columnLines": true,
+                        "designer|displayName": "购车单信息",
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "itemId": "HgCarOrderGridPanel",
+                        "layout|flex": 12,
+                        "layout|region": "center",
+                        "layout|split": false,
+                        "store": "CarOrderStore",
+                        "title": "购车订单信息"
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "de5c813c-a802-46ea-a186-84fead5bb326",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "name": "MyToolbar",
+                            "designerId": "be24471d-f952-4e48-8708-ee96d5576fe6",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "RefreBtn",
+                                        "layout|flex": null,
+                                        "text": "刷新",
+                                        "width": 49
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "04cfb5de-5187-4491-94f5-0cac2c7e872d",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onRefreBtnClick",
+                                                "implHandler": [
+                                                    "var HgCarOrderReuqestPanel=button.up('#HgCarOrderReuqestPanel');",
+                                                    "",
+                                                    "var CarOrdertypeField=HgCarOrderReuqestPanel.down('#CarOrdertype');",
+                                                    "var CarOrderStatusField=HgCarOrderReuqestPanel.down('#CarOrderStatus');",
+                                                    "",
+                                                    "CarOrdertypeField.reset();",
+                                                    "CarOrderStatusField.reset();",
+                                                    "this.onHgCarOrderGridPanelRender(null,null);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onRefreBtnClick",
+                                            "designerId": "17b13ad0-452d-4690-a0d7-bff5a933bda5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "signBtn",
+                                        "layout|flex": null,
+                                        "text": "已签约"
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "2ad60c6a-6ce7-40c2-b20e-ec7cc0874f8a",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSignBtnClick",
+                                                "implHandler": [
+                                                    "var HgcarOrderGridPanel=button.up('#HgCarOrderGridPanel');",
+                                                    "",
+                                                    "var status=HgcarOrderGridPanel.selection.data.f_status;",
+                                                    "",
+                                                    "if(status!==3){",
+                                                    "    return;",
+                                                    "}",
+                                                    "var orderId=HgcarOrderGridPanel.selection.data.f_ofid;",
+                                                    "",
+                                                    "/**获取LoginSuccessJsonStore中的data**/",
+                                                    "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                                    "var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                                    "var userName=LoginSuccessStore.data.items[0].data.userName;",
+                                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                                    "",
+                                                    "Ext.Ajax.request({",
+                                                    "",
+                                                    "     url:url+\"/biz/order/modify.do\",",
+                                                    "     params:{",
+                                                    "         f_ofid:orderId,",
+                                                    "         f_operator:userName,",
+                                                    "         f_operatorid:userId,",
+                                                    "         f_status:5",
+                                                    "     },",
+                                                    "",
+                                                    "     success:function(response){",
+                                                    "           var text = response.responseText;",
+                                                    "           var result = JSON.parse(text);",
+                                                    "",
+                                                    "            if (result=== null) {",
+                                                    "                Ext.Msg.alert('提示', '保存出错了，结果：' + result);",
+                                                    "                return;",
+                                                    "",
+                                                    "            }",
+                                                    "",
+                                                    "",
+                                                    "        if (result.succeed === true) {",
+                                                    "            Ext.Msg.alert('提示', '操作成功');",
+                                                    "        } else {",
+                                                    "            Ext.Msg.alert('提示', '操作失败');",
+                                                    "        }",
+                                                    "",
+                                                    "     }",
+                                                    "});",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSignBtnClick",
+                                            "designerId": "7bcf92a8-8c19-4f98-b7db-37ddf844bc27"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "name",
+                                        "fieldLabel": "订单类型",
+                                        "itemId": "CarOrdertype",
+                                        "labelAlign": null,
+                                        "labelWidth": 60,
+                                        "layout|flex": null,
+                                        "store": "CarOrdertypeStore",
+                                        "valueField": "id",
+                                        "width": 150
+                                    },
+                                    "name": "MyComboBox9",
+                                    "designerId": "199c03f3-c765-4b38-b1d5-414977530876"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "name",
+                                        "fieldLabel": "订单状态",
+                                        "itemId": "CarOrderStatus",
+                                        "labelWidth": 60,
+                                        "layout|flex": null,
+                                        "store": "CarOrderStatusStore",
+                                        "valueField": "id",
+                                        "width": 150
+                                    },
+                                    "name": "MyComboBox10",
+                                    "designerId": "1dbb4b45-07ff-492e-94c5-645df81e0364"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "QueryBtn",
+                                        "layout|flex": null,
+                                        "text": "查询"
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "717b8004-e20c-493e-a0be-c64061a26cc8",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onQueryBtnClick",
+                                                "implHandler": [
+                                                    "var HgCarOrderReuqestPanel=button.up('#HgCarOrderReuqestPanel');",
+                                                    "",
+                                                    "var CarOrdertypeField=HgCarOrderReuqestPanel.down('#CarOrdertype');",
+                                                    "var CarOrderStatusField=HgCarOrderReuqestPanel.down('#CarOrderStatus');",
+                                                    "",
+                                                    "var CarOrdertype='';",
+                                                    "var CarOrderStatus='';",
+                                                    "",
+                                                    "if(CarOrdertypeField.value!==null){",
+                                                    "    CarOrdertype=CarOrdertypeField.getValue();",
+                                                    "}",
+                                                    "if(CarOrderStatusField.value!==null){",
+                                                    "    CarOrderStatus=CarOrderStatusField.getValue();",
+                                                    "}",
+                                                    "",
+                                                    "  var carOrderStore = Ext.getStore('CarOrderStore');",
+                                                    "        var ajaxProxy = carOrderStore.getProxy();",
+                                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                                    "console.log(url + \"/biz/order/list.do?orderType=\"+CarOrdertype+'&orderStatus='+CarOrderStatus);",
+                                                    "        ajaxProxy.setUrl(url + \"/biz/order/list.do?orderType=\"+CarOrdertype+'&orderStatus='+CarOrderStatus);",
+                                                    "        carOrderStore.load();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onQueryBtnClick",
+                                            "designerId": "12348bcc-fc1c-4b3d-a131-7a95dd352ab0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "string",
+                                "text": "序号",
+                                "width": 76
+                            },
+                            "name": "MyRowNumberer1",
+                            "designerId": "98b3efeb-45cb-4500-955b-cdae2ff9fe8e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "title",
+                                "text": "车型名称",
+                                "width": 167
+                            },
+                            "name": "MyColumn8",
+                            "designerId": "1ee3f340-dd02-4148-91d5-574983c57b23"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "f_color",
+                                "text": "车辆颜色"
+                            },
+                            "name": "MyColumn15",
+                            "designerId": "e62b2d2b-47c8-4044-80aa-67f0d1dc779b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "f_status",
+                                "text": "购车单状态"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "d1694511-f22f-4a64-8de8-11945460d8bb",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "if(value===0){",
+                                            "    return '已作废';",
+                                            "}else if(value===1){",
+                                            "    //     if(record.data.type===1){",
+                                            "    //         return '已跟进';",
+                                            "    //     }else{",
+                                            "    //         return '已报价';",
+                                            "    //     }",
+                                            "    return '询价';",
+                                            "",
+                                            "}else if(value===2){",
+                                            "    return '已报价';",
+                                            "}else if(value===3){",
+                                            "    return '已支付';",
+                                            "}else if(value===4){",
+                                            "    return '已过期';",
+                                            "}else if(value===5){",
+                                            "    return '待提车';",
+                                            "}else if(value===6){",
+                                            "    return '已完成';",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "e8a100a2-c4ad-4f6d-99d1-849ec5482311"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "guidePrice",
+                                "text": "指导价格(万)",
+                                "width": 127
+                            },
+                            "name": "MyNumberColumn",
+                            "designerId": "aade285a-65f1-4e8a-9d17-acac1b28be1c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "f_bottomprice",
+                                "text": "最低价(万)",
+                                "width": 103
+                            },
+                            "name": "MyColumn9",
+                            "designerId": "78d1de5a-063f-42f9-8032-43dd73b699cf",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "if(value!==undefined&&value!==null&&value!==''){",
+                                            "",
+                                            "   var V= Ext.util.Format.number(value/10000,'0.00');",
+                                            "    return V;",
+                                            "}else{",
+                                            "    return value;",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "25394261-233a-4fc3-a663-012dcd318d3c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "f_operator",
+                                "text": "操作员",
+                                "width": 124
+                            },
+                            "name": "MyColumn6",
+                            "designerId": "5163e689-7f20-4cfc-8ba9-b94c48aa1ea1"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "f_operatetime",
+                                "format": "Y-m-d H:i:s",
+                                "text": "操作时间",
+                                "width": 167
+                            },
+                            "name": "MyDateColumn3",
+                            "designerId": "65504796-b2e5-428d-a848-ffe689aad5b5"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "f_createtime",
+                                "format": "Y-m-d H:i:s",
+                                "text": "创建时间",
+                                "width": 150
+                            },
+                            "name": "MyDateColumn2",
+                            "designerId": "cf108c3c-06c8-41cd-8120-44b18efe0019"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "text": "操作"
+                            },
+                            "name": "MyActionColumn",
+                            "designerId": "e381030a-33d9-4c6a-9c46-edb52e60a136",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "altText": "失效操作",
+                                        "designer|displayName": "是否失效",
+                                        "icon": null,
+                                        "iconCls": "Cancel"
+                                    },
+                                    "name": "MyActionColumnItem",
+                                    "designerId": "8264fa77-13cc-426c-bbaf-a3218e7bbe4b",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "",
+                                                    "var status=record.data.f_status;",
+                                                    "",
+                                                    "if(status===0||status===4){",
+                                                    "    Ext.Msg.alert('提示','此购车订单已作废或已过期');",
+                                                    "    return;",
+                                                    "}",
+                                                    "",
+                                                    "Ext.MessageBox.confirm('请确认', '您确认是否作废此购车单？', function(btn){",
+                                                    "     if(btn==='no'){",
+                                                    "         return;",
+                                                    "     }else if(btn==='yes'){",
+                                                    "         var orderId=record.data.f_ofid;",
+                                                    "         var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                                    "          /**获取LoginSuccessJsonStore中的data**/",
+                                                    "        var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                                    "        var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                                    "        var userName=LoginSuccessStore.data.items[0].data.userName;",
+                                                    "         ",
+                                                    "         Ext.Ajax.request({",
+                                                    "            url: url + '/biz/order/cancel.do',",
+                                                    "            params: {",
+                                                    "                orderId:orderId,",
+                                                    "                operatorId:userId,",
+                                                    "                operator:userName",
+                                                    "            },",
+                                                    "                success: function (response) {",
+                                                    "                var text = response.responseText;",
+                                                    "                var result = JSON.parse(text);",
+                                                    "",
+                                                    "                if (result === null) {",
+                                                    "                    Ext.Msg.alert('提示', '操作出错了，结果：' + text);",
+                                                    "                    return;",
+                                                    "                }",
+                                                    "",
+                                                    "        if (result.succeed === true) {",
+                                                    "            Ext.Msg.alert('提示', '操作成功');",
+                                                    "",
+                                                    "            /**成功操作后，刷新页面信息***/",
+                                                    "            view.store.load();",
+                                                    "",
+                                                    "",
+                                                    "        } else {",
+                                                    "            Ext.Msg.alert('提示', '操作出错了');",
+                                                    "        }",
+                                                    "    }",
+                                                    "});",
+                                                    "",
+                                                    "     }",
+                                                    "});",
+                                                    "",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "e85b86cc-c61e-4743-8d23-1bcdaee222f0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "afterPageText": "页   共{0}页",
+                                "beforePageText": "第",
+                                "displayInfo": true,
+                                "dock": "bottom",
+                                "emptyMsg": "无信息",
+                                "firstText": "第一页",
+                                "frame": true,
+                                "lastText": "最后一页",
+                                "nextText": "下一页",
+                                "prependButtons": true,
+                                "prevText": "上一页",
+                                "refreshText": "刷新",
+                                "store": "CarOrderStore",
+                                "width": 360
+                            },
+                            "name": "MyPagingToolbar",
+                            "designerId": "074fac55-fa42-466c-b742-aecbac06dac2"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView",
+                            "designerId": "2a52c26b-03eb-437f-b43e-a83146d7d106"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onHgCarOrderGridPanelRender",
+                                "implHandler": [
+                                    "var carOrderStore = Ext.getStore('CarOrderStore');",
+                                    "var ajaxProxy = carOrderStore.getProxy();",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "ajaxProxy.setUrl(url + \"/biz/order/list.do\");",
+                                    "carOrderStore.load();"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "name": "onHgCarOrderGridPanelRender",
+                            "designerId": "fa0438e4-a196-4eab-89b5-836161c3b85c"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onHgCarOrderGridPanelSelectionChange",
+                                "implHandler": [
+                                    "if(selected.length<1){",
+                                    "    return;",
+                                    "}",
+                                    "/**1,查询询价记录***/",
+                                    "var record=selected[0];",
+                                    "var orderId=record.data.f_ofid;",
+                                    "var carTypeId=record.data.f_cartypeid;",
+                                    "",
+                                    "var color=record.data.f_color===undefined?null:record.data.f_color;",
+                                    "",
+                                    "var CarReportPriceStore=Ext.getStore('CarReportPriceStore');",
+                                    "var ajaxProxy=CarReportPriceStore.getProxy();",
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                    "ajaxProxy.setUrl(url + \"/hg/carenquiry/list.do?cartypeid=\"+carTypeId);",
+                                    "CarReportPriceStore.load();",
+                                    "",
+                                    "/**2，更新PropertGrid记录**/",
+                                    "",
+                                    "var CarOrderDetailPropertyPanel=Ext.getCmp('CarOrderDetailPropertyPanel');",
+                                    "",
+                                    "/**状态，数字转化为字符**/",
+                                    "var status=record.data.f_status;",
+                                    "if(status===0){",
+                                    "    status='已作废';",
+                                    "}else if(status===1){",
+                                    "    status= '询价';",
+                                    "",
+                                    "}else if(status===2){",
+                                    "    if(record.data.type===1){",
+                                    "        status='已跟进';",
+                                    "    }else{",
+                                    "        status='已报价';",
+                                    "    }",
+                                    "    //     status='已报价';",
+                                    "}else if(status===3){",
+                                    "    status='已支付';",
+                                    "}else if(status===4){",
+                                    "    status='已过期';",
+                                    "}else if(status===5){",
+                                    "    status='待提车';",
+                                    "}else if(status===6){",
+                                    "    status='已完成';",
+                                    "}else{",
+                                    "    status='未知';",
+                                    "}",
+                                    "",
+                                    "",
+                                    "/***购车方式，转化**/",
+                                    "var purchaseWay=record.data.f_purchaseway;",
+                                    "if(purchaseWay===0){",
+                                    "    purchaseWay='分期付款';",
+                                    "}else if(purchaseWay===1){",
+                                    "    purchaseWay='全额付款';",
+                                    "}else{",
+                                    "    purchaseWay='其他';",
+                                    "}",
+                                    "/***支付方式 转化**/",
+                                    "",
+                                    "var paymodel=record.data.f_paymode;",
+                                    "if(paymodel===undefined){",
+                                    "    paymodel=undefined;",
+                                    "}else if(paymodel===0){",
+                                    "    paymodel='微信支付';",
+                                    "}else if(paymodel===1){",
+                                    "    paymodel='支付宝';",
+                                    "}else if(paymodel===2){",
+                                    "    paymodel='财付通';",
+                                    "}else if(paymodel===3){",
+                                    "    paymodel='信用卡';",
+                                    "}else if(paymodel===4){",
+                                    "    paymodel='储蓄卡';",
+                                    "}",
+                                    "",
+                                    "var operateTime=record.data.f_operatetime;",
+                                    "if(operateTime===undefined||operateTime===null){",
+                                    "    operateTime=undefined;",
+                                    "}else{",
+                                    "    operateTime=operateTime.toLocaleString();",
+                                    "}",
+                                    "",
+                                    "var payitem=record.data.f_payitem;",
+                                    "if(payitem===0){",
+                                    "   payitem='购车订金支付';",
+                                    "}",
+                                    "",
+                                    "CarOrderDetailPropertyPanel.setSource({",
+                                    "    f_ofid:orderId,",
+                                    "    f_name:record.data.f_name,",
+                                    "    f_phone:record.data.f_phone,",
+                                    "    f_carbrand:record.data.brand,",
+                                    "    f_carset:record.data.carSetName,",
+                                    "    f_cartype:record.data.title,",
+                                    "    f_operator:record.data.f_operator,",
+                                    "    f_operatetime:operateTime,",
+                                    "    f_createtime:record.data.f_createtime===undefined?undefined:record.data.f_createtime.toLocaleString(),",
+                                    "    f_status:status,",
+                                    "    f_bottomprice:record.data.f_bottomprice===undefined?undefined:record.data.f_bottomprice/10000,",
+                                    "    f_payments:record.data.f_payments===undefined?undefined:record.data.f_payments/10000,",
+                                    "    f_paymode:paymodel,",
+                                    "    f_payitem:payitem,",
+                                    "    f_paytime:(record.data.f_paytime===undefined?undefined:new Date(record.data.f_paytime*1000).toLocaleString()),",
+                                    "    f_purchaseway:purchaseWay,",
+                                    "    f_expecttime:record.data.f_expecttime===undefined?undefined:record.data.f_expecttime,",
+                                    "    f_ncname:record.data.f_ncname,",
+                                    "    f_saleman:record.data.f_saleman,",
+                                    "    f_salephone:record.data.f_salephone,",
+                                    "    f_color:record.data.f_color,",
+                                    "    f_desc:record.data.f_desc,",
+                                    "    f_editordesc:record.data.f_editordesc===undefined?'':record.data.f_editordesc",
+                                    "},{",
+                                    "    f_ofid:{displayName:'订单号'},",
+                                    "    f_name:{displayName:'姓名',selectOnFocus:false},",
+                                    "    f_phone:{displayName:'联系方式'},",
+                                    "    f_carbrand:{displayName:'车辆品牌'},",
+                                    "    f_carset:{displayName:'车系'},",
+                                    "    f_cartype:{displayName:'车辆型号'},",
+                                    "    f_operator:{displayName:'报价员'},",
+                                    "    f_operatetime:{displayName:'操作时间'},",
+                                    "    f_createtime:{displayName:'购车单创建时间'},",
+                                    "    f_status:{displayName:'购车单状态'},",
+                                    "    f_bottomprice:{displayName:'最低价格(万)'},",
+                                    "    f_payments:{displayName:'定金金额'},",
+                                    "    f_paymode:{displayName:'支付方式'},",
+                                    "    f_payitem:{displayName:'支付项目'},",
+                                    "    f_paytime:{displayName:'支付时间'},",
+                                    "    f_purchaseway:{displayName:'购车方式'},",
+                                    "    f_expecttime:{displayName:'预计购车时间'},",
+                                    "    f_ncname:{displayName:'经销商名称'},",
+                                    "    f_saleman:{displayName:'销售代表'},",
+                                    "    f_salephone:{displayName:'销售代表联系方式'},",
+                                    "    f_color:{displayName:'车辆颜色'},",
+                                    "    f_desc:{displayName:'客户备注'},",
+                                    "    f_editordesc:{displayName:'编辑者备注'}",
+                                    "});"
+                                ],
+                                "name": "selectionchange",
+                                "scope": "me"
+                            },
+                            "name": "onHgCarOrderGridPanelSelectionChange",
+                            "designerId": "919690d0-2aa6-41c7-8847-b3479aa0b7ac"
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDeselect": true,
+                                "mode": "SINGLE"
+                            },
+                            "name": "MyCheckboxSelectionModel1",
+                            "designerId": "037762fa-1154-4781-9a5c-14841a0df3da"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "autoScroll": true,
+                        "bodyBorder": true,
+                        "collapsible": true,
+                        "designer|displayName": "购车单详情",
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "id": "CarOrderDetailPropertyPanel",
+                        "itemId": "CarOrderDetailPropertyPanel",
+                        "layout|flex": 4,
+                        "layout|region": "east",
+                        "layout|split": true,
+                        "title": "购车单详情",
+                        "titleCollapse": true,
+                        "valueField": null,
+                        "width": 169
+                    },
+                    "name": "MyPropertyGrid",
+                    "designerId": "d0546f63-2da7-4f43-8c66-57ff395aa024",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCarOrderDetailPropertyPanelPropertyChange",
+                                "implHandler": [
+                                    "//propertyGridPanel详细信息修改时触发",
+                                    "",
+                                    "if(recordId!=='f_editordesc'){",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "/**获取LoginSuccessJsonStore中的data**/",
+                                    "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                    "var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                    "var userName=LoginSuccessStore.data.items[0].data.userName;",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "",
+                                    "     url:url+\"/biz/order/modify.do\",",
+                                    "     params:{",
+                                    "         f_ofid:source.f_ofid,",
+                                    "         f_operator:userName,",
+                                    "         f_operatorid:userId,",
+                                    "         f_editordesc:value",
+                                    "     },",
+                                    "",
+                                    "     success:function(response){",
+                                    "       var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "        if (result=== null) {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，结果：' + result);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (!result.succeed) {",
+                                    "",
+                                    "            Ext.Msg.alert('提示', '保存出错了');",
+                                    "            return;",
+                                    "        }",
+                                    "//更新orderGrid数据",
+                                    "var carOrderStore = Ext.getStore('CarOrderStore');",
+                                    "var ajaxProxy = carOrderStore.getProxy();",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "ajaxProxy.setUrl(url + \"/biz/order/list.do\");",
+                                    "carOrderStore.load();",
+                                    "",
+                                    "     },",
+                                    "    failure:function(){",
+                                    "       Ext.Msg.alert('提示','操作失败');",
+                                    "                }",
+                                    "});",
+                                    "",
+                                    ""
+                                ],
+                                "name": "propertychange",
+                                "scope": "me"
+                            },
+                            "name": "onCarOrderDetailPropertyPanelPropertyChange",
+                            "designerId": "70695a36-ea78-48c5-a92c-c4e6b6dffe71"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "columnLines": true,
+                "designer|displayName": "询价记录",
+                "height": 150,
+                "itemId": "CarAskPriceGridPanel",
+                "layout|flex": 2,
+                "layout|region": "south",
+                "store": "CarReportPriceStore",
+                "title": "询价记录"
+            },
+            "name": "MyGridPanel2",
+            "designerId": "4b532b42-295a-42b7-82ff-a9c40ba25a5a",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "6d9b8850-c051-401b-8cae-4d99b78eafc5",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "bottomPricesubmitBtn",
+                                "layout|flex": null,
+                                "text": "底价报价"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "36560912-eb05-4941-876a-91102f59b1c7",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBottomPricesubmitBtnClick",
+                                        "implHandler": [
+                                            "var HgCarOrderRequestpanel=button.up('#HgCarOrderReuqestPanel');",
+                                            "",
+                                            "var CarAskPriceGridPanel= HgCarOrderRequestpanel.down('#CarAskPriceGridPanel');",
+                                            "var HgCarOrderGridPanel= HgCarOrderRequestpanel.down('#HgCarOrderGridPanel');",
+                                            "",
+                                            "if(HgCarOrderGridPanel.selModel.selected.items.length<1){",
+                                            "    Ext.Msg.alert('错误提示','请选择需要报价的订单信息!');",
+                                            "    return;",
+                                            "}",
+                                            "",
+                                            "var record= HgCarOrderGridPanel.selModel.selected.items[0].data;",
+                                            "",
+                                            "     var type=record.f_type;",
+                                            "        if(type===1){/**直销车辆*/",
+                                            "            var BottomPriceSubmitPanel =new CallCenterApp.view.BottomPriceSubmitPanel({record:record});",
+                                            "",
+                                            "            BottomPriceSubmitPanel.show();",
+                                            "",
+                                            "",
+                                            "",
+                                            "        }else{/**底价购车**/",
+                                            "",
+                                            "            if(CarAskPriceGridPanel.selModel.selected.items.length<1){",
+                                            "                Ext.Msg.alert('错误提示','请选择需要报价的信息!');",
+                                            "                return;",
+                                            "            }",
+                                            "            var askPriceRecord=CarAskPriceGridPanel.selModel.selected.items[0].data;",
+                                            "",
+                                            "",
+                                            "            var BottomPriceSubmitPanel =new CallCenterApp.view.BottomPriceSubmitPanel({record:record,askPriceRecord:askPriceRecord});",
+                                            "            var cartypeField=BottomPriceSubmitPanel.down('#cartype');",
+                                            "            BottomPriceSubmitPanel.show();",
+                                            "",
+                                            "        }"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBottomPricesubmitBtnClick",
+                                    "designerId": "a47c994a-f520-4b63-8d52-da107640b2d0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "string",
+                        "text": "序号",
+                        "width": 64
+                    },
+                    "name": "MyRowNumberer2",
+                    "designerId": "e87416dd-d4b3-467c-84d3-b63583ec6507"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_cartype",
+                        "text": "车辆型号",
+                        "width": 156
+                    },
+                    "name": "MyColumn17",
+                    "designerId": "691adb04-cbad-42e0-a72b-f6a780d7e7c7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_color",
+                        "text": "车辆颜色"
+                    },
+                    "name": "MyColumn18",
+                    "designerId": "6e5998a7-1a1d-4a3c-a657-2fe41434a235"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_ncname",
+                        "text": "经销商名称",
+                        "width": 120
+                    },
+                    "name": "MyColumn19",
+                    "designerId": "81ccb60c-01e5-4b59-a3aa-3756a010dc20"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_price",
+                        "text": "报价(万)"
+                    },
+                    "name": "MyColumn20",
+                    "designerId": "99d3bded-380c-4db1-99cd-c6daf8808c9d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "if(value!==undefined&&value!==null&&value!==''){",
+                                    "    ",
+                                    "   var V= Ext.util.Format.number(value/10000,'0.00');",
+                                    "    return V;",
+                                    "}"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "578b3316-a8d9-41d7-93e2-d6993847af00"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_saleman",
+                        "text": "销售代表"
+                    },
+                    "name": "MyColumn21",
+                    "designerId": "694d4282-424a-4e7a-86a2-6da29a1472a8"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_validtime",
+                        "format": "Y-m-d H:i:s",
+                        "text": "有效时间",
+                        "width": 135
+                    },
+                    "name": "MyDateColumn4",
+                    "designerId": "665e9fe7-9d96-4816-b122-765e11adfbcc"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "userName",
+                        "text": "操作员"
+                    },
+                    "name": "MyColumn24",
+                    "designerId": "6196915a-d863-4d61-8144-ba36ec40a1fb"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView2",
+                    "designerId": "eaa494dc-98da-455d-938c-ee4732c9ae12"
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDeselect": true,
+                        "mode": "SINGLE"
+                    },
+                    "name": "MyCheckboxSelectionModel",
+                    "designerId": "699a38f3-f3ca-4f08-ba47-90c96cb58da4"
+                }
+            ]
+        }
+    ]
+}

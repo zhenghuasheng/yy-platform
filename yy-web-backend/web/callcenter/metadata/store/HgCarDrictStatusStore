@@ -1,0 +1,45 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[{value:false,name:'禁用'},{value:true,name:'启用'}]"
+        ],
+        "designer|userClassName": "HgCarDrictStatusStore",
+        "storeId": "HgCarDrictStatusStore"
+    },
+    "name": "MyStore",
+    "designerId": "fc4e67b0-7875-449f-a7ec-e070378eb1e8",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "name": "MyField10",
+            "designerId": "79736584-9719-44b6-8a21-d5e8972d6580"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField12",
+            "designerId": "9a1dc1b2-d70f-4f19-bbdb-8e53a9f91a22"
+        }
+    ]
+}

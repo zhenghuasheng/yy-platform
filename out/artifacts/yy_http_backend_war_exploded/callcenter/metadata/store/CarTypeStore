@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarTypeStore",
+        "storeId": "CarTypeStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bcc58aeb-9c31-41f5-80fc-abeabb80b15e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy7",
+            "designerId": "a9b49cf1-258d-4267-ac92-9a46c07c1681",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "cars"
+                    },
+                    "name": "MyJsonReader7",
+                    "designerId": "6598676f-d71b-4afe-a4eb-802a262c403d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField29",
+            "designerId": "54bf7ee6-6e9f-4582-8c87-2188201c5095"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField30",
+            "designerId": "d9a4e0f1-d585-4b2c-aac8-cf5be39ad951"
+        }
+    ]
+}

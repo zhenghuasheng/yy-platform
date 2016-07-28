@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "insrequestpanel",
+        "designer|userClassName": "InsRequestPanelViewController"
+    },
+    "name": "EtcRequestPanelViewController1",
+    "designerId": "bfa493a7-5ced-487f-ac49-e6f3a37c4c22"
+}

@@ -1,0 +1,341 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "columnrequestpanel",
+        "designer|userClassName": "ColumnRequestPanel",
+        "height": null,
+        "id": "ColumnRequestPanel",
+        "itemId": "ColumnRequestPanel",
+        "title": null,
+        "width": null
+    },
+    "designerId": "5eeb3983-c4eb-4c15-ad77-678f60198425",
+    "viewControllerInstanceId": "9a573487-bcfa-488d-b6fb-debf5bbaa1f1",
+    "viewModelInstanceId": "7b26c66f-44c1-420e-a6c6-a896b84fa205",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar6",
+            "designerId": "477bc0f9-6d65-45c9-8748-2acfa66179ba",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saveButton",
+                        "layout|flex": null,
+                        "text": "保存"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "49fa1389-befe-48a4-9ce0-6d773ebc53ce",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveButtonClick",
+                                "implHandler": [
+                                    "        var columnRequestPanel = button.up('#ColumnRequestPanel');",
+                                    "",
+                                    "        var itemId = columnManagePanel.down('#itemIdField');",
+                                    "        var name = columnManagePanel.down('#nameField');",
+                                    "        var pitemId = columnManagePanel.down('#pitemIdField');",
+                                    "        var desc = columnManagePanel.down('#descField');",
+                                    "        var status = columnManagePanel.down('#statusField');",
+                                    "        var order = columnManagePanel.down('#orderField');",
+                                    "        var stId = columnManagePanel.down('#stIdField');",
+                                    "        var ico = columnManagePanel.down('#icoField');",
+                                    "        var itemCode = columnManagePanel.down('#itemCodeField');",
+                                    "",
+                                    "",
+                                    "        if(name.getValue()===\"\" || stid.getValue()===\"\" || itemcode.getValue()===\"\"){",
+                                    "            Ext.Msg.alert('提示','请填写必要信息!');",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "",
+                                    "        Ext.Ajax.request({",
+                                    "            url: url + '',",
+                                    "            params: {",
+                                    "                'f_itemid':itemId.getValue(),",
+                                    "                'f_name':name.getValue(),",
+                                    "                'f_pitemid':pitemId.getValue(),",
+                                    "                'f_desc':desc.getValue(),",
+                                    "                'f_status':status.getValue(),",
+                                    "                'f_order':order.getValue(),",
+                                    "                'f_stid':stId.getValue(),",
+                                    "                'f_ico':ico.getValue(),",
+                                    "                'f_itemcode':itemCode.getValue()",
+                                    "            },",
+                                    "            success: function (response) {",
+                                    "                var text = response.responseText;",
+                                    "                var result = JSON.parse(text);",
+                                    "                if (result === null) {",
+                                    "                    Ext.Msg.alert('提示', '修改出错了，结果：' + text);",
+                                    "                    return;",
+                                    "                }",
+                                    "",
+                                    "                if (result.succeed === true) {",
+                                    "                    Ext.getStore('ColumnManageStore').reload();",
+                                    "                    Ext.Msg.alert('提示', '修改成功');",
+                                    "                } else {",
+                                    "                    Ext.Msg.alert('提示', '修改出错了，错误：' + result.errMsg);",
+                                    "                }",
+                                    "            }",
+                                    "        });"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveButtonClick",
+                            "designerId": "82d55fa4-a7dd-42a2-8894-e7cf7c82a3e7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "resetButton",
+                        "layout|flex": null,
+                        "text": "重置"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "dedca156-3d55-4d5f-8847-64261fe74652",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onResetButtonC",
+                                "implHandler": [
+                                    "        this.onColumnRequestPanelBeforeRender();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onResetButtonC",
+                            "designerId": "796962a9-8120-49d8-bd34-f2676b7b84d0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "editable": false,
+                "fieldLabel": "栏目序号",
+                "itemId": "itemIdField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField16",
+            "designerId": "73fa9b77-77d8-435e-845d-c7daf1d633a6"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "栏目名称",
+                "itemId": "nameField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField17",
+            "designerId": "f19a7a2f-6a5f-4d59-9071-08a0dafc601c"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "f_name",
+                "editable": false,
+                "fieldLabel": "父栏目名称",
+                "itemId": "pitemIdField",
+                "labelAlign": "right",
+                "margin": 10,
+                "store": "ColumnManageStore",
+                "valueField": "f_itemid",
+                "width": 300
+            },
+            "name": "MyComboBox5",
+            "designerId": "612e9ef3-4471-494c-bb8e-e2187b3fef07"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "栏目状态",
+                "itemId": "statusField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField18",
+            "designerId": "18311163-146d-4cdc-9d7e-5d372c8b64eb"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "排序",
+                "itemId": "orderField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField19",
+            "designerId": "ead35b9c-34d4-474a-9a42-b299eb31ffde"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "系统编码",
+                "itemId": "stIdField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField20",
+            "designerId": "475f55f1-765a-4f32-b061-16944163ee3c"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "图标",
+                "itemId": "icoField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField21",
+            "designerId": "23117fc1-03e6-48ff-a2e3-b0ebd1c2828a"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "栏目编码",
+                "itemId": "itemCodeField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextField22",
+            "designerId": "8e3456d9-3a0a-47b2-ab55-f6c7c36a8fc2"
+        },
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "栏目描述",
+                "itemId": "descField",
+                "labelAlign": "right",
+                "margin": 10,
+                "width": 300
+            },
+            "name": "MyTextArea1",
+            "designerId": "64c4c8b3-9226-4ed1-af71-bba376ae3d96"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onColumnRequestPanelBeforeRender",
+                "implHandler": [
+                    "        var columnRequestPanel = Ext.getCmp('ColumnRequestPanel');",
+                    "",
+                    "        columnRequestPanel.down('#itemIdField').setValue(columnRequestPanel.date.f_itemid);",
+                    "        columnRequestPanel.down('#nameField').setValue(columnRequestPanel.date.f_name);",
+                    "        columnRequestPanel.down('#pitemIdField').setValue(columnRequestPanel.date.f_pitemid);",
+                    "        columnRequestPanel.down('#descField').setValue(columnRequestPanel.date.f_desc);",
+                    "        columnRequestPanel.down('#statusField').setValue(columnRequestPanel.date.f_status);",
+                    "        columnRequestPanel.down('#orderField').setValue(columnRequestPanel.date.f_order);",
+                    "        columnRequestPanel.down('#stIdField').setValue(columnRequestPanel.date.f_stid);",
+                    "        columnRequestPanel.down('#icoField').setValue(columnRequestPanel.date.f_ico);",
+                    "        columnRequestPanel.down('#itemCodeField').setValue(columnRequestPanel.date.f_itemcode);"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onColumnRequestPanelBeforeRender",
+            "designerId": "f02dd77e-65c0-476d-9de6-20a91ed07848"
+        }
+    ]
+}

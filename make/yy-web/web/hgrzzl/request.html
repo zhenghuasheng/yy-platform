@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>弘高业务对接系统</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./lib/validate/css/bootstrapValidator.css"/>
+    <script src="./js/action.js"></script>
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="container">
+            <div class="row clearfix margintop">
+                <div class="col-md-12 column">
+                    <div class="form-horizontal" role="form" id="defaultForm">
+                        <div class="form-group">
+                            <label for="nameField" class="col-sm-3 control-label">姓名</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control inputField" id="nameField" name="userName"
+                                       placeholder="请输入姓名"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneField" class="col-sm-3 control-label">电话</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control inputField" id="phoneField" name="phone"
+                                       placeholder="请输入电话"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="idcardField" class="col-sm-3 control-label">身份证</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control inputField" id="idcardField" name="idCard"
+                                       placeholder="请输入身份证号码"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-5">
+                                <button type="submit" class="btn btn-default" onclick="submitRequest()">提交申请</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示信息</h4>
+            </div>
+            <div class="modal-body" id="myModalBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./lib/validate/js/bootstrapValidator.js"></script>
+<script type="text/javascript">
+    $(document).ready(requestValidate());
+</script>
+</body>
+</html>

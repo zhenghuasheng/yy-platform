@@ -1,0 +1,267 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "closable": true,
+        "designer|userAlias": "messagetabpanel",
+        "designer|userClassName": "MessageTabPanel",
+        "height": 381,
+        "itemId": "messageTabPanel",
+        "title": "短信发送",
+        "width": 597
+    },
+    "name": "MyTabPanel1",
+    "designerId": "9b5f169d-85d1-40ce-b151-06cd52bed959",
+    "viewControllerInstanceId": "cb008b13-3faf-4ac0-8b11-a9cfe8d8003f",
+    "viewModelInstanceId": "03f5ed9b-8bb5-4cfc-a9e6-0b9806343c1a",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "短信单发",
+                "id": "postSingleMessagePanel",
+                "itemId": "postSingleMessagePanel",
+                "title": "短信单发"
+            },
+            "name": "MyPanel3",
+            "designerId": "dbaa9e1d-ac9c-49c5-b557-2855ce3568c9",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig",
+                    "designerId": "d5fe1548-3920-41b0-a7ba-5a5d643819ed"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "blankText": "手机号码不能为空",
+                        "emptyText": "请输入手机号码",
+                        "fieldLabel": "手机号码",
+                        "itemId": "messagePhone",
+                        "regex": "/^1(3|5|8)[0-9]{9}$/",
+                        "regexText": "手机号码为11位"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "45702128-b676-4589-be4b-3e2d81c852ff"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "短信内容超过70字符将按多条收费",
+                        "fieldLabel": "短信内容",
+                        "height": 155,
+                        "itemId": "messageContent",
+                        "width": 494
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "1801dd4a-c39a-4843-a02c-291e3e3a2dcb"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "提交发送",
+                        "itemId": "postMessageButton",
+                        "margin": "10 20 50 100",
+                        "text": "提交发送"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "c94c1ebb-45c2-4ce7-af7f-8f12735b78a2",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPostMessageButtonClick",
+                                "implHandler": [
+                                    "var postSingleMessagePanel = button.up('#postSingleMessagePanel');",
+                                    "var phoneField = postSingleMessagePanel.down('#messagePhone');",
+                                    "var contentField = postSingleMessagePanel.down('#messageContent');",
+                                    "",
+                                    "if (!phoneField.validate()) {",
+                                    "    Ext.Msg.alert('Status', '请正确填写手机号码信息.');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "var jsonArray = [];",
+                                    "jsonArray.push({mobile:phoneField.getValue(),content:contentField.getValue(),});",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "Ext.Ajax.request({",
+                                    "",
+                                    "    url: url + '/action/sms/submit.do',",
+                                    "    params:{",
+                                    "         phoneAndContent:JSON.stringify(jsonArray),",
+                                    "    },",
+                                    "",
+                                    "    success: function (response) {",
+                                    "       //var text=Ext.util.JSON.decode(response.responseText);",
+                                    "        var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "",
+                                    "        if (result=== null) {",
+                                    "            Ext.Msg.alert('提示', '提交出错了，结果：' + result);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (result.succeed===true) {",
+                                    "            Ext.Msg.alert('提示', '发送成功');",
+                                    "        } else {",
+                                    "            Ext.Msg.alert('提示', '发送出错了，错误：' + result.ptError);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        phoneField.reset();",
+                                    "        contentField.reset();",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onPostMessageButtonClick",
+                            "designerId": "593d40f9-72f5-49a6-bfa4-80cb546ced55"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "短信群发",
+                "id": "postMultipleMessagePanel",
+                "itemId": "postMultipleMessagePanel",
+                "title": "短信群发"
+            },
+            "name": "MyPanel4",
+            "designerId": "33b77940-fc40-4766-a173-43697310f76d",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig1",
+                    "designerId": "b02a89bc-c18f-496c-ad95-02fedfdf39e1"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "multipleMessageContainer",
+                        "id": "multipleMessageContainer",
+                        "itemId": "multipleMessageContainer"
+                    },
+                    "name": "MyForm1",
+                    "designerId": "e432a3ce-2175-4263-9117-0c3f8730338f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.File",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Excel文件导入",
+                                "fieldLabel": "导入Excel文件",
+                                "frame": true,
+                                "id": "inputExcelField",
+                                "itemId": "inputExcelField",
+                                "width": 368
+                            },
+                            "name": "MyFileUpload",
+                            "designerId": "b52e97d2-a52e-41c3-8d0c-104fa081bd17",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onInputExcelFieldRender",
+                                        "implHandler": [
+                                            "var baseurl = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                            "var url =  baseurl+'/action/sms/upload.do';",
+                                            "",
+                                            " $('#imageFiled-button-fileInputEl').fileupload({",
+                                            "        url: url,",
+                                            "        dataType: 'json',",
+                                            "        acceptFileTypes:  /(\\.|\\/)(gif|jpe?g|png)$/i,",
+                                            "        done: function (e, data) {",
+                                            "            $.each(data.result.files, function (index, file) {",
+                                            "",
+                                            "                carsetImageContent.setSrc(file.url);",
+                                            "",
+                                            "            });",
+                                            "        },",
+                                            "        progressall: function (e, data) {",
+                                            "            var progress = parseInt(data.loaded / data.total * 100, 10);",
+                                            "            fileuploadProgressBar.setValue(progress/100);",
+                                            "",
+                                            "        }",
+                                            "    }).prop('disabled', !$.support.fileInput)",
+                                            "        .parent().addClass($.support.fileInput ? undefined : 'disabled');"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "name": "onInputExcelFieldRender",
+                                    "designerId": "858cafd9-99b3-4869-b268-d5f2bc167b0a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

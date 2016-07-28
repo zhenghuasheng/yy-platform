@@ -1,0 +1,41 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "advicereadwindow",
+        "designer|userClassName": "AdviceReadWindow",
+        "height": 250,
+        "id": "advicereadwindow",
+        "itemId": "advicereadwindow",
+        "title": "反馈详情",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "1de6f2dc-4866-4904-9053-5066eb80c34b",
+    "viewControllerInstanceId": "98804e20-8911-4a70-bfd3-00ed29f7d96e",
+    "viewModelInstanceId": "d795ba01-b5fd-4e0b-ad46-41d84acd11f0",
+    "cn": [
+        {
+            "type": "Ext.form.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "",
+                "frame": true,
+                "height": 202,
+                "id": "adviceContentText",
+                "itemId": "adviceContentText",
+                "width": 390
+            },
+            "name": "MyTextArea",
+            "designerId": "452edddd-38ff-4c60-bf24-cd1f076d0ef4"
+        }
+    ]
+}

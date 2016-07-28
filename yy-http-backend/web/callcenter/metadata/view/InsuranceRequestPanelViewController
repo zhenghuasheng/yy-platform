@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "insurancerequestpanel",
+        "designer|userClassName": "InsuranceRequestPanelViewController"
+    },
+    "designerId": "fb1e50ae-866e-4c66-921b-acfa474de7e7"
+}

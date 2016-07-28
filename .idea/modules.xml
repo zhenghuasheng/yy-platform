@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/yy-http-backend/yy-http-backend.iml" filepath="$PROJECT_DIR$/yy-http-backend/yy-http-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yy-orderPlatform-data/yy-orderPlatform-data.iml" filepath="$PROJECT_DIR$/yy-orderPlatform-data/yy-orderPlatform-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yy-web-backend/yy-web-backend.iml" filepath="$PROJECT_DIR$/yy-web-backend/yy-web-backend.iml" />
+    </modules>
+  </component>
+</project>

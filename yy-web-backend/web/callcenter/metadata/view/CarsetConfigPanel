@@ -1,0 +1,718 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyBorder": true,
+        "closable": true,
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "carsetconfigpanel",
+        "designer|userClassName": "CarsetConfigPanel",
+        "frame": true,
+        "height": 497,
+        "id": "CarsetConfigPanel",
+        "itemId": "CarsetConfigPanel",
+        "layout": "fit",
+        "title": "车系配置",
+        "width": 689
+    },
+    "name": "MyPanel",
+    "designerId": "7417548c-53af-40d8-9074-e4c306a7732b",
+    "viewControllerInstanceId": "848232fc-40ea-40e0-826a-64a58501bbc6",
+    "viewModelInstanceId": "b08b2848-acb4-4c23-aa21-db9efa72eac0",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "height": 421,
+                "itemId": "CarsetConfigTabPanel",
+                "weight": null,
+                "width": 757
+            },
+            "name": "MyTabPanel",
+            "designerId": "3cf78c07-7f6c-4c0e-a1f9-90c3981ac4f3",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 539,
+                        "itemId": "effectCarsetPanel",
+                        "layout": "fit",
+                        "title": "已上架车款",
+                        "width": 693
+                    },
+                    "name": "MyPanel",
+                    "designerId": "24be136c-2028-4d73-ad13-90cda7bec6a6",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig",
+                            "designerId": "1600197a-0b39-4653-af30-9e6c200b2e5c"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 349,
+                                "itemId": "effectCarsetGridPanel",
+                                "store": "CarTypeConfigStore",
+                                "title": ""
+                            },
+                            "name": "MyGridPanel1",
+                            "designerId": "a0cf3c60-5fc4-497e-b602-c4b564c56ddd",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "string",
+                                        "text": "序号",
+                                        "width": 64
+                                    },
+                                    "name": "MyRowNumberer",
+                                    "designerId": "97613615-f9cc-4a8a-b165-4aafb66b26ed"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "title",
+                                        "text": "车款名称",
+                                        "width": 406
+                                    },
+                                    "name": "MyColumn10",
+                                    "designerId": "e3ebbd99-4a53-4e85-9fee-1b7f00388b26"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "id",
+                                        "hidden": true,
+                                        "text": "车型ID"
+                                    },
+                                    "name": "MyColumn12",
+                                    "designerId": "3ce46831-a392-404a-97d8-82b5f32e63e2"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "operateTime",
+                                        "format": "Y-m-d H:i:s",
+                                        "text": "生效时间"
+                                    },
+                                    "name": "MyDateColumn",
+                                    "designerId": "9f73a645-b4c8-4f28-89b2-3a9acff6f80c"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "operator",
+                                        "text": "生效操作人"
+                                    },
+                                    "name": "MyColumn14",
+                                    "designerId": "726ed628-ea44-48c9-9c2b-41a975714cd5"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView1",
+                                    "designerId": "ef1f63cb-d76e-470c-996e-6f5115b63889"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "menuText": "关闭操作",
+                                        "text": "操作"
+                                    },
+                                    "name": "MyActionColumn2",
+                                    "designerId": "8205f5ea-dbe8-45c6-add0-3c09e3020afe",
+                                    "cn": [
+                                        {
+                                            "type": "actioncolumnitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "altText": "关闭操作",
+                                                "designer|displayName": "关闭操作",
+                                                "iconCls": "Cardelete"
+                                            },
+                                            "name": "MyActionColumnItem1",
+                                            "designerId": "38b74e32-60a5-4483-bf24-456976e58e52",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "view",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "item",
+                                                            "e",
+                                                            "record",
+                                                            "row"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var CarsetConfigPanel=view.up('#CarsetConfigPanel');",
+                                                            "var carBrandSelector=CarsetConfigPanel.down('#carBrandSelector');",
+                                                            "var carsetSelector =CarsetConfigPanel.down('#carsetSelector');",
+                                                            "var carsetId=carsetSelector.getValue();",
+                                                            "var carBrandId=carBrandSelector.getValue();",
+                                                            "var url=Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                                            "",
+                                                            "/**获取LoginSuccessJsonStore中的data**/",
+                                                            "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                                            "var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                                            "Ext.Ajax.request({",
+                                                            "    url: url + '/hg/car/bottom/set.do',",
+                                                            "    params: {",
+                                                            "        brandId:carBrandId,",
+                                                            "        carsetId:carsetId,",
+                                                            "        carId:record.data.id,",
+                                                            "        status:false,",
+                                                            "        operatorId:userId",
+                                                            "    },",
+                                                            "    success: function (response) {",
+                                                            "        var text = response.responseText;",
+                                                            "        var result = JSON.parse(text);",
+                                                            "",
+                                                            "        if (result === null) {",
+                                                            "            Ext.Msg.alert('提示', '操作出错');",
+                                                            "            return;",
+                                                            "        }",
+                                                            "",
+                                                            "        if (result.succeed === true) {",
+                                                            "",
+                                                            "            var CarTypeConfigStore=Ext.getStore('CarTypeConfigStore');",
+                                                            "            var ajaxProxy=CarTypeConfigStore.getProxy();",
+                                                            "",
+                                                            "            var url=Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                                            "",
+                                                            "            ajaxProxy.setUrl(url + \"/hg/car/bottom/list.do?carsetId=\"+carsetId+'&status=true');",
+                                                            "            CarTypeConfigStore.load();",
+                                                            "",
+                                                            "",
+                                                            "        } else {",
+                                                            "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.errMsg);",
+                                                            "        }",
+                                                            "    }",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "143f5e32-3d0a-4f45-a318-fcb46922978d"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayInfo": true,
+                                        "dock": "bottom",
+                                        "store": "CarTypeConfigStore",
+                                        "width": 360
+                                    },
+                                    "name": "MyPagingToolbar1",
+                                    "designerId": "cd34148f-3983-4245-b0c1-ad214e98e814"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 331,
+                        "itemId": "closedCarsetPanel",
+                        "layout": "fit",
+                        "title": "未上架车款"
+                    },
+                    "name": "MyPanel2",
+                    "designerId": "a858dd6f-02f1-4c43-81cb-cf3112b1a6e7",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig1",
+                            "designerId": "640d9a0b-827e-4444-8ec5-8312ebcf7260"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 386,
+                                "itemId": "closedCarsetGridPanel",
+                                "store": "CarTypeConfigStore",
+                                "title": ""
+                            },
+                            "name": "MyGridPanel3",
+                            "designerId": "c24e6cee-530e-435b-bf99-2e2aebfd500b",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "string",
+                                        "text": "序号",
+                                        "width": 64
+                                    },
+                                    "name": "MyRowNumberer3",
+                                    "designerId": "6465d51f-8444-4596-bd42-a24fa6af8b3a"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "title",
+                                        "text": "车系名称",
+                                        "width": 341
+                                    },
+                                    "name": "MyColumn23",
+                                    "designerId": "1bd8a9ba-2c96-44bb-8123-d6c4ae405fb2"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "id",
+                                        "hidden": true,
+                                        "text": "车型ID"
+                                    },
+                                    "name": "MyColumn26",
+                                    "designerId": "e33821ca-ea39-408c-8f16-f55aa53ce9e0"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Date",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "operateTime",
+                                        "text": "关闭时间"
+                                    },
+                                    "name": "MyDateColumn1",
+                                    "designerId": "8d86ed3d-0ffb-49c5-9ef4-0c203ba86291"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "operator",
+                                        "text": "操作人"
+                                    },
+                                    "name": "MyColumn33",
+                                    "designerId": "8405ee74-6b58-4d52-94e6-162476852a4b"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyGridView3",
+                                    "designerId": "11b1b64c-a951-4505-ac4c-b0d180201228"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Action",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "altText": "开启",
+                                        "menuText": "开启",
+                                        "text": "操作"
+                                    },
+                                    "name": "MyActionColumn4",
+                                    "designerId": "bfb8ee47-aa2b-47f4-87e7-c50763cfbc4f",
+                                    "cn": [
+                                        {
+                                            "type": "actioncolumnitem",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "启用操作",
+                                                "iconCls": "Carstart"
+                                            },
+                                            "name": "MyActionColumnItem2",
+                                            "designerId": "4590092a-57fe-40fc-8453-7b03e8172ff4",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|params": [
+                                                            "view",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "item",
+                                                            "e",
+                                                            "record",
+                                                            "row"
+                                                        ],
+                                                        "fn": "handler",
+                                                        "implHandler": [
+                                                            "var CarsetConfigPanel=view.up('#CarsetConfigPanel');",
+                                                            "var carBrandSelector=CarsetConfigPanel.down('#carBrandSelector');",
+                                                            "var carsetSelector =CarsetConfigPanel.down('#carsetSelector');",
+                                                            "var carsetId=carsetSelector.getValue();",
+                                                            "var carBrandId=carBrandSelector.getValue();",
+                                                            "var url=Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                                            "",
+                                                            "/**获取LoginSuccessJsonStore中的data**/",
+                                                            "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                                            "var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                                            "Ext.Ajax.request({",
+                                                            "    url: url + '/hg/car/bottom/set.do',",
+                                                            "    params: {",
+                                                            "        brandId:carBrandId,",
+                                                            "        carsetId:carsetId,",
+                                                            "        carId:record.data.id,",
+                                                            "        status:true,",
+                                                            "        operatorId:userId",
+                                                            "    },",
+                                                            "    success: function (response) {",
+                                                            "        var text = response.responseText;",
+                                                            "        var result = JSON.parse(text);",
+                                                            "",
+                                                            "        if (result === null) {",
+                                                            "            Ext.Msg.alert('提示', '操作出错');",
+                                                            "            return;",
+                                                            "        }",
+                                                            "",
+                                                            "        if (result.succeed === true) {",
+                                                            "",
+                                                            "            var CarTypeConfigStore=Ext.getStore('CarTypeConfigStore');",
+                                                            "            var ajaxProxy=CarTypeConfigStore.getProxy();",
+                                                            "",
+                                                            "            var url=Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                                            "",
+                                                            "            ajaxProxy.setUrl(url + \"/hg/car/bottom/list.do?carsetId=\"+carsetId+'&status=false');",
+                                                            "            CarTypeConfigStore.load();",
+                                                            "",
+                                                            "",
+                                                            "        } else {",
+                                                            "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.errMsg);",
+                                                            "        }",
+                                                            "    }",
+                                                            "});"
+                                                        ]
+                                                    },
+                                                    "name": "handler",
+                                                    "designerId": "312f8e60-604d-4858-9e05-ea28e011577b"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayInfo": true,
+                                        "dock": "bottom",
+                                        "store": "CarTypeConfigStore",
+                                        "width": 360
+                                    },
+                                    "name": "MyPagingToolbar2",
+                                    "designerId": "a6db9ff6-c744-453d-89c3-ab1762d6dcfb"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTabpanelTabChange",
+                        "implHandler": [
+                            "var CarsetConfigPanel=tabPanel.up('#CarsetConfigPanel');",
+                            "var carsetSelector =CarsetConfigPanel.down('#carsetSelector');",
+                            "var carsetId=carsetSelector.getValue();",
+                            "if(carsetId===null){",
+                            "    return;",
+                            "}",
+                            "var CarTypeConfigStore=Ext.getStore('CarTypeConfigStore');",
+                            "var ajaxProxy=CarTypeConfigStore.getProxy();",
+                            "",
+                            "var url=Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                            "if(newCard.itemId==='effectCarsetPanel'){",
+                            "    ajaxProxy.setUrl(url + \"/hg/car/bottom/list.do?carsetId=\"+carsetId+'&status=true');",
+                            "}else{",
+                            "     ajaxProxy.setUrl(url + \"/hg/car/bottom/list.do?carsetId=\"+carsetId+'&status=false');",
+                            "}",
+                            "CarTypeConfigStore.load();"
+                        ],
+                        "name": "tabchange",
+                        "scope": "me"
+                    },
+                    "name": "onTabpanelTabChange",
+                    "designerId": "66eaf5fc-af10-498b-aed7-736f0fb4f0ed"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar1",
+            "designerId": "c0cd34e5-21f3-498a-af3b-9e7c9aea80f9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "车辆品牌选择",
+                        "displayField": "name",
+                        "editable": false,
+                        "fieldLabel": "车辆品牌选择",
+                        "itemId": "carBrandSelector",
+                        "labelWidth": 90,
+                        "layout|flex": null,
+                        "store": "CarBrandStord",
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "73be4872-bcfa-405c-af31-551921d4e0b9",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCarBrandSelectorRender",
+                                "implHandler": [
+                                    " var carBrandStore = Ext.getStore('CarBrandStord');",
+                                    "    if(carBrandStore.data.length>0){",
+                                    "        return;",
+                                    "    }",
+                                    "        var ajaxProxy = carBrandStore.getProxy();",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('CarBrandServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/car/queryBrand\");",
+                                    "        carBrandStore.load();"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "name": "onCarBrandSelectorRender",
+                            "designerId": "f9d2620b-d843-46b4-a5b8-60cbcf6d1b90"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCarBrandSelectorSelect",
+                                "implHandler": [
+                                    "  var brandId=records[0].data.id;",
+                                    "",
+                                    "        var carsetStore=Ext.getStore('CarsetStore');",
+                                    "        var ajaxProxy=carsetStore.getProxy();",
+                                    "",
+                                    "        var url=Ext.getStore('ConfigStore').getAt(0).get('CarBrandServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/car/queryCarset?id=\"+brandId);",
+                                    "        carsetStore.load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onCarBrandSelectorSelect",
+                            "designerId": "293d476a-33b7-4526-bbe3-087c39e2c41a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "车系选择",
+                        "displayField": "name",
+                        "fieldLabel": "车辆系别",
+                        "itemId": "carsetSelector",
+                        "labelWidth": 70,
+                        "layout|flex": null,
+                        "store": "CarsetStore",
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "79e726f8-f771-4198-b718-29cce03abd03",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCarsetSelectorSelect",
+                                "implHandler": [
+                                    "",
+                                    "var carsetId=records[0].data.id;",
+                                    "var CarTypeConfigStore=Ext.getStore('CarTypeConfigStore');",
+                                    "var ajaxProxy=CarTypeConfigStore.getProxy();",
+                                    "",
+                                    "var CarsetConfigPanel=combo.up('#CarsetConfigPanel');",
+                                    "var CarsetConfigTabPanel=CarsetConfigPanel.down('#CarsetConfigTabPanel');",
+                                    "",
+                                    "var ActiveTab=CarsetConfigTabPanel.getActiveTab();",
+                                    "var url=Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                    "if(ActiveTab.itemId==='effectCarsetPanel'){",
+                                    "   ",
+                                    "    ajaxProxy.setUrl(url + \"/hg/car/bottom/list.do?carsetId=\"+carsetId+'&status=true');",
+                                    "}else{",
+                                    "    ajaxProxy.setUrl(url + \"/hg/car/bottom/list.do?carsetId=\"+carsetId+'&status=false');",
+                                    "}",
+                                    "CarTypeConfigStore.load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onCarsetSelectorSelect",
+                            "designerId": "c0448716-dcf5-41d2-bb93-fea6a2c6bac2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

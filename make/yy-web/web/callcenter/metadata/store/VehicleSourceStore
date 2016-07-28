@@ -1,0 +1,67 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[{id:0,name:'宏高融资'},{id:1,name:'直销'}]"
+        ],
+        "designer|userClassName": "VehicleSourceStore",
+        "storeId": "VehicleSourceStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "70da1c20-2d4e-4da5-b2b9-47ecbdd549ad",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy4",
+            "designerId": "6b0e9751-e2c5-4d84-afbb-ccc44b017cc4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader4",
+                    "designerId": "68493f76-1c3d-4539-b437-2cb4f4c279a0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField4",
+            "designerId": "f334cd44-b077-438e-8d03-d311ab541411"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField11",
+            "designerId": "49f89c7d-b91c-4350-8c9e-a71a9433a5c2"
+        }
+    ]
+}

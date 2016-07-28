@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarsetStore",
+        "model": "CarsetModel",
+        "storeId": "CarsetStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "63cf2703-42fa-41de-a0d5-c2cb5ce974b6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy6",
+            "designerId": "1c41eaff-cc93-4aa4-a290-bb136930091c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "carset"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "60e963be-1cd2-4db3-9e8c-761f15a41943"
+                }
+            ]
+        }
+    ]
+}

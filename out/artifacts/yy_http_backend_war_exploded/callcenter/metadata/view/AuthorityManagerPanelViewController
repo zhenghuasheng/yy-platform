@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "authoritymanagerpanel",
+        "designer|userClassName": "AuthorityManagerPanelViewController"
+    },
+    "designerId": "184d4fca-3f9c-4c96-aa97-7ae14aead401"
+}

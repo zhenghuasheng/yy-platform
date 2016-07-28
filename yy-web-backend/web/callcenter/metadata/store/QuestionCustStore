@@ -1,0 +1,84 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "QuestionCustStore",
+        "storeId": "QuestionCustStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "00ac575b-9f58-438c-a7ee-808fbce97cf3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "limitParam": "PageSize",
+                "pageParam": "Page"
+            },
+            "name": "MyAjaxProxy5",
+            "designerId": "dea8b6a7-f3d9-47bf-84b6-51789953f947",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "4b7c3d8f-7926-4449-b760-42106373d883"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_name"
+            },
+            "name": "MyField28",
+            "designerId": "a16ca82d-aaa1-456a-aae9-ca38bd9697f9"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_phone"
+            },
+            "name": "MyField31",
+            "designerId": "4dd8ce6f-7af7-438d-9b63-3ecfdad672a7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_idcard"
+            },
+            "name": "MyField32",
+            "designerId": "55aaefd0-4dbb-47d8-9a72-c23e96952c48"
+        }
+    ]
+}

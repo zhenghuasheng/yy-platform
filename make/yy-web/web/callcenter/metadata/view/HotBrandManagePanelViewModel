@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hotbrandmanagepanel",
+        "designer|userClassName": "HotBrandManagePanelViewModel"
+    },
+    "designerId": "f65606c8-fb01-435c-ac28-0f3ae82f9f98"
+}

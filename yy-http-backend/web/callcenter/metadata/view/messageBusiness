@@ -1,0 +1,114 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "messagebusiness",
+        "designer|userClassName": "messageBusiness",
+        "height": 250,
+        "id": "messageBusiness",
+        "itemId": "messageBusiness",
+        "title": "短信平台",
+        "width": 400
+    },
+    "name": "MyPanel3",
+    "designerId": "8af3c9e1-cd28-4780-b496-038e46390569",
+    "viewControllerInstanceId": "7608147e-6b15-4f99-a34d-500c7d1a666f",
+    "viewModelInstanceId": "1d8f1464-2bf1-4b15-bfdb-783ca5d2e05b",
+    "cn": [
+        {
+            "type": "Ext.menu.Menu",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "floating": false,
+                "id": "messageMenu",
+                "itemId": "messageMenu",
+                "width": 399
+            },
+            "name": "MyMenu",
+            "designerId": "373e81e3-0a98-4fbb-b197-0bf7ce07d34b",
+            "cn": [
+                {
+                    "type": "Ext.menu.Item",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "singleMassageItem",
+                        "text": "短信发送"
+                    },
+                    "name": "MyMenuItem",
+                    "designerId": "89910272-6324-4901-95f0-707bc80b84ff"
+                },
+                {
+                    "type": "Ext.menu.Item",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "consumerManageItem",
+                        "text": "账号管理"
+                    },
+                    "name": "MyMenuItem2",
+                    "designerId": "f37833a6-c613-4425-b3bc-70f00eb274d4"
+                },
+                {
+                    "type": "Ext.menu.Item",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "addConsumerItem",
+                        "text": "账号添加"
+                    },
+                    "name": "MyMenuItem3",
+                    "designerId": "b83bed9d-08e9-4f15-bd09-f6e6698297d7"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMessageMenuClick",
+                        "implHandler": [
+                            "var mainView = Ext.getCmp('mainView');",
+                            "var contentPanel = mainView.getComponent('contentPanel');",
+                            "if (item.itemId == 'singleMassageItem') {",
+                            "            var messageTabPanel = contentPanel.getComponent('messageTabPanel');",
+                            "",
+                            "            if (messageTabPanel === undefined) {",
+                            "                messageTabPanel = new CallCenterApp.view.MessageTabPanel({",
+                            "                });",
+                            "",
+                            "                contentPanel.add(messageTabPanel);",
+                            "            }",
+                            "",
+                            "            contentPanel.setActiveTab(messageTabPanel);",
+                            " }"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onMessageMenuClick",
+                    "designerId": "ef1d3673-22ab-4164-a166-4000696362c2"
+                }
+            ]
+        }
+    ]
+}

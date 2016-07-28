@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AdviceStore",
+        "model": "adviceModel",
+        "storeId": "AdviceStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "950ca481-fb62-4436-9031-b36ce4c15bc0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "limitParam": "pageSize"
+            },
+            "name": "MyAjaxProxy2",
+            "designerId": "6199fe1a-4f00-4bea-9691-b747c2c6bf33",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.resList",
+                        "totalProperty": "object.total"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "a82db29e-a4f6-410f-a553-639348b78231"
+                }
+            ]
+        }
+    ]
+}

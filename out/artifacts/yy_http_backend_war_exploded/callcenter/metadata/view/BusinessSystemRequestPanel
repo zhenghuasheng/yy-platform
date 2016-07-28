@@ -1,0 +1,259 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": null,
+        "designer|userAlias": "businesssystemrequestpanel",
+        "designer|userClassName": "BusinessSystemRequestPanel",
+        "height": null,
+        "id": "BusinessSystemRequestPanel",
+        "itemId": "BusinessSystemRequestPanel",
+        "padding": null,
+        "title": null,
+        "width": null
+    },
+    "name": "MyPanel1",
+    "designerId": "fdc49f2a-db46-4bb3-bda2-e48a51676afe",
+    "viewControllerInstanceId": "88b83a3c-22dd-48ef-b4c6-084c699bb0c1",
+    "viewModelInstanceId": "3b2c9045-31f0-4a1b-b23e-2afa0a4f21af",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "99455001-3672-4eed-9dfc-c7ced6b9eb49",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saveButton",
+                        "layout|flex": null,
+                        "text": "保存"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "d9458cd3-947f-4b49-b03e-0357306ba8e1",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveButtonClick",
+                                "implHandler": [
+                                    "        var businessSystemRequestPanel = button.up('#BusinessSystemRequestPanel');",
+                                    "        //根据itemid获取值",
+                                    "        var systemId = businessSystemRequestPanel.down('#systemIdField');",
+                                    "        var systemName = businessSystemRequestPanel.down('#systemNameField');",
+                                    "        var fatherSystem = businessSystemRequestPanel.down('#fatherSystemField');",
+                                    "        var authorizationSystem = businessSystemRequestPanel.down('#authorizationSystemField');",
+                                    "        var defaultUrl = businessSystemRequestPanel.down('#defaultUrlField');",
+                                    "",
+                                    "",
+                                    "        if(systemName.getValue()===\"\"){",
+                                    "            Ext.Msg.alert('提示','请必要信息不能为空!');",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "",
+                                    "        Ext.Ajax.request({",
+                                    "            url: url + '/biz/app/edit.do',",
+                                    "            params: {",
+                                    "            'f_stid':systemId.getValue(),",
+                                    "            'f_stname':systemName.getValue(),",
+                                    "            'f_pstid':fatherSystem.getValue(),",
+                                    "            'f_accredit':authorizationSystem.getValue(),",
+                                    "            'f_url':defaultUrl.getValue()",
+                                    "            },",
+                                    "            success: function (response) {",
+                                    "                var text = response.responseText;",
+                                    "                var result = JSON.parse(text);",
+                                    "                if (result === null) {",
+                                    "                    Ext.Msg.alert('提示', '修改出错了，结果：' + text);",
+                                    "                    return;",
+                                    "                }",
+                                    "",
+                                    "                if (result.succeed === true) {",
+                                    "                    Ext.getStore('BusinessSystemManagerStore').reload();",
+                                    "                    Ext.Msg.alert('提示', '修改成功');",
+                                    "                } else {",
+                                    "                    Ext.Msg.alert('提示', '修改出错了，错误：' + result.errMsg);",
+                                    "                }",
+                                    "            }",
+                                    "        });"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveButtonClick",
+                            "designerId": "dfd48edc-b10b-4f53-81c7-9f47cf26bd1b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "resetButton",
+                        "layout|flex": null,
+                        "text": "重置"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "5e75a455-12d4-4453-a4cb-138bcabaa8b4",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onResetButtonClick",
+                                "implHandler": [
+                                    "        this.onBusinessSystemRequestPanelBeforeRender();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onResetButtonClick",
+                            "designerId": "70a1a4ef-8c7c-4f14-b64f-6c78d3300061"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "editable": false,
+                "fieldLabel": "系统编码",
+                "itemId": "systemIdField",
+                "labelAlign": "right",
+                "margin": 15
+            },
+            "name": "MyTextField9",
+            "designerId": "84606c29-8970-4c68-ade2-27889262e7d9"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "系统名称",
+                "itemId": "systemNameField",
+                "labelAlign": "right",
+                "margin": 15
+            },
+            "name": "MyTextField10",
+            "designerId": "cbe1a88b-4236-4367-9ffb-58a8d4226d9a"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayField": "f_stname",
+                "editable": false,
+                "fieldLabel": "父系统名称",
+                "itemId": "fatherSystemField",
+                "labelAlign": "right",
+                "margin": 15,
+                "store": "BusinessSystemManagerStore",
+                "valueField": "f_stid"
+            },
+            "name": "MyComboBox6",
+            "designerId": "3a6fa7f1-39bf-4257-9119-973a9fee27de"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "可授权系统",
+                "itemId": "authorizationSystemField",
+                "labelAlign": "right",
+                "margin": 15
+            },
+            "name": "MyTextField11",
+            "designerId": "be1e65a8-6b31-4501-b467-52cdce14b797"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "系统默认url",
+                "itemId": "defaultUrlField",
+                "labelAlign": "right",
+                "labelWidth": null,
+                "margin": 15
+            },
+            "name": "MyTextField14",
+            "designerId": "35689d83-6272-4246-802a-849bd546832c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBusinessSystemRequestPanelBeforeRender",
+                "implHandler": [
+                    "        var businessSystemRequestPanel = Ext.getCmp('BusinessSystemRequestPanel');",
+                    "        businessSystemRequestPanel.down('#systemIdField').setValue(businessSystemRequestPanel.date.f_stid);",
+                    "        businessSystemRequestPanel.down('#systemNameField').setValue(businessSystemRequestPanel.date.f_stname);",
+                    "        businessSystemRequestPanel.down('#fatherSystemField').setValue(businessSystemRequestPanel.date.f_pstid);",
+                    "        businessSystemRequestPanel.down('#authorizationSystemField').setValue(businessSystemRequestPanel.date.f_accredit);",
+                    "        businessSystemRequestPanel.down('#defaultUrlField').setValue(businessSystemRequestPanel.date.f_url);"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onBusinessSystemRequestPanelBeforeRender",
+            "designerId": "e2fa6d21-69ad-4342-88ff-a36b97d9d587"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sqdbusiness",
+        "designer|userClassName": "sqdBusinessViewController"
+    },
+    "designerId": "2143e2c2-4aa9-4751-8b85-0609be38c8e8"
+}

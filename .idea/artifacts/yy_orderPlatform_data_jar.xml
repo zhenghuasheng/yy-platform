@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="yy-orderPlatform-data:jar">
+    <output-path>$PROJECT_DIR$/library</output-path>
+    <root id="root">
+      <element id="archive" name="yy-orderPlatform-data.jar">
+        <element id="module-output" name="yy-orderPlatform-data" />
+      </element>
+    </root>
+  </artifact>
+</component>

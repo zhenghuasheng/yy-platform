@@ -1,0 +1,58 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"id\": 0,",
+            "        \"text\": \"未婚\"",
+            "    },",
+            "    {",
+            "        \"id\": 1,",
+            "        \"text\": \"已婚\"",
+            "    },",
+            "    {",
+            "        \"id\": -1,",
+            "        \"text\": \"\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "MarryArrayStore",
+        "storeId": "MarryArrayStore"
+    },
+    "name": "SexArrayStore1",
+    "designerId": "b81094be-4dcd-483d-a165-a6bbc985db04",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyInteger",
+            "designerId": "bdcbd809-6a21-40fa-883d-bce1092574f0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "name": "MyString",
+            "designerId": "7b58fd3a-9b20-45da-826f-680bd4be862e"
+        }
+    ]
+}

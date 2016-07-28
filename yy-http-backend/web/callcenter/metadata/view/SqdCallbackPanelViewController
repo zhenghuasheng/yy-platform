@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sqdcallbackpanel",
+        "designer|userClassName": "SqdCallbackPanelViewController"
+    },
+    "name": "SqdStatusPanelViewController1",
+    "designerId": "046a6365-0464-4ae5-9fd8-38c45b2a5231"
+}

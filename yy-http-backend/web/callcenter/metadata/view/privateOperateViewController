@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "privateoperate",
+        "designer|userClassName": "privateOperateViewController"
+    },
+    "designerId": "1c352c40-b45d-4d82-89db-cd6ace3d6be3"
+}

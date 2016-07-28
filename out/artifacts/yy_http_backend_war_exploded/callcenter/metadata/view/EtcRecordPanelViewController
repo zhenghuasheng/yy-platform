@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "etcrecordpanel",
+        "designer|userClassName": "EtcRecordPanelViewController"
+    },
+    "designerId": "8214f620-9103-493e-803c-84d0771ea41e"
+}

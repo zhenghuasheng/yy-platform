@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EticketRuleStore",
+        "model": "EticketRuleModel",
+        "storeId": "EticketRuleStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "078ccd78-3227-438f-a9d9-f7d23e4c453d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy",
+            "designerId": "0240e0c2-cfc0-4bb4-8f74-eb85774a95b5",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.eticketRules"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "ba761144-3a43-4637-87a6-3fd6923d1d2b"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PreloginStore",
+        "model": "PrelogonModel",
+        "storeId": "PreloginStore"
+    },
+    "name": "MyStore",
+    "designerId": "6cb508b2-50fc-4bf9-8e7e-adda3d7513a7"
+}

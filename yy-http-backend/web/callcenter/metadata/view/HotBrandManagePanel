@@ -1,0 +1,355 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "hotbrandmanagepanel",
+        "designer|userClassName": "HotBrandManagePanel",
+        "height": null,
+        "id": "HotBrandManagePanel",
+        "itemId": "HotBrandManagePanel",
+        "title": "热门品牌管理",
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "93348c4f-01f4-447b-bccb-843a01b274ed",
+    "viewControllerInstanceId": "5abc72d0-8e9e-4009-8abd-dc0b992ead07",
+    "viewModelInstanceId": "f65606c8-fb01-435c-ac28-0f3ae82f9f98",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "f412f065-d349-460a-9c55-b760f97f9bdf",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "f_stname",
+                        "editable": false,
+                        "emptyText": "请选择系统",
+                        "fieldLabel": "系统",
+                        "itemId": "systemSelector",
+                        "labelAlign": "right",
+                        "labelWidth": 80,
+                        "layout|flex": null,
+                        "store": "BusinessSystemManagerStore",
+                        "valueField": "f_stid"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "bc815e54-2050-49c3-8b60-6c194773fd33",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSystemSelectorSelect",
+                                "implHandler": [
+                                    "        var hotBrandManagePanel=combo.up('#HotBrandManagePanel');",
+                                    "        var systemSelector =hotBrandManagePanel.down('#systemSelector');",
+                                    "        var systemId=systemSelector.getValue();",
+                                    "",
+                                    "        if(systemId===null){",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        var url=Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "",
+                                    "        var carBrandOnStore=Ext.getStore('CarBrandOnStore');",
+                                    "        var ajaxProxyOn=carBrandOnStore.getProxy();",
+                                    "        ajaxProxyOn.setUrl(url+\"/biz/app/brand/get.do?\"+\"appId=\"+systemId+\"&status=true\");",
+                                    "        carBrandOnStore.reload();",
+                                    "",
+                                    "        var hotBrandStore=Ext.getStore('HotBrandStore');",
+                                    "        var ajaxProxy=hotBrandStore.getProxy();",
+                                    "        ajaxProxy.setUrl(url+\"/biz/hot/brand/get.do?\"+\"appId=\"+systemId);",
+                                    "        hotBrandStore.reload();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onSystemSelectorSelect",
+                            "designerId": "0113d9f6-42dc-446b-bd1f-0a91f0e35736"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "editable": false,
+                        "emptyText": "请选择品牌",
+                        "fieldLabel": "品牌",
+                        "itemId": "brandSelector",
+                        "labelAlign": "right",
+                        "labelWidth": 80,
+                        "layout|flex": null,
+                        "store": "CarBrandOnStore",
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "d61e8ef8-4262-4ce4-b175-6f2fe8f4c098"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "addBtn",
+                        "layout|flex": null,
+                        "text": "添加"
+                    },
+                    "name": "MyButton",
+                    "designerId": "ec16bf81-dcae-4f5c-81c0-467e2405265e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddBtnClick",
+                                "implHandler": [
+                                    "        var hotBrandManagePanel=button.up('#HotBrandManagePanel');",
+                                    "        var systemSelector =hotBrandManagePanel.down('#systemSelector');",
+                                    "        var brandSelector =hotBrandManagePanel.down('#brandSelector');",
+                                    "",
+                                    "        var appId = systemSelector.getValue();",
+                                    "        var brandId = brandSelector.getValue();",
+                                    "",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "",
+                                    "        Ext.Ajax.request({",
+                                    "            url: url + '/biz/hot/brand/add.do',",
+                                    "            params:{",
+                                    "                'appId':appId,",
+                                    "                'brandId':brandId",
+                                    "            },",
+                                    "            success: function (response) {",
+                                    "                var text = response.responseText;",
+                                    "                var result = JSON.parse(text);",
+                                    "                if (result === null) {",
+                                    "                    Ext.Msg.alert('提示', '添加出错了，结果：' + text);",
+                                    "                    return;",
+                                    "                }",
+                                    "",
+                                    "                if (result.succeed === true) {",
+                                    "                    Ext.getStore('HotBrandStore').reload();",
+                                    "                    Ext.Msg.alert('提示', '添加成功');",
+                                    "                } else {",
+                                    "                    Ext.Msg.alert('提示', '添加出错了，错误：' + result.errMsg);",
+                                    "                }",
+                                    "            }",
+                                    "        });"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAddBtnClick",
+                            "designerId": "fa864b8b-9607-4fd0-9d26-f81255010d9c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "store": "HotBrandStore",
+                "title": null
+            },
+            "name": "MyGridPanel",
+            "designerId": "0ef7fd59-7d20-40e9-8fdd-caa9c8aa17d9",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "序号",
+                        "width": 50
+                    },
+                    "name": "MyRowNumberer",
+                    "designerId": "23431ed9-3bf1-4c90-a6aa-8b278dfa639c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "title",
+                        "text": "品牌",
+                        "width": 150
+                    },
+                    "name": "MyColumn",
+                    "designerId": "dd3d2431-5f22-4472-b4ca-3cada91580d8"
+                },
+                {
+                    "type": "Ext.grid.column.Action",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "text": "操作"
+                    },
+                    "name": "MyActionColumn2",
+                    "designerId": "2c6991c9-d5a4-481c-8efa-50a5115b72b0",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "altText": "删除",
+                                "designer|displayName": "delete",
+                                "iconCls": "Bulletcross",
+                                "tooltip": "删除"
+                            },
+                            "name": "MyActionColumnItem1",
+                            "designerId": "736f7b1d-55c7-46e1-8ea5-7125ad02fd53",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "                                Ext.MessageBox.confirm('请确认', '您确认删除该条记录吗？',function(btn){",
+                                            "",
+                                            "                                    if(btn==='no'){",
+                                            "                                        return;",
+                                            "                                    }else if(btn==='yes'){",
+                                            "",
+                                            "                                        var id=record.data.hvid;",
+                                            "                                        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                            "",
+                                            "                                        Ext.Ajax.request({",
+                                            "                                            url:url+\"/biz/hot/delete.do\",",
+                                            "                                            params:{",
+                                            "                                                id:id",
+                                            "                                            },",
+                                            "",
+                                            "                                            success:function(response){",
+                                            "                                                var text = response.responseText;",
+                                            "                                                var result = JSON.parse(text);",
+                                            "",
+                                            "                                                if (result=== null) {",
+                                            "                                                    Ext.Msg.alert('提示', '删除出错了，结果：' + result);",
+                                            "                                                    return;",
+                                            "                                                }else if (result.succeed) {",
+                                            "                                                    view.store.reload();",
+                                            "                                                    Ext.Msg.alert('提示', '删除成功');",
+                                            "                                                }else {",
+                                            "                                                    Ext.Msg.alert('提示', '删除出错了，错误：' + result.ptError);",
+                                            "                                                    return;",
+                                            "                                                }",
+                                            "                                            },",
+                                            "",
+                                            "                                            failure:function(){",
+                                            "                                                Ext.Msg.alert('提示','删除失败');",
+                                            "",
+                                            "                                            },",
+                                            "                                        });",
+                                            "                                    }",
+                                            "                                });"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "8c939f12-b9dc-4e56-a6f9-bf451376839d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHotBrandManagePanelRender",
+                "implHandler": [
+                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                    "",
+                    "        var businessSystemManagerStore=Ext.getStore('BusinessSystemManagerStore');",
+                    "",
+                    "        var ajaxProxy=businessSystemManagerStore.getProxy();",
+                    "",
+                    "        ajaxProxy.setUrl(url + \"/biz/app/list.do\");",
+                    "",
+                    "        businessSystemManagerStore.load();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onHotBrandManagePanelRender",
+            "designerId": "d5de869b-2e79-4bf0-8f0f-606adba728ee"
+        }
+    ]
+}

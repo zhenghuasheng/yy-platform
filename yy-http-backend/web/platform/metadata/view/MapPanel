@@ -1,0 +1,33 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mapPanel",
+        "designer|userClassName": "MapPanel",
+        "id": "mapPanel",
+        "itemId": "mapPanel",
+        "layout": null
+    },
+    "name": "MyPanel3",
+    "designerId": "85bad9b8-8349-441d-b831-28d32f5ad94f",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 201,
+                "src": "http://img3.imgtn.bdimg.com/it/u=1981510576,702115325&fm=21&gp=0.jpg"
+            },
+            "name": "MyImg",
+            "designerId": "8986c430-7eea-40d2-bc19-df2c76e39827"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HotBrandStore",
+        "model": "HotBrandModel",
+        "storeId": "HotBrandStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "88e3dbc2-072e-4e4f-8384-495aa53a72d6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy4",
+            "designerId": "5617b4b1-242d-47e3-8d7b-2fca92ecb57d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object",
+                        "totalProperty": "object.total"
+                    },
+                    "name": "MyJsonReader4",
+                    "designerId": "3f17dd47-6517-4bc1-aa6f-d9a2220b5888"
+                }
+            ]
+        }
+    ]
+}

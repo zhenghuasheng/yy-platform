@@ -1,0 +1,55 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "limitUseServerStore",
+        "model": "LimitUseServerModel",
+        "storeId": "limitUseServerStore"
+    },
+    "name": "MyJsonStore1",
+    "designerId": "d8b8cf54-00b5-4dfd-bac0-b145b6587476",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy",
+            "designerId": "f2f8d1f3-9291-4ba9-af3c-13b5195ab61a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": null
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "d477ccfa-a19a-4991-801e-f00a575c9bf4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fnameanddes"
+            },
+            "name": "MyField15",
+            "designerId": "c1d07ad3-261e-49d9-aef7-20f1079b3526"
+        }
+    ]
+}

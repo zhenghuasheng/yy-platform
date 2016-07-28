@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "smsconsumermanagepanel",
+        "designer|userClassName": "SmsConsumerManagePanelViewController"
+    },
+    "designerId": "a94882b1-b8e3-404b-8494-dbc3d5b88287"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "etcstatuspanel",
+        "designer|userClassName": "EtcStatusPanelViewController"
+    },
+    "name": "EtcRequestPanelViewController1",
+    "designerId": "caa26fd2-aba3-46f8-a4ec-0e3ac71c9e62"
+}

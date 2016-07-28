@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "insurancerequestpanel",
+        "designer|userClassName": "InsuranceRequestPanelViewModel"
+    },
+    "designerId": "2cd41981-d7e0-4e81-a74a-ee0fc2010396"
+}

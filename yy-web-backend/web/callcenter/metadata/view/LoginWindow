@@ -1,0 +1,307 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "bodyBorder": true,
+        "bodyStyle": [
+            "\"background-image:url('resources/image/login-background.jpg');padding:55px 5px 0\""
+        ],
+        "closable": false,
+        "container|align": "center",
+        "container|pack": "center",
+        "designer|initialView": true,
+        "designer|userAlias": "loginwindow",
+        "designer|userClassName": "LoginWindow",
+        "height": 267,
+        "itemId": "loginWindow",
+        "layout": "vbox",
+        "title": "客户关系管理系统",
+        "width": 400
+    },
+    "name": "MyWindow",
+    "designerId": "c49ed2de-c4b8-480d-86ec-7218216aa509",
+    "viewControllerInstanceId": "c5f7354b-3dde-41bb-ac4f-7e1ea71be5cf",
+    "viewModelInstanceId": "6c50efd0-4ef3-4421-981b-8a434b64f2fe",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "用户名",
+                "itemId": "userField",
+                "labelWidth": 80,
+                "margin": 10,
+                "selectOnFocus": true
+            },
+            "name": "MyTextField9",
+            "designerId": "67e161b4-9893-491d-9758-452cdd29ea40",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onUserFieldBlur",
+                        "implHandler": [
+                            "",
+                            "var successCallback = function(resp, ops) {",
+                            "    //alert(resp.responseText);",
+                            "    var result = JSON.parse(resp.responseText);",
+                            " ",
+                            "    if(result.errno===\"PT_ERROR_USER_NOTEXIST\"){",
+                            "",
+                            "",
+                            "        Ext.Msg.alert(\"登录提示\",\"用户名不存在\");",
+                            "",
+                            "        component.reset();",
+                            "        component.focus(component,100);",
+                            "",
+                            "        return;",
+                            "    }",
+                            "    var PrelogonStore = Ext.getStore('PreloginStore');",
+                            "    PrelogonStore.removeAll();",
+                            "    PrelogonStore.add(result.data);",
+                            "",
+                            "",
+                            "};",
+                            "",
+                            "// Failure",
+                            "var failureCallback = function(resp, ops) {",
+                            "    Ext.Msg.alert('Login Failure', \"用户名校验错误，请稍后重试!\");",
+                            "};",
+                            "var phone=component.getValue();",
+                            "var url = Ext.getStore('ConfigStore').getAt(1).get('UserServerUrl');",
+                            "Ext.Ajax.request({",
+                            "    url: url+\"/user/prelogon.do\",",
+                            "    params:{",
+                            "",
+                            "        phone:phone,",
+                            "    },",
+                            "    success: successCallback,",
+                            "    failure: failureCallback",
+                            "});"
+                        ],
+                        "name": "blur",
+                        "scope": "me"
+                    },
+                    "name": "onUserFieldBlur",
+                    "designerId": "6cbe081f-fcb7-4ee1-8bef-60c3eb712afd"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onUserFieldRender",
+                        "implHandler": [
+                            "var phone=Ext.util.Cookies.get(\"userName\");",
+                            "if(phone!==null&&phone!==undefined){",
+                            "    component.setValue(phone);",
+                            "}",
+                            "component.focus();"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "name": "onUserFieldRender",
+                    "designerId": "3378ad26-de97-48c6-bab4-7e82597f463a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "密码",
+                "inputType": "password",
+                "itemId": "pwdField",
+                "labelWidth": 80,
+                "margin": 10
+            },
+            "name": "MyTextField10",
+            "designerId": "f65308e6-c95a-400e-a63e-edb39f97bf02"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 30,
+                "itemId": "loginBtn",
+                "margin": 10,
+                "text": "登录",
+                "width": 80
+            },
+            "name": "MyButton8",
+            "designerId": "670e383a-ddaa-40ee-a622-bc1d4280c80f",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLoginBtnClick",
+                        "implHandler": [
+                            "var loginWnd = button.up('#loginWindow');",
+                            "var userField = loginWnd.down('#userField');",
+                            "var pwdField = loginWnd.down('#pwdField');",
+                            "",
+                            "if (!userField.validate() || !userField.validate()) {",
+                            "    Ext.Msg.alert('警告', '请正确填写信息.');",
+                            "    return;",
+                            "}",
+                            "// Success",
+                            "var successCallback = function(resp, ops) {",
+                            "    Ext.util.Cookies.set(\"userName\", userField.getValue());",
+                            "",
+                            "    var result = JSON.parse(resp.responseText);",
+                            "    if(result.flag===\"0\"){",
+                            "        /**登录成功，将返回参数存储LoginSuccessJsonStore中*/",
+                            "        var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                            "        LoginSuccessStore.removeAll();",
+                            "        LoginSuccessStore.add(result.data);",
+                            "        /**--------------------------------------------------------------*/",
+                            "",
+                            "        /**--------------------------登录成功注册消息中心-----------------------------------*/",
+                            "        var userId=result.data.userId;",
+                            "",
+                            "        var ws=new WebSocket('ws://' + window.location.host+'/api/messagesalertHandler?userId='+userId);",
+                            "",
+                            "",
+                            "        ws.onopen = function () {",
+                            "            //CONNECTING (0)：表示还没建立连接；",
+                            "            //OPEN (1)： 已经建立连接，可以进行通讯；",
+                            "            //CLOSING (2)：通过关闭握手，正在关闭连接；",
+                            "            //CLOSED (3)：连接已经关闭或无法打开；",
+                            "            if(this.readyState===3){",
+                            "                 Ext.Msg.alert('消息中心提示', '连接出错了：连接已经关闭或无法打开！');",
+                            "            }",
+                            "            ",
+                            "        };",
+                            "        ws.onmessage = function (event) {",
+                            "           ",
+                            "            var win= new Ext.window.Toast({",
+                            "                html: event.data,",
+                            "                title: '订单消息提醒',",
+                            "                width: 400,",
+                            "                height:200,",
+                            "                autoCloseDelay:30000,",
+                            "                border:true,",
+                            "                frame:true,",
+                            "                frameHeader:true,",
+                            "                align: 'br',",
+                            "                bodyStyle: {",
+                            "                    background:'#ffc',",
+                            "                    padding: '10px'",
+                            "                }",
+                            "            });",
+                            "",
+                            "            win.show();",
+                            "",
+                            "        };",
+                            "        ws.onclose=function(event){",
+                            "",
+                            "        };",
+                            "",
+                            "",
+                            "",
+                            "        /**登录成功，页面转向**/",
+                            "        loginWnd.close();",
+                            "        var mainView = new CallCenterApp.view.MainView({ws:ws});",
+                            "        mainView.show();",
+                            "    }else{",
+                            "",
+                            "        alert(\"登录失败!\"+result.msg);",
+                            "    }",
+                            "",
+                            "};",
+                            "",
+                            "// Failure",
+                            "var failureCallback = function(resp, ops) {",
+                            "",
+                            "    Ext.Msg.alert('Login Failure', resp);",
+                            "",
+                            "};",
+                            "",
+                            "/**获取PreloginStore中的data----------------------------------*/",
+                            "var PrelogonStore = Ext.getStore('PreloginStore');",
+                            "if(PrelogonStore.getData().length<1){//未预登录或者预登录失败情况",
+                            "",
+                            "    this.onUserFieldBlur(userField,null,null);",
+                            "    return;",
+                            "",
+                            "}",
+                            "var extraKey=PrelogonStore.getData().items[0].data.extraKey;",
+                            "var salt=PrelogonStore.getData().items[0].data.salt;",
+                            "/**----------------------------------------------------------*/",
+                            "var password1=Ext.MD5(pwdField.getValue()+salt);",
+                            "",
+                            "var url = Ext.getStore('ConfigStore').getAt(1).get('UserServerUrl');",
+                            "Ext.Ajax.request({",
+                            "    url: url+\"/user/logon.do\",",
+                            "    params:{",
+                            "        phone:userField.getValue(),",
+                            "        pwd:Ext.MD5(password1+extraKey),",
+                            "        //verify:verifyField.getValue",
+                            "    },",
+                            "    success: successCallback,",
+                            "    failure: failureCallback",
+                            "});",
+                            "",
+                            ""
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onLoginBtnClick",
+                    "designerId": "a9a4bbc0-e908-4fbc-b435-6ef64941bb3b"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoginWindowRender",
+                "implHandler": [
+                    "var userField=component.down('#userField');",
+                    "userField.isFocusable(true);",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onLoginWindowRender",
+            "designerId": "67b0d6c3-0ed7-41a6-9946-cae561073aa8"
+        }
+    ]
+}

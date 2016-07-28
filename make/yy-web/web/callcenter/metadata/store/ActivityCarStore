@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ActivityCarStore",
+        "model": "ActivityCarModel",
+        "storeId": "ActivityCarStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "c008bc7b-bf96-49ec-a393-683f3d61ff5d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy7",
+            "designerId": "cf55d27c-c357-4590-9562-cf252e7c98a6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object",
+                        "totalProperty": "object.total"
+                    },
+                    "name": "MyJsonReader7",
+                    "designerId": "02181366-4903-48bc-8507-e480f37b0ac1"
+                }
+            ]
+        }
+    ]
+}

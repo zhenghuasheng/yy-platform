@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HotCarsetStore",
+        "model": "HotCarsetModel",
+        "storeId": "HotCarsetStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "9ea5f5f4-0346-41ca-8893-b8d92172c9ab",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy5",
+            "designerId": "35e776a6-9e86-4bd6-ae5b-df29544e14fd",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object",
+                        "totalProperty": "object.total"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "9e1c4139-2e24-4530-9c92-6e5fe8c58a9a"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1031 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "hgstpanel",
+        "designer|userClassName": "HgStatusPanel",
+        "height": 573,
+        "id": "hgStatusPanel",
+        "itemId": "hgStatusPanel",
+        "layout": "fit",
+        "title": "融资状态查询",
+        "width": 718
+    },
+    "name": "MyPanel7",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "795a2483-6c6a-4057-8c46-18a6dac3f8a9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "item",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "45f96fde-fbe6-43f3-bb05-612dd277a94b",
+    "viewModelInstanceId": "2b27dc82-a598-4361-8845-c3ed051711ce",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "HgStatusStore",
+                "width": 360
+            },
+            "name": "MyPagingToolbar",
+            "designerId": "c8b966e5-18ca-47aa-a47b-abb26bc958af"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": 5,
+                "layout": "border"
+            },
+            "name": "MyContainer",
+            "designerId": "fa608a18-600e-4da3-b457-9d116cf81919",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "columnLines": true,
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "itemId": "StatusGridPanel",
+                        "layout|flex": 12,
+                        "layout|region": "center",
+                        "layout|split": false,
+                        "maxWidth": null,
+                        "store": "HgStatusStore",
+                        "title": ""
+                    },
+                    "name": "MyGridPanel",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e715971b-72b8-43c9-b755-e6a24229150e",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "index",
+                                "text": "序号",
+                                "width": 50
+                            },
+                            "name": "MyRowNumberer2",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b1c09025-3a8a-41b1-97b1-0921aa4443fd"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "f_ciid",
+                                "hidden": true,
+                                "text": "ID"
+                            },
+                            "name": "MyNumberColumn",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "7e60bb42-7cef-4c1d-8d84-11105b89bc5f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "name",
+                                "text": "姓名",
+                                "width": 122
+                            },
+                            "name": "MyColumn",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3895a4a1-7666-4754-9360-edaba4b55c6c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "phone",
+                                "text": "电话",
+                                "width": 130
+                            },
+                            "name": "MyColumn1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "694e9b09-ba31-49e0-9bac-0d7df8e5cf5f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "f_status",
+                                "text": "状态",
+                                "width": 81
+                            },
+                            "name": "MyColumn2",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b6ae4463-2b6e-4c2c-80b3-70e11d836810",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "if(value===0){",
+                                            "    return \"待处理\";",
+                                            "}else if(value===1){",
+                                            "    return \"处理中\";",
+                                            "}else if(value===2){",
+                                            "    return \"已接受\";",
+                                            "}else if(value===3){",
+                                            "    return \"被驳回\";",
+                                            "}else if(value===4){",
+                                            "    return \"已出单\";",
+                                            "}else if(value===5){",
+                                            "    return \"已送单\";",
+                                            "}else if(value===6){",
+                                            "    return \"业务完成\";",
+                                            "}else if(value===7){",
+                                            "    return \"完成咨询\";",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "792f2300-e434-498c-aca7-69cc21be96bd"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "name",
+                                        "editable": false,
+                                        "itemId": "HgStatusComboBox",
+                                        "store": "StatusStore",
+                                        "valueField": "id"
+                                    },
+                                    "name": "MyComboBox8",
+                                    "designerId": "fdb5cba3-8acf-4ead-a3cf-03ac0dd9b4db"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "appletime",
+                                "text": "提交时间",
+                                "width": 154
+                            },
+                            "name": "MyColumn3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ca596eaf-0e99-4585-b0fd-d4437d81419a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "source",
+                                "text": "来源",
+                                "width": 94
+                            },
+                            "name": "MyColumn6",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f0b2d96b-35eb-4a49-adab-d6a4ce8af4d6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "f_price",
+                                "text": "融资金额",
+                                "width": 122
+                            },
+                            "name": "MyNumberColumn2",
+                            "designerId": "6e718dcb-01a1-4625-948c-9d566eddbc9e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "HgpriceEditer",
+                                        "minValue": 0
+                                    },
+                                    "name": "MyNumberField22",
+                                    "designerId": "e6cd07ae-6fa3-44d5-a5e5-de2f44217442"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "f_desc",
+                                "text": "备注",
+                                "width": 120
+                            },
+                            "name": "MyColumn7",
+                            "designerId": "7fb6ff8a-8a08-4047-a836-6d9a1e4537d8",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "hgDescEditor"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "9da2e3db-39c6-4306-98b7-0854799bac7a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableTextSelection": true,
+                                "maxWidth": null
+                            },
+                            "name": "MyGridView",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "54f5e153-7375-4c32-bfdb-183c0dad120f"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusGridPanelRowDblClick",
+                                "implHandler": [
+                                    "        this.onDetailBtnClick(null, e, eOpts);"
+                                ],
+                                "name": "rowdblclick",
+                                "scope": "me"
+                            },
+                            "name": "onStatusGridPanelRowDblClick",
+                            "designerId": "9a9a6b80-3136-46b4-b4e8-6d5625bb4530"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "clicksToEdit": 1
+                            },
+                            "name": "MyCellEditingPlugin2",
+                            "designerId": "ffebfa3a-fbb8-4781-8727-a56b2bdd18f6"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusGridPanelCellContextMenu",
+                                "implHandler": [
+                                    "var targetDel='/action/hg/delete.do';",
+                                    "var storeId='HgStatusStore';",
+                                    "var refreshUrl=\"/action/hg/list.do?system=ytadmin@7788\";",
+                                    "var rightMenu=new CallCenterApp.view.RightClickMenu({",
+                                    "    record: record,",
+                                    "    targetDel:targetDel,",
+                                    "    storeId:storeId,",
+                                    "    refreshUrl:refreshUrl",
+                                    "});",
+                                    "e.preventDefault();",
+                                    "         //定位。显示 右键菜单",
+                                    " rightMenu.showAt(e.getXY());",
+                                    ""
+                                ],
+                                "name": "cellcontextmenu",
+                                "scope": "me"
+                            },
+                            "name": "onStatusGridPanelCellContextMenu",
+                            "designerId": "ac0d5aa4-a2ba-4f24-a094-ba9ef188e1ed"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onHgStatusGridPanelRowClick",
+                                "implHandler": [
+                                    "var HgStatusPropertyPanel=Ext.getCmp('HgStatusPropertyPanel');",
+                                    "var record=record.data;",
+                                    "/**性别判定**/",
+                                    "var sex;",
+                                    "if(record.f_sex===0){",
+                                    "    sex='男';",
+                                    "}else if(record.f_sex===1){",
+                                    "    sex='女';",
+                                    "}else{",
+                                    "    sex='未知';",
+                                    "}",
+                                    "",
+                                    "/**婚姻状况判定*/",
+                                    "var marriage;",
+                                    "if(record.f_marriage===0){",
+                                    "    marriage='未婚';",
+                                    "}else if(record.f_marriage===1){",
+                                    "    marriage='已婚';",
+                                    "}else{",
+                                    "    marriage='未知';",
+                                    "}",
+                                    "/**家庭住址**/",
+                                    "",
+                                    "var addressArray = (record.f_address===undefined)?null:record.f_address.split(';');",
+                                    "var address=(addressArray[5] === 'null')? undefined : addressArray[5];",
+                                    "",
+                                    "HgStatusPropertyPanel.setSource({",
+                                    "     f_name:record.f_name,",
+                                    "     f_phone:record.f_phone,",
+                                    "     f_idcard:record.f_idcard,",
+                                    "     f_sex:sex,",
+                                    "     f_marriage:marriage,",
+                                    "     f_address:address,",
+                                    "     f_mid:record.f_mid,",
+                                    "    f_company:record.f_company,",
+                                    "    f_matecompany:record.f_matecompany,",
+                                    "    f_mateidcard:record.f_mateidcard,",
+                                    "    f_matename:record.f_matename,",
+                                    "    f_matephone:record.f_matephone,",
+                                    "    f_status:record.status,",
+                                    "    appletime:record.appletime,",
+                                    "    f_source:record.f_source,",
+                                    "    f_price:(record.f_price===undefined)?undefined:record.f_price+'万',",
+                                    "    f_desc:record.f_desc,",
+                                    "",
+                                    "},{",
+                                    "    f_name:{",
+                                    "        displayName:'姓名',",
+                                    "    },",
+                                    "    f_phone:{",
+                                    "        displayName:'电话',",
+                                    "    },",
+                                    "    f_idcard:{",
+                                    "        displayName:'身份证',",
+                                    "    },",
+                                    "    f_sex:{",
+                                    "        displayName:'性别',",
+                                    "    },",
+                                    "    f_marriage:{",
+                                    "        displayName:'婚姻状况',",
+                                    "    },",
+                                    "    f_address:{",
+                                    "        displayName:'家庭住址',",
+                                    "    },",
+                                    "    f_mid:{",
+                                    "        displayName:'客户ID',",
+                                    "    },",
+                                    "    f_company:{",
+                                    "        displayName:'公司',",
+                                    "    },",
+                                    "    f_matecompany:{",
+                                    "        displayName:'配偶公司',",
+                                    "    },",
+                                    "    f_mateidcard:{",
+                                    "        displayName:'配偶身份证',",
+                                    "    },",
+                                    "    f_matename:{",
+                                    "        displayName:'配偶姓名',",
+                                    "    },",
+                                    "    f_matephone:{",
+                                    "        displayName:'配偶手机',",
+                                    "    },",
+                                    "    f_status:{",
+                                    "        displayName:'状态',",
+                                    "    },",
+                                    "    appletime:{",
+                                    "        displayName:'提交时间',",
+                                    "    },",
+                                    "    f_source:{",
+                                    "        displayName:'来源',",
+                                    "    },",
+                                    "    f_price:{",
+                                    "        displayName:'融资金额',",
+                                    "    },",
+                                    "    f_desc:{",
+                                    "        displayName:'备注',",
+                                    "    }",
+                                    "    ",
+                                    "    ",
+                                    "});",
+                                    "",
+                                    ""
+                                ],
+                                "name": "rowclick",
+                                "scope": "me"
+                            },
+                            "name": "onHgStatusGridPanelRowClick",
+                            "designerId": "64e1feeb-8c08-4c7b-bbd3-df1ecd5bfa36"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "collapsed": false,
+                        "collapsible": true,
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "id": "HgStatusPropertyPanel",
+                        "itemId": "HgStatusPropertyPanel",
+                        "layout|flex": 3,
+                        "layout|region": "east",
+                        "layout|split": true,
+                        "margin": null,
+                        "maxWidth": null,
+                        "nameColumnWidth": null,
+                        "source": null,
+                        "title": "属性",
+                        "titleCollapse": true,
+                        "width": 150
+                    },
+                    "name": "MyPropertyGrid",
+                    "designerId": "f7320a97-0619-4b1d-b56d-47d39476dc3a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "8578e063-bea8-4f5c-93d1-b3a8b9593b7e",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "刷新"
+                    },
+                    "name": "MyButton",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "2979d636-daa6-4a9d-80f4-cbd2966b5390",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "implHandler": [
+                                    "var hgStatusStore = Ext.getStore('HgStatusStore');",
+                                    "var ajaxProxy = hgStatusStore.getProxy();",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "ajaxProxy.setUrl(url + \"/action/hg/list.do?system=ytadmin@7788\");",
+                                    "hgStatusStore.load();",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "66bf7f09-aa28-41a4-80b4-f5994fdf09a1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a2ff087a-85d1-406e-aceb-bef4c67bb2cb"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "exportBtn",
+                        "layout|flex": null,
+                        "text": "导出内容"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "cc68767b-3fde-4342-bd9b-746a0fbacb5b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onExportBtnClick",
+                                "implHandler": [
+                                    "var page=Ext.getStore('HgStatusStore').currentPage;",
+                                    "var pageSize=Ext.getStore('HgStatusStore').getPageSize();",
+                                    "var start=(page-1)*pageSize;",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        window.location = url + '/action/hg/export.do?system=ytadmin@7788&source=&start='+start+'&count='+pageSize;"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onExportBtnClick",
+                            "designerId": "d0012381-8bfc-4c84-a9be-6ac8c19f95a4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "detailBtn",
+                        "layout|flex": null,
+                        "text": "详细信息"
+                    },
+                    "name": "MyButton9",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "9f4ab2a0-c354-43ac-8ae4-998b92a434ec",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDetailBtnClick",
+                                "implHandler": [
+                                    "var hgStatusPanel = Ext.getCmp('hgStatusPanel');",
+                                    "var statusGrid = hgStatusPanel.down('#StatusGridPanel');",
+                                    "",
+                                    "if (statusGrid.selection === null) {",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "var hgRequestPanel = new CallCenterApp.view.HgRequestPanel({",
+                                    "    f_ciid: statusGrid.selection.data.f_ciid,",
+                                    "    closable: false,",
+                                    "    autoScroll: false,",
+                                    "    title: ''",
+                                    "});",
+                                    "",
+                                    "var nameField = hgRequestPanel.down('#nameField');",
+                                    "var phoneField = hgRequestPanel.down('#phoneField');",
+                                    "var idCardField = hgRequestPanel.down('#idCardField');",
+                                    "var marryField = hgRequestPanel.down('#marryField');",
+                                    "var wifeNameField = hgRequestPanel.down('#wifeNameField');",
+                                    "var wifePhoneField = hgRequestPanel.down('#wifePhoneField');",
+                                    "var wifeIdCardField = hgRequestPanel.down('#wifeIdCardField');",
+                                    "var sexField = hgRequestPanel.down('#sexField');",
+                                    "var provinceField = hgRequestPanel.down('#provinceField');",
+                                    "var cityField = hgRequestPanel.down('#cityField');",
+                                    "var districtField = hgRequestPanel.down('#districtField');",
+                                    "var streetField = hgRequestPanel.down('#streetField');",
+                                    "var addressField = hgRequestPanel.down('#addressField');",
+                                    "var houseField = hgRequestPanel.down('#houseRadioGroup');",
+                                    "var mpayField = hgRequestPanel.down('#mpayField');",
+                                    "var buyDateField = hgRequestPanel.down('#buyDateField');",
+                                    "var rentDateField = hgRequestPanel.down('#rentDateField');",
+                                    "var areaField = hgRequestPanel.down('#areaField');",
+                                    "var houseAddrField = hgRequestPanel.down('#houseAddrField');",
+                                    "var companyField = hgRequestPanel.down('#company');",
+                                    "var jobField = hgRequestPanel.down('#jobTitle');",
+                                    "var jobAgeField = hgRequestPanel.down('#jobAge');",
+                                    "var incomeField = hgRequestPanel.down('#incomeField');",
+                                    "var otherIncomeField = hgRequestPanel.down('#otherIncomeField');",
+                                    "var bankSeriaField = hgRequestPanel.down('#bankSeriaField');",
+                                    "var outDateField = hgRequestPanel.down('#outDateRadioGroup');",
+                                    "var outNumField = hgRequestPanel.down('#outNumField');",
+                                    "var buyCarInChangsha = hgRequestPanel.down('#buyCarInChangsha');",
+                                    "var useCarCityField = hgRequestPanel.down('#useCarCityField');",
+                                    "var loveCarField = hgRequestPanel.down('#loveCarField');",
+                                    "var lookedCarField = hgRequestPanel.down('#lookedCarField');",
+                                    "var carPriceField = hgRequestPanel.down('#carPriceField');",
+                                    "var depositField = hgRequestPanel.down('#depositField');",
+                                    "var loanMoneyField = hgRequestPanel.down('#loanMoneyField');",
+                                    "",
+                                    "var wifeCompanyField = hgRequestPanel.down('#wifeCompany');",
+                                    "var wifeJobField = hgRequestPanel.down('#wifeJobTitle');",
+                                    "var wifeJobAgeField = hgRequestPanel.down('#wifeJobAge');",
+                                    "var wifeIncomeField = hgRequestPanel.down('#wifeIncomeField');",
+                                    "var wifeBankSeriaField = hgRequestPanel.down('#wifeBankSeriaField');",
+                                    "var wifeOtherIncomeField = hgRequestPanel.down('#wifeOtherIncomeField');",
+                                    "",
+                                    "var myForm = new Ext.window.Window({",
+                                    "    modal: true,",
+                                    "    autoScroll: true,",
+                                    "    title: '融资申请',",
+                                    "    width: 560,",
+                                    "    height: 600,",
+                                    "    resizable: true",
+                                    "});",
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "Ext.Ajax.request({",
+                                    "    url: url + '/action/hg/detail.do',",
+                                    "    params: {",
+                                    "        f_ciid: statusGrid.selection.data.f_ciid",
+                                    "    },",
+                                    "",
+                                    "    success: function (response) {",
+                                    "        var result = JSON.parse(response.responseText);",
+                                    "        nameField.setValue(result.object.hgRequest.f_name);",
+                                    "        phoneField.setValue(result.object.hgRequest.f_phone);",
+                                    "        idCardField.setValue(result.object.hgRequest.f_idcard);",
+                                    "        sexField.setValue({sex: result.object.hgRequest.f_sex});",
+                                    "        marryField.setValue({marry: result.object.hgRequest.f_marriage});",
+                                    "        var addressArray = result.object.hgRequest.f_address.split(';');",
+                                    "        addressField.setValue(addressArray[5] === 'null' ? '' : addressArray[5]);",
+                                    "        var houseArray = result.object.hgRequest.f_house.split(';');",
+                                    "        houseField.setValue({house: houseArray[0]});",
+                                    "",
+                                    "        if (houseArray[1] > 0) {",
+                                    "            buyDateField.setValue(new Date(houseArray[1] * 1000));",
+                                    "        }",
+                                    "",
+                                    "        mpayField.setValue(houseArray[2] > 0 ? houseArray[2] : '');",
+                                    "        areaField.setValue(houseArray[3] > 0 ? houseArray[3] : '');",
+                                    "        houseAddrField.setValue(houseArray[5] === 'null' ? '' : houseArray[5]);",
+                                    "",
+                                    "        if (houseArray[4] > 0) {",
+                                    "            rentDateField.setValue(new Date(houseArray[4] * 1000));",
+                                    "        }",
+                                    "",
+                                    "        companyField.setValue(result.object.hgRequest.f_company);",
+                                    "        var jobArray = result.object.hgRequest.f_position.split(';');",
+                                    "        jobField.setValue(jobArray[0] === 'null' ? '' : jobArray[0]);",
+                                    "        jobAgeField.setValue(jobArray[1] < 0 ? '' : jobArray[1]);",
+                                    "        var incomeArray = result.object.hgRequest.f_income.split(';');",
+                                    "        incomeField.setValue({income: incomeArray[0]});",
+                                    "        otherIncomeField.setValue(incomeArray[1]);",
+                                    "        bankSeriaField.setValue({bank: incomeArray[2]});",
+                                    "        var creditArray = result.object.hgRequest.f_credit.split(';');",
+                                    "        outDateField.setValue({outdate: creditArray[0]});",
+                                    "        outNumField.setValue(creditArray[1] < 0 ? '' : creditArray[1]);",
+                                    "        var buyCarArray = result.object.hgRequest.f_buycar.split(';');",
+                                    "        buyCarInChangsha.setValue({city: buyCarArray[0]});",
+                                    "        useCarCityField.setValue(buyCarArray[1] === 'null' ? '' : buyCarArray[1]);",
+                                    "        loveCarField.setValue(buyCarArray[2] === 'null' ? '' : buyCarArray[2]);",
+                                    "        var financingArray = result.object.hgRequest.f_financing.split(';');",
+                                    "        lookedCarField.setValue({look: financingArray[0]});",
+                                    "        carPriceField.setValue(financingArray[1] > 0 ? financingArray[1] : '');",
+                                    "        depositField.setValue({deposit: financingArray[2]});",
+                                    "        loanMoneyField.setValue(financingArray[3] > 0 ? financingArray[3] : '');",
+                                    "",
+                                    "        if (result.object.hgRequest.f_marriage === 1) {",
+                                    "            wifeNameField.setValue(result.object.hgRequest.f_matename);",
+                                    "            wifePhoneField.setValue(result.object.hgRequest.f_matephone);",
+                                    "            wifeIdCardField.setValue(result.object.hgRequest.f_mateidcard);",
+                                    "            wifeCompanyField.setValue(result.object.hgRequest.f_company);",
+                                    "",
+                                    "            var wifeJobArray = result.object.hgRequest.f_mateposition.split(';');",
+                                    "            wifeJobField.setValue(wifeJobArray[0] === 'null' ? '' : wifeJobArray[0]);",
+                                    "            wifeJobAgeField.setValue(wifeJobArray[1] < 0 ? '' : wifeJobArray[1]);",
+                                    "            var wifeIncomeArray = result.object.hgRequest.f_mateincome.split(';');",
+                                    "            wifeIncomeField.setValue({wifeincome: wifeIncomeArray[0]});",
+                                    "            wifeOtherIncomeField.setValue(wifeIncomeArray[1]);",
+                                    "            wifeBankSeriaField.setValue({wifebank: wifeIncomeArray[2]});",
+                                    "        }",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    "myForm.add(hgRequestPanel);",
+                                    "myForm.show();",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onDetailBtnClick",
+                            "designerId": "4cfb4275-4908-444a-9c5a-4e1c532952b3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "submitBtn",
+                        "layout|flex": null,
+                        "text": "提交申请"
+                    },
+                    "name": "MyButton10",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c519f498-cd0e-4def-b229-3f00df0637a9",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSubmitBtnClick",
+                                "implHandler": [
+                                    "var hgStatusPanel = Ext.getCmp('hgStatusPanel');",
+                                    "var statusGrid = hgStatusPanel.down('#StatusGridPanel');",
+                                    "",
+                                    "if (statusGrid.selection === null) {",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "var deptStore = Ext.getStore('DeptStore');",
+                                    "var ajaxProxy = deptStore.getProxy();",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "ajaxProxy.setUrl(url + \"/action/hg/department.do\");",
+                                    "deptStore.load();",
+                                    "var hgSubmitWindow = new CallCenterApp.view.SubmitWindow({",
+                                    "    requestId: statusGrid.selection.data.f_ciid",
+                                    "});",
+                                    "",
+                                    "hgSubmitWindow.show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSubmitBtnClick",
+                            "designerId": "5571dd89-f539-4b3f-b0ed-92e1e0cf3b7a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saveBtn",
+                        "layout|flex": null,
+                        "text": "修改保存"
+                    },
+                    "name": "MyButton17",
+                    "designerId": "4b7dd2d8-462d-4f2d-8b57-fda39d10ae07",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveBtnClick",
+                                "implHandler": [
+                                    "var hgStatusPanel=button.up('#hgStatusPanel');",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "var hgStatusStore = Ext.getStore('HgStatusStore');",
+                                    "var records = hgStatusStore.getModifiedRecords().slice(0);",
+                                    "    if(records.length<1){",
+                                    "        return;",
+                                    "    }",
+                                    "Ext.MessageBox.confirm('请确认', '您确认修改吗？', function(btn){",
+                                    "     if(btn==='no'){",
+                                    "         return;",
+                                    "     }else if(btn==='yes'){",
+                                    "",
+                                    "",
+                                    "             var jsonArray = [];",
+                                    "             Ext.each(records,function(item){",
+                                    "             var f_ciid=item.data.f_ciid;",
+                                    "             var f_status=item.data.f_status;",
+                                    "             var f_price=item.data.f_price;",
+                                    "             var f_desc=item.data.f_desc;",
+                                    "                 jsonArray.push({f_ciid:f_ciid,f_status:f_status,f_price:f_price,f_desc:f_desc});",
+                                    "            });",
+                                    "                 Ext.Ajax.request({",
+                                    "",
+                                    "                     url:url+\"/action/hg/update.do\",",
+                                    "                     params:{",
+                                    "                     hgStr:JSON.stringify(jsonArray),",
+                                    "                     },",
+                                    "",
+                                    "     success:function(response){",
+                                    "       var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "        if (result=== null) {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，结果：' + result);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (result[0].succeed) {",
+                                    "",
+                                    "            alert('保存成功');",
+                                    "            var hgStatusStore = Ext.getStore('HgStatusStore');",
+                                    "            var ajaxProxy = hgStatusStore.getProxy();",
+                                    "            var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "                ajaxProxy.setUrl(url + \"/action/hg/list.do?system=ytadmin@7788\");",
+                                    "                hgStatusStore.load();",
+                                    "",
+                                    "        } else {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.ptError);",
+                                    "            return;",
+                                    "        }",
+                                    "                },",
+                                    "",
+                                    "    failure:function(){",
+                                    "       Ext.Msg.alert('提示','失败');",
+                                    "                },",
+                                    "            });",
+                                    "",
+                                    "     }",
+                                    "",
+                                    " });",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveBtnClick",
+                            "designerId": "25343faa-400b-4c0d-87e6-2afe9e8e8f47"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHgStatusPanelRender",
+                "implHandler": [
+                    "        this.onRefreshBtnClick(null, null, null);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onHgStatusPanelRender",
+            "designerId": "649be82f-ad1d-4d77-ae2e-0adc924177f6"
+        }
+    ]
+}

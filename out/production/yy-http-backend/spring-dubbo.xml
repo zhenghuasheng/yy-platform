@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringFacetInspection -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="yy-web-backend-app"/>
+    <!-- 使用multicast广播注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://zookeeper.com:2181" file="./registry.file"/>
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo"  port="30904"/>
+
+    <dubbo:reference interface="com.order.server.UserServer" id="userServer"/>
+    <dubbo:reference interface="com.order.server.AuthServer" id="authServer"/>
+    <dubbo:reference interface="com.order.server.UserMoneyServer" id="userMoneyServer"/>
+    <dubbo:reference interface="com.order.server.UserIntegrateServer" id="userIntegrateServer"/>
+    <dubbo:reference interface="com.order.server.TaskServer" id="taskServer"/>
+
+</beans>

@@ -1,0 +1,52 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "                [{",
+            "                    id: 0,",
+            "                    name: '限时购'",
+            "                },",
+            "                {",
+            "                    id: 1,",
+            "                    name: '促销车'",
+            "                }]"
+        ],
+        "designer|userClassName": "ActivityTypeStore",
+        "storeId": "ActivityTypeStore"
+    },
+    "name": "MyStore",
+    "designerId": "25e6fe87-323a-4f01-b835-450397be2f13",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField5",
+            "designerId": "97101538-8629-4494-86cf-5994ec3d09e7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField6",
+            "designerId": "51778c75-8efc-4f07-9c25-45f3c3eef4e1"
+        }
+    ]
+}

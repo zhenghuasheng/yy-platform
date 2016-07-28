@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "bizstatuspanel",
+        "designer|userClassName": "BizStatusPanelViewModel"
+    },
+    "name": "CustomerStatusPanelViewModel1",
+    "designerId": "bca31249-31ff-4fcc-ba76-b4d7d40eeac4"
+}

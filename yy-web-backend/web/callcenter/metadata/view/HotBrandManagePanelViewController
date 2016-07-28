@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hotbrandmanagepanel",
+        "designer|userClassName": "HotBrandManagePanelViewController"
+    },
+    "designerId": "5abc72d0-8e9e-4009-8abd-dc0b992ead07"
+}

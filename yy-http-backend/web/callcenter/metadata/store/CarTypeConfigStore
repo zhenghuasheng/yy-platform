@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarTypeConfigStore",
+        "model": "CarTypeConfigModel",
+        "storeId": "CarTypeConfigStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "7ad2a1d4-e161-406a-bd3a-af7c3260164b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "limitParam": "pageSize"
+            },
+            "name": "MyAjaxProxy9",
+            "designerId": "c927627c-8a66-4b21-800d-17f363c46c8e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.carList",
+                        "totalProperty": "object.total"
+                    },
+                    "name": "MyJsonReader9",
+                    "designerId": "1e03b5b6-2c65-4833-aaa9-cff7aec6c601"
+                }
+            ]
+        }
+    ]
+}

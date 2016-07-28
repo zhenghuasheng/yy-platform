@@ -1,0 +1,80 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LoginSuccessModel"
+    },
+    "name": "MyModel",
+    "designerId": "922af0e5-e90b-4660-9daa-c4764117101d",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "data.token"
+                ],
+                "name": "token"
+            },
+            "name": "MyString3",
+            "designerId": "7961c146-bbe0-46bb-b443-d8e4e5f2f4e2"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "data.userId",
+                    ""
+                ],
+                "name": "userId"
+            },
+            "name": "MyString4",
+            "designerId": "0317af87-4830-4c1c-9fd5-1c2f3fafc062"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "data.userName"
+                ],
+                "name": "userName"
+            },
+            "name": "MyString5",
+            "designerId": "c435855f-9cde-4c2a-a8c3-464cb0f9b2aa"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "data.userPhone"
+                ],
+                "name": "userPhone"
+            },
+            "name": "MyString6",
+            "designerId": "8b9b0ad4-15c0-4c2d-841f-75137361688e"
+        }
+    ]
+}

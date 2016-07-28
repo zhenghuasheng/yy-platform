@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hotcarsetmanagepanel",
+        "designer|userClassName": "HotCarsetManagePanelViewModel"
+    },
+    "designerId": "bfda72c5-f4c2-49e7-a1c0-4652b3a9739e"
+}

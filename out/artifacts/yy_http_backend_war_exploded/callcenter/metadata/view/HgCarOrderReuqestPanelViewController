@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hgcarorderreuqestpanel",
+        "designer|userClassName": "HgCarOrderReuqestPanelViewController"
+    },
+    "designerId": "1139fb9c-fc65-46be-952b-8d2de88783a3"
+}

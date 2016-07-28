@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "bannermanagepanel",
+        "designer|userClassName": "BannerManagePanelViewModel"
+    },
+    "name": "CarsetImagAddPanelViewModel1",
+    "designerId": "e615753d-5d15-4998-af0b-e40407a16973"
+}

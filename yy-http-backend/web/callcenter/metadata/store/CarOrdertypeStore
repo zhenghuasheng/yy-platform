@@ -1,0 +1,45 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[{id:0,name:'底价购车'},{id:1,name:'直销车辆'}]"
+        ],
+        "designer|userClassName": "CarOrdertypeStore",
+        "storeId": "CarOrdertypeStore"
+    },
+    "name": "MyStore",
+    "designerId": "6dddb226-1853-4db1-a78d-dab3bbba9235",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField20",
+            "designerId": "fcabbca0-e45c-4268-9ee8-f89bbc5d6191"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField23",
+            "designerId": "e63d8456-d545-41f1-a864-ca95e8f14f9b"
+        }
+    ]
+}

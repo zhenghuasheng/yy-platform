@@ -1,0 +1,191 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView",
+        "id": "mainView",
+        "itemId": "mainView",
+        "layout": "border"
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "ccf11f1b-c72a-44fc-9803-344ace6f3349",
+    "viewControllerInstanceId": "4611ed12-d628-4ff4-91cd-baa29154d036",
+    "viewModelInstanceId": "f4941368-9963-4383-b809-d66d6516ffe3",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 100,
+                "hidden": true,
+                "itemId": "headerPanel",
+                "layout|region": "north",
+                "title": "呼叫中心业务系统"
+            },
+            "name": "MyPanel1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "d12ff238-6d23-4f16-b276-6ecc63966fbf"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": true,
+                "autoScroll": true,
+                "collapseDirection": "left",
+                "collapsed": false,
+                "collapsible": true,
+                "iconCls": "Magnifierzoomin",
+                "itemId": "menuPanel",
+                "layout": "accordion",
+                "layout|collapseMode": null,
+                "layout|region": "west",
+                "layout|split": true,
+                "title": "导航",
+                "titleCollapse": true,
+                "width": 250
+            },
+            "name": "MyPanel2",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "ec429cf4-e38a-4872-a33d-5a8029944736",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMenuPanelRender",
+                        "implHandler": [
+                            "component.hide();",
+                            "component.removeAll();",
+                            "",
+                            "var moduleItemid=component.getItemId();",
+                            "/**获取LoginSuccessJsonStore中的data**/",
+                            "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                            "var userId=LoginSuccessStore.data.items[0].data.userId;",
+                            "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    url: url +'/action/authority/list.do',",
+                            "    params: {",
+                            "        userid: userId,",
+                            "        pmnid:moduleItemid",
+                            "    },",
+                            "",
+                            "    success: function (response) {",
+                            "        var text = response.responseText;",
+                            "        var result = JSON.parse(text);",
+                            "        if (result === null) {",
+                            "            Ext.Msg.alert('提示', '加载出错，请重新登录' + text);",
+                            "            return;",
+                            "        }",
+                            "",
+                            "        if (result.succeed) {",
+                            "            var array=result.object.authorityList;",
+                            "            for(var i = 0; i < array.length; ++i) {",
+                            "                var item = array[i];",
+                            "                if(item.f_available){",
+                            "                    var element = Ext.create('CallCenterApp.view.' + item.authorityRequest.f_mnid);",
+                            "                    component.add(element);",
+                            "                }",
+                            "            }",
+                            "",
+                            "            component.updateLayout();",
+                            "            component.show();",
+                            "        } else {",
+                            "            Ext.Msg.alert('提示', '加载出错，请重新登录：');",
+                            "        }",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "name": "onMenuPanelRender",
+                    "designerId": "e6af6c89-ee53-445d-aace-def35f110ae0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "contentPanel",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "title": ""
+            },
+            "name": "MyTabPanel",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "3a200be7-aa02-4bfa-bc13-05b3cebcdf9c"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 80,
+                "hidden": true,
+                "itemId": "footerPanel",
+                "layout|region": "south",
+                "title": "Footer"
+            },
+            "name": "MyPanel",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "142aa7f2-5e3c-4582-aa22-8f687a2a3e8e"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMainViewAfterRender",
+                "implHandler": [
+                    "        document.title='客服系统';",
+                    "        Ext.grid.PropertyColumnModel.prototype.nameText = '名称';",
+                    "        Ext.grid.PropertyColumnModel.prototype.valueText = '内容';"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onMainViewAfterRender",
+            "designerId": "3a3b7cca-f72d-440e-beb2-3b7f99d9337b"
+        }
+    ]
+}

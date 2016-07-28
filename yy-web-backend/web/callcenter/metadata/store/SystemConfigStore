@@ -1,0 +1,76 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "{systemId:'1001',",
+            "",
+            " systemName:'大圣购车'",
+            " }",
+            "",
+            "",
+            "",
+            "",
+            "]"
+        ],
+        "designer|userAlias": "SystemConfigStore",
+        "designer|userClassName": "SystemConfigStore",
+        "storeId": "SystemConfigStore"
+    },
+    "designerId": "7ac26d5e-1dbc-4fc5-904a-dd1a66894721",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy11",
+            "designerId": "581f13b5-7d14-4680-b9c5-f7746b052ca3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyJsonReader11",
+                    "designerId": "9120b855-d421-43f8-a375-b95cde23df27"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "systemId"
+            },
+            "name": "MyField43",
+            "designerId": "9d04eccf-54cb-48df-90ea-c85f4cf24f1d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "systemName"
+            },
+            "name": "MyField44",
+            "designerId": "cbf2059b-25d2-4699-a8d5-69efd280f5d8"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "messagetabpanel",
+        "designer|userClassName": "MessageTabPanelViewController"
+    },
+    "designerId": "cb008b13-3faf-4ac0-8b11-a9cfe8d8003f"
+}

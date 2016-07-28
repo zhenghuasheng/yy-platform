@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sqdstatuspanel",
+        "designer|userClassName": "SqdStatusPanelViewController"
+    },
+    "name": "InsStatusPanelViewController1",
+    "designerId": "aaec338a-6b06-4c6c-9895-27e9223a4ba1"
+}

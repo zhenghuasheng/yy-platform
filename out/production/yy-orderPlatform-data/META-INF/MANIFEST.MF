@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: yt-data.jar mybatis-spring-1.2.2.jar
+Main-Class: com.etong.pt.data.impl.Launcher
+

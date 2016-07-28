@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hgrequestpanel",
+        "designer|userClassName": "HgRequestPanelViewModel"
+    },
+    "designerId": "61897cd9-ced7-4453-bce7-dc08c6a92234"
+}

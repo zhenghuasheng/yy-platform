@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeptBizmanModel"
+    },
+    "name": "DeptModel1",
+    "designerId": "a0943ceb-a4ab-4ff3-8b34-a5266d352d1a",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "phone"
+            },
+            "name": "MyString8",
+            "designerId": "d739d367-1d32-4ebc-b60d-0792ddbdaa4b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": null,
+                "name": "name"
+            },
+            "name": "MyString9",
+            "designerId": "0518fec7-bc0c-45ce-ad03-28477e3a5a89"
+        }
+    ]
+}

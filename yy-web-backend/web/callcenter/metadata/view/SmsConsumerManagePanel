@@ -1,0 +1,145 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "Smsconsumermanagepanel",
+        "designer|userClassName": "SmsConsumerManagePanel",
+        "height": 531,
+        "itemId": "smsConsumerManagePanel",
+        "title": "",
+        "width": 696
+    },
+    "name": "MyPanel",
+    "designerId": "35753f12-e698-43d4-9d78-e9eb742cdfed",
+    "viewControllerInstanceId": "a94882b1-b8e3-404b-8494-dbc3d5b88287",
+    "viewModelInstanceId": "887590e1-2a04-4b19-9f01-26d95594e7af",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 275,
+                "itemId": "SmsConGridPanel",
+                "title": "短信用户管理"
+            },
+            "name": "MyGridPanel",
+            "designerId": "75ad39f7-f473-444d-8c89-b03b10fd0eef",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "designer|displayName": "用户名",
+                        "itemId": "memberName",
+                        "text": "用户名"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "de9964b3-1779-4497-8806-e62d9fc93a61"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "designer|displayName": "用户ID",
+                        "itemId": "memberId",
+                        "text": "用户ID"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "1d8bfedd-0966-4f44-a16f-93662ffb5635"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "designer|displayName": "创建时间",
+                        "itemId": "createTime",
+                        "text": "创建时间"
+                    },
+                    "name": "MyDateColumn1",
+                    "designerId": "6729adde-fd3b-4c07-a182-1d5c6b6dcd36"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "date",
+                        "designer|displayName": "修改时间",
+                        "itemId": "operateTime",
+                        "text": "修改时间"
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "0d1a3563-b3e5-4855-92cf-d331e385d74f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "designer|displayName": "修改人",
+                        "itemId": "operator",
+                        "text": "修改人"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "3224ea20-b9e6-4ace-bac6-72d853d096ec"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "bool",
+                        "designer|displayName": "是否生效",
+                        "itemId": "viable",
+                        "text": "是否生效"
+                    },
+                    "name": "MyBooleanColumn",
+                    "designerId": "f8359d23-b3c8-4a89-98be-1a0f203674d1"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView",
+                    "designerId": "58932647-99a3-4143-8929-da8128f8ebcd"
+                }
+            ]
+        }
+    ]
+}

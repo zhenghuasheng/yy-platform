@@ -1,0 +1,751 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "collapsed": false,
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "authorstatuspanel",
+        "designer|userClassName": "AuthorStatusPanel",
+        "frame": true,
+        "height": 467,
+        "itemId": "authorStatusPanel",
+        "layout": "fit",
+        "title": "理赔查询",
+        "width": 643
+    },
+    "name": "MyPanel12",
+    "designerId": "85e4ce1f-5196-4b2f-91a4-eaa3fd698bf5",
+    "viewControllerInstanceId": "02390094-20f1-4352-b079-8dac48690f80",
+    "viewModelInstanceId": "1bc35974-1bc6-4ff4-a091-be96907eef26",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "AuthorStatusPanelContainer",
+                "layout": "border"
+            },
+            "name": "MyContainer2",
+            "designerId": "59f2543b-4e6a-474e-b70c-4f5eee78da3d",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "collapsed": false,
+                        "columnLines": true,
+                        "itemId": "AuthorStatusGridPanel",
+                        "layout|flex": 12,
+                        "layout|region": "center",
+                        "store": "AuthorStatusStore",
+                        "title": ""
+                    },
+                    "name": "MyGridPanel4",
+                    "designerId": "a21cb9ec-4cde-4289-adc5-c359f537e6c6",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "",
+                                "text": "序号",
+                                "width": 48
+                            },
+                            "name": "MyRowNumberer4",
+                            "designerId": "d69647d9-4faa-4cf5-81d9-a04a284bfe1c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "name",
+                                "text": "姓名",
+                                "width": 79
+                            },
+                            "name": "MyColumn12",
+                            "designerId": "75e0af67-79f6-4b31-bdd7-8452189e53b2"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "phone",
+                                "text": "电话"
+                            },
+                            "name": "MyColumn20",
+                            "designerId": "1c2b0834-43e0-4caf-b51c-188b49313933"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "idcard",
+                                "text": "身份证",
+                                "width": 181
+                            },
+                            "name": "MyColumn21",
+                            "designerId": "cd4649bf-8fa6-4dbe-acf7-cc8e685736c9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "plateNum",
+                                "text": "车牌号"
+                            },
+                            "name": "MyColumn22",
+                            "designerId": "f5efa563-c5d8-4139-9dc0-0a668569b8a8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "insuer",
+                                "text": "保险商"
+                            },
+                            "name": "MyColumn29",
+                            "designerId": "5e71249e-19db-4abb-9d9a-a7e6791828fb"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "insuerDate",
+                                "format": "Y-m-d",
+                                "text": "出险日期"
+                            },
+                            "name": "MyDateColumn4",
+                            "designerId": "96729f54-0443-45dd-b24e-ea546196cf92"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "reportDate",
+                                "format": "Y-m-d",
+                                "text": "报案日期"
+                            },
+                            "name": "MyDateColumn5",
+                            "designerId": "9d8b2160-16d6-4623-a501-209408964dac"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "beneficiary",
+                                "text": "第一受益人"
+                            },
+                            "name": "MyColumn25",
+                            "designerId": "99207cb2-5d0c-455a-9953-786a6346ef55"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "settleMoney",
+                                "designer|displayName": "理赔金额",
+                                "itemId": "authorMoney",
+                                "text": "理赔金额"
+                            },
+                            "name": "MyNumberColumn1",
+                            "designerId": "ada63169-385f-4ee8-89be-d411e8387239",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "authorMoneyEditer",
+                                        "minText": "最小值为0",
+                                        "minValue": 0,
+                                        "selectOnFocus": true
+                                    },
+                                    "name": "MyNumberField21",
+                                    "designerId": "864ed214-e9ad-49b9-9f20-2a7abb40240c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "receiveType",
+                                "text": "领取方式"
+                            },
+                            "name": "MyColumn27",
+                            "designerId": "1583d1e9-14d7-491d-810d-7fb50d127de1",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "{if(value==1)return '纸质';else return '电子档';}"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "36211eea-1452-4f4e-94bf-20c62294ccfc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "receiveAddress",
+                                "text": "领取地址"
+                            },
+                            "name": "MyColumn28",
+                            "designerId": "5fa87a41-0267-44ce-8f54-82931f712a68"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "f_desc",
+                                "text": "备注"
+                            },
+                            "name": "MyColumn24",
+                            "designerId": "c35a385f-8d01-4a78-9ae4-05ffb25d9f8c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "descTextFieldEtitor"
+                                    },
+                                    "name": "MyTextField14",
+                                    "designerId": "aa38197b-f24f-488c-8391-956d3f058bdd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableTextSelection": true,
+                                "itemId": "AuthorStatusGridView"
+                            },
+                            "name": "MyGridView4",
+                            "designerId": "69ee7c34-67e5-43c9-aece-72ad8eaf971a"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "clicksToEdit": 1
+                            },
+                            "name": "MyCellEditingPlugin4",
+                            "designerId": "290dc329-2364-42c7-b4eb-e938bbf28d42"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAuthorStatusGridPanelCellContextMenu",
+                                "implHandler": [
+                                    "var targetDel=\"/action/author/delete.do\";",
+                                    "var storeId='AuthorStatusStore';",
+                                    "var refreshUrl=\"/action/author/list.do?system=ytadmin@7788\";",
+                                    "var rightMenu=new CallCenterApp.view.RightClickMenu({",
+                                    "    record: record,",
+                                    "    targetDel:targetDel,",
+                                    "    storeId:storeId,",
+                                    "    refreshUrl:refreshUrl",
+                                    "});",
+                                    "e.preventDefault();",
+                                    "         //定位。显示 右键菜单",
+                                    " rightMenu.showAt(e.getXY());"
+                                ],
+                                "name": "cellcontextmenu",
+                                "scope": "me"
+                            },
+                            "name": "onAuthorStatusGridPanelCellContextMenu",
+                            "designerId": "f814eaf6-6ade-4d00-beb8-2d1fae52b291"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAuthorStatusGridPanelSelect",
+                                "implHandler": [
+                                    "var record=record.data;",
+                                    "AuthorStatusPropertyPanel=Ext.getCmp('AuthorStatusPropertyPanel');",
+                                    "AuthorStatusPropertyPanel.setSource({",
+                                    "    ",
+                                    "       f_name:record.f_name,",
+                                    "    f_phone:record.f_phone,",
+                                    "    f_idcard:record.f_idcard,",
+                                    "    f_plate_number:record.f_plate_number,",
+                                    "    f_insuer:record.f_insuer,",
+                                    "    insuerDate:record.insuerDate,",
+                                    "    reportDate:record.reportDate,",
+                                    "    f_beneficiary:record.f_beneficiary,",
+                                    "    f_settlemoney:(record.f_settlemoney===undefined)?undefined:record.f_settlemoney+'元',",
+                                    "    f_receivetype:(record.f_receivetype===1)?'纸质':'电子档',",
+                                    "    f_receiveAddress:record.receiveAddress,",
+                                    "    f_source:record.f_source,",
+                                    "    f_desc:record.f_desc",
+                                    "",
+                                    "",
+                                    "},{",
+                                    "    f_name:{",
+                                    "        displayName:'姓名'",
+                                    "    },",
+                                    "    f_phone:{",
+                                    "        displayName:'电话号码'",
+                                    "    },",
+                                    "    f_idcard:{",
+                                    "        displayName:'身份证'",
+                                    "    },",
+                                    "    f_plate_number:{",
+                                    "        displayName:'车牌号'",
+                                    "    },",
+                                    "    f_insuer:{",
+                                    "        displayName:'保险商'",
+                                    "    },",
+                                    "    insuerDate:{",
+                                    "        displayName:'出险日期'",
+                                    "    },",
+                                    "    reportDate:{",
+                                    "        displayName:'报案日期'",
+                                    "    },",
+                                    "    f_beneficiary:{",
+                                    "        displayName:'第一受益人',",
+                                    "    },",
+                                    "    f_settlemoney:{",
+                                    "        displayName:'理赔金额',",
+                                    "    },",
+                                    "    f_receivetype:{",
+                                    "        displayName:'领取方式',",
+                                    "    },",
+                                    "    f_receiveAddress:{",
+                                    "        displayName:'领取地址',",
+                                    "    },",
+                                    "    f_source:{",
+                                    "        displayName:'来源',",
+                                    "    },",
+                                    "    f_desc:{",
+                                    "        displayName:'备注',",
+                                    "    },",
+                                    "});"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onAuthorStatusGridPanelSelect",
+                            "designerId": "3cfe1a5d-5d7b-4215-83be-2422f3ce7af2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsible": true,
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "id": "AuthorStatusPropertyPanel",
+                        "itemId": "AuthorStatusPropertyPanel",
+                        "layout|flex": 3,
+                        "layout|region": "east",
+                        "layout|split": true,
+                        "source": null,
+                        "title": "属性",
+                        "titleCollapse": true,
+                        "width": 150
+                    },
+                    "name": "MyPropertyGrid2",
+                    "designerId": "1bbb3544-c770-4cfc-9193-5f9327dd6288"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "frame": false,
+                "itemId": "mypagingtoolbar2",
+                "lastText": "上一页",
+                "nextText": "下一页",
+                "store": "AuthorStatusStore",
+                "width": 360
+            },
+            "name": "MyPagingToolbar2",
+            "designerId": "268667e4-da65-4ebc-92f9-436286b9ef3b",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMypagingtoolbar2Change",
+                        "implHandler": [
+                            "var AuthorStatusStore = Ext.getStore('AuthorStatusStore');",
+                            "        var records = AuthorStatusStore.getModifiedRecords().slice(0);",
+                            "        if(records.length>0){",
+                            "//return;",
+                            "//       Ext.MessageBox.confirm('请确认', '当前页面有未保存数据，您确认转向下一页？', function(btn){",
+                            "//           if(btn==='no'){",
+                            "//              return;",
+                            "//           }",
+                            "//       });",
+                            "",
+                            "            }"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "name": "onMypagingtoolbar2Change",
+                    "designerId": "41300d83-b2c5-417e-be6a-b225332f598f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar3",
+            "designerId": "4ad4fd95-def7-41ca-8373-8e8cc59c4595",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "Arrowrefresh",
+                        "itemId": "refreshbutton",
+                        "layout|flex": null,
+                        "text": "刷新",
+                        "width": 74
+                    },
+                    "name": "MyButton13",
+                    "designerId": "5ea65ccf-5660-418d-8ad9-dc5fdc84a490",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshbuttonClick",
+                                "implHandler": [
+                                    " var AuthorStatusStore = Ext.getStore('AuthorStatusStore');",
+                                    " AuthorStatusStore.removeAll();",
+                                    " var ajaxProxy = AuthorStatusStore.getProxy();",
+                                    " var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "     ajaxProxy.setUrl(url + \"/action/author/list.do?system=ytadmin@7788\");",
+                                    "     AuthorStatusStore.load();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefreshbuttonClick",
+                            "designerId": "86694546-572b-4e86-a0e0-597be2131a36"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "arrowCls": null,
+                        "focusCls": null,
+                        "iconCls": "Applicationosxgo",
+                        "itemId": "exportButton",
+                        "layout|flex": null,
+                        "overCls": null,
+                        "text": "导出",
+                        "width": 77
+                    },
+                    "name": "MyButton14",
+                    "designerId": "83a87194-1ed8-4ff8-8b32-cea2d3782c63",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onExportButtonClick",
+                                "implHandler": [
+                                    "var AuthoriStatusStore=Ext.getStore('AuthorStatusStore');",
+                                    "var page=AuthoriStatusStore.currentPage;",
+                                    "var pageSize=AuthoriStatusStore.getPageSize();",
+                                    "var start=(page-1)*pageSize;",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        window.location = url + '/action/author/export.do?system=ytadmin@7788&source=&start='+start+'&count='+pageSize;"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onExportButtonClick",
+                            "designerId": "d477fcc4-4121-4605-820b-3dfb7e137736"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "Scriptsave",
+                        "itemId": "saveButton",
+                        "layout|flex": null,
+                        "text": "修改保存"
+                    },
+                    "name": "MyButton18",
+                    "designerId": "afe77799-d332-4ad1-930a-92c0098014c3",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveButtonClick",
+                                "implHandler": [
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "var AuthorStatusStore = Ext.getStore('AuthorStatusStore');",
+                                    "var records = AuthorStatusStore.getModifiedRecords().slice(0);",
+                                    "if(records.length<1){",
+                                    "    return;",
+                                    "}",
+                                    "Ext.MessageBox.confirm('请确认', '您确认修改吗？', function(btn){",
+                                    "     if(btn==='no'){",
+                                    "         return;",
+                                    "     }else if(btn==='yes'){",
+                                    "",
+                                    "var jsonArray = [];",
+                                    "Ext.each(records,function(item){",
+                                    "    var f_scid=item.data.f_scid;",
+                                    "    var f_settlemoney=item.data.settleMoney;",
+                                    "    var f_desc=item.data.f_desc;",
+                                    "    jsonArray.push({",
+                                    "        f_scid:f_scid,",
+                                    "        f_settlemoney:f_settlemoney,",
+                                    "        f_desc:f_desc",
+                                    "    });",
+                                    "            });",
+                                    " Ext.Ajax.request({",
+                                    "",
+                                    "     url:url+\"/action/author/update.do\",",
+                                    "     params:{",
+                                    "         modifyStr:JSON.stringify(jsonArray),",
+                                    "     },",
+                                    "",
+                                    "     success:function(response){",
+                                    "       var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "        if (result=== null) {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，结果：' + result);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (result[0].succeed) {",
+                                    "",
+                                    "            alert('保存成功');",
+                                    "       /**保存成功后刷新当前页面数据***********刷新Store***************/",
+                                    "       var AuthorStatusStore = Ext.getStore('AuthorStatusStore');",
+                                    "       var ajaxProxy = AuthorStatusStore.getProxy();",
+                                    "       var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/action/author/list.do?system=ytadmin@7788\");",
+                                    "        AuthorStatusStore.load();",
+                                    "       /**保存成功后刷新当前页面**************************/",
+                                    "",
+                                    "        } else {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.ptError);",
+                                    "            return;",
+                                    "        }",
+                                    "                },",
+                                    "",
+                                    "    failure:function(){",
+                                    "       Ext.Msg.alert('提示','失败');",
+                                    "                },",
+                                    "            });",
+                                    "",
+                                    "     }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveButtonClick",
+                            "designerId": "403475bb-c501-4f52-948a-f8efb66efed4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAuthorStatusPanelRender",
+                "implHandler": [
+                    "this.onRefreshbuttonClick(null, null, null);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onAuthorStatusPanelRender",
+            "designerId": "1b78cc29-63f9-4f52-a980-938e35910553"
+        }
+    ]
+}

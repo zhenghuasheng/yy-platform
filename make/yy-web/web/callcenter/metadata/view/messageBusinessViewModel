@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "messagebusiness",
+        "designer|userClassName": "messageBusinessViewModel"
+    },
+    "designerId": "1d8f1464-2bf1-4b15-bfdb-783ca5d2e05b"
+}

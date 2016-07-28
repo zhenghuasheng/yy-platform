@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "limitUseShopStore",
+        "model": "LimitUseShopModel",
+        "storeId": "limitUseShopStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bdc8bd67-f015-4bbb-a6b4-45453e04d526",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://sqd.hg-rzzl.com/g4studio/DeptAction"
+            },
+            "name": "MyAjaxProxy2",
+            "designerId": "f3ac309a-8406-4d54-8498-66fed4c11c5a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "ROOT"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "5a209014-ce4e-4eed-91bc-9aee904f32fd"
+                }
+            ]
+        }
+    ]
+}

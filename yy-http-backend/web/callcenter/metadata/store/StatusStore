@@ -1,0 +1,53 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[{id:0,name:'待处理'},",
+            "{id:1,name:'处理中'},",
+            "{id:2,name:'已接受'},",
+            "{id:3,name:'被驳回'},",
+            "{id:4,name:'已出单'},",
+            "{id:5,name:'已送单'},",
+            "{id:6,name:'业务完成'},",
+            "{id:7,name:'完成咨询'}",
+            "]"
+        ],
+        "designer|userClassName": "StatusStore",
+        "storeId": "StatusStore"
+    },
+    "name": "MyStore",
+    "designerId": "ac767339-6eba-417b-91e4-cf3a0def6112",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField7",
+            "designerId": "8aaf0aab-5085-480c-9b0d-1b0fb66e4b8c"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField11",
+            "designerId": "0654ec05-b7ad-43d6-8f80-bf67af4ff560"
+        }
+    ]
+}

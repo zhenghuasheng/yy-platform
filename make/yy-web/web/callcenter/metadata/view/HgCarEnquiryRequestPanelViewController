@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hgcarenquiryrequestpanel",
+        "designer|userClassName": "HgCarEnquiryRequestPanelViewController"
+    },
+    "designerId": "fc173fe7-e65a-4ccb-8aaf-67eb084d8374"
+}

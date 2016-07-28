@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hgstatuspanel",
+        "designer|userClassName": "HgStatusPanelViewController"
+    },
+    "designerId": "45f96fde-fbe6-43f3-bb05-612dd277a94b"
+}

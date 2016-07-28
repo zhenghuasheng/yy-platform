@@ -1,0 +1,108 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EticketConsumerModel"
+    },
+    "name": "MyModel",
+    "designerId": "7e64c342-d9d7-4ea0-a7a3-da86a5f13fbf",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "eticketInfo.f_name"
+                ],
+                "name": "f_name"
+            },
+            "name": "MyField13",
+            "designerId": "147c0d5f-917d-4bd9-bb6e-8c9323432faa"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "eticketInfo.f_type"
+                ],
+                "name": "f_type"
+            },
+            "name": "MyField20",
+            "designerId": "9a3c7c36-2963-4f23-bc09-064888472ae7"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "eticketInfo.f_money"
+                ],
+                "name": "f_money"
+            },
+            "name": "MyField21",
+            "designerId": "38ad5908-50ce-47cd-8ba3-0607f47ba05d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "eticketInfo.f_rebate"
+                ],
+                "name": "f_rebate"
+            },
+            "name": "MyField26",
+            "designerId": "62524b23-ffa2-4a58-a85c-d7f7eeb95a01"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "eticketInfo.f_id"
+                ],
+                "name": "f_id"
+            },
+            "name": "MyField22",
+            "designerId": "f65c015b-cc95-4b1d-8182-e22b6c3175a5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "eticketCount"
+            },
+            "name": "MyField23",
+            "designerId": "df61ebe7-3a0c-4def-82f2-34749785eb67"
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "CityStore",
+        "storeId": "CityStore"
+    },
+    "name": "ProvinceStore1",
+    "designerId": "16199005-5a88-43d6-98f5-14c9dba658ec",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/region/city.do"
+            },
+            "name": "MyAjaxProxy3",
+            "designerId": "e4b793c9-2246-482d-87ff-858713b5dc77",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.cityList"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "eb6725bb-cc5f-4a4e-a28e-c49fe90dea8e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "cityID"
+                ],
+                "name": "id"
+            },
+            "name": "MyInteger1",
+            "designerId": "b7a3a51b-589f-4524-9b23-416ba19fb760"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "cityName"
+                ],
+                "name": "text"
+            },
+            "name": "MyString5",
+            "designerId": "2e74bebe-8f32-4168-8b3e-e44d0fe598c6"
+        }
+    ]
+}

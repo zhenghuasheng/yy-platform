@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PtCustomerInfoStore",
+        "model": "PtCustomerInfo",
+        "storeId": "PtCustomerInfoStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "3da26504-7054-4db8-82e6-6e08063e7f9f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy1",
+            "designerId": "50b7f2cd-71f0-4886-bc14-008c30c95a79",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.custList"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "1c998c78-cf55-4594-af8d-00cb66becd99"
+                }
+            ]
+        }
+    ]
+}

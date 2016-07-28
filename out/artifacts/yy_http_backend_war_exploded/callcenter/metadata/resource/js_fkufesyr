@@ -1,0 +1,16 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js_fkufesyr",
+        "id": null,
+        "includeInBundle": true,
+        "url": "http://code.jquery.com/jquery-1.7.1.js"
+    },
+    "name": "js1",
+    "designerId": "66bf0141-34cc-4919-92ae-df80396c7430"
+}

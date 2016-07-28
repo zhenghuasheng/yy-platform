@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "eticketgiverulespanel",
+        "designer|userClassName": "EticketGiverulesPanelViewModel"
+    },
+    "designerId": "bcfacb73-0347-4105-8a0c-e0b266e98f45"
+}

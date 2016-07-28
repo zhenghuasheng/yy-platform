@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "carsetimagaddpanel",
+        "designer|userClassName": "CarsetImagAddPanelViewModel"
+    },
+    "designerId": "b5f6eb84-084d-447a-bc94-19a82c36f973"
+}

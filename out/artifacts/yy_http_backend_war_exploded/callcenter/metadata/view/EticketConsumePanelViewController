@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "eticketconsumepanel",
+        "designer|userClassName": "EticketConsumePanelViewController"
+    },
+    "designerId": "a520c097-8db7-4975-8c23-a8875d53136d"
+}

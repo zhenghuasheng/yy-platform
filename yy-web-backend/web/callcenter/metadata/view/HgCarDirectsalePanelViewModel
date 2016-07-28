@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "hgcardirectsalepanel",
+        "designer|userClassName": "HgCarDirectsalePanelViewModel"
+    },
+    "designerId": "b2a3c346-8372-464f-99ac-e2bbc2aa7d85"
+}

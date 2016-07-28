@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "columnmanagepanel",
+        "designer|userClassName": "ColumnManagePanelViewController"
+    },
+    "designerId": "cbe55d3b-feb0-41db-bae2-5bd2e5936e1d"
+}

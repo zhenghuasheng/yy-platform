@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "eticketbusiness",
+        "designer|userClassName": "eticketBusinessViewController"
+    },
+    "designerId": "1a52d2b2-d22c-4ea8-a42e-0f54a30d00d0"
+}

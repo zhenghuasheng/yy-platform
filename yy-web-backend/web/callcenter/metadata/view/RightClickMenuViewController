@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rightclickmenu",
+        "designer|userClassName": "RightClickMenuViewController"
+    },
+    "designerId": "7bc2ad94-f42d-4c2b-89a6-8f18335fcc0b"
+}

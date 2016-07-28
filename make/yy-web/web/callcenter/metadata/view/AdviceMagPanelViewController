@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "advicemagpanel",
+        "designer|userClassName": "AdviceMagPanelViewController"
+    },
+    "designerId": "a48dbc7f-af84-4cc7-8d75-3cd3d1ec53d9"
+}

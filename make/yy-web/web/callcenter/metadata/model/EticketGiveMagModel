@@ -1,0 +1,107 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EticketGiveMagModel"
+    },
+    "name": "MyModel",
+    "designerId": "75b5fee0-2303-4fcc-bf56-83cb524a77e3",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_code"
+            },
+            "name": "MyField25",
+            "designerId": "0b07fb46-e28a-42dd-a35b-9cd738511f32"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_orderid"
+            },
+            "name": "MyField32",
+            "designerId": "d607ae95-9e54-4b86-84a8-756cf8e93e1d"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_phone"
+            },
+            "name": "MyField33",
+            "designerId": "e2487dad-2c0c-4aba-b922-b89632b918bd"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_status"
+            },
+            "name": "MyField34",
+            "designerId": "a4eba746-a984-4dab-a938-90bb3cea3a94"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_ticketid"
+            },
+            "name": "MyField35",
+            "designerId": "965f2986-1564-48f8-9c2c-967570404bec"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "f_usetime"
+            },
+            "name": "MyDate4",
+            "designerId": "9061010a-9128-4da2-84a6-07326634ae71"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "custName"
+            },
+            "name": "MyField16",
+            "designerId": "a77734ff-d5f6-41e1-bb67-9f584f81a3cd"
+        }
+    ]
+}

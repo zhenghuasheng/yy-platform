@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HgCarDirectModel"
+    },
+    "name": "MyModel",
+    "designerId": "5abb48e2-985b-4d75-9629-b240e4fed386",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title"
+            },
+            "name": "MyField17",
+            "designerId": "0c1425be-c4b8-4e05-890e-9f802ca5e597"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "color"
+            },
+            "name": "MyField18",
+            "designerId": "8afea711-f3a9-4493-90ff-8b9f1c6bac0e"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "directPrice"
+            },
+            "name": "MyField19",
+            "designerId": "1234fc59-0f72-4683-9530-3b6b566d47e8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "name": "MyField31",
+            "designerId": "99527866-2d8b-4d91-8081-3a3486841a67"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "operator"
+            },
+            "name": "MyField28",
+            "designerId": "9124c5de-b710-4c45-884c-80cfb47be7bb"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "operateTime"
+            },
+            "name": "MyDate2",
+            "designerId": "245f5f9a-b36c-43a8-9afc-e7c858202873"
+        }
+    ]
+}

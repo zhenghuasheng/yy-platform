@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "systemoprateadmin",
+        "designer|userClassName": "systemOprateAdminViewController"
+    },
+    "designerId": "c334ff95-a787-473e-8210-4d30b30a3771"
+}

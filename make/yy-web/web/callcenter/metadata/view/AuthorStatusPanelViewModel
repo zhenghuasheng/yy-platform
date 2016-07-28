@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "authorstatuspanel",
+        "designer|userClassName": "AuthorStatusPanelViewModel"
+    },
+    "designerId": "1bc35974-1bc6-4ff4-a091-be96907eef26"
+}

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dubbo">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../thirdpart/thirdparty/dubbo" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../thirdpart/thirdparty/dubbo" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../thirdpart/thirdparty/dubbo" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../thirdpart/thirdparty/dubbo" recursive="false" type="SOURCES" />
+  </library>
+</component>

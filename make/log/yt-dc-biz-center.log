@@ -1,0 +1,62 @@
+2016-06-07 20:42:35,643-[INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2016-06-07 20:42:35,815-[INFO] jetty-6.1.26
+2016-06-07 20:42:36,179-[INFO] NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2016-06-07 20:42:36,410-[INFO] Set web app root system property: 'webapp.root' = [E:\other\project\make\yy-web\web]
+2016-06-07 20:42:36,422-[INFO] Initializing log4j from [classpath:log4j.properties]
+2016-06-07 20:42:36,459-[INFO] Initializing Spring root WebApplicationContext
+2016-06-07 20:42:36,461-[INFO] Root WebApplicationContext: initialization started
+2016-06-07 20:42:36,757-[INFO] Refreshing Root WebApplicationContext: startup date [Tue Jun 07 20:42:36 CST 2016]; root of context hierarchy
+2016-06-07 20:42:36,895-[INFO] Loading XML bean definitions from class path resource [spring-config.xml]
+2016-06-07 20:42:37,634-[INFO] Loading XML bean definitions from class path resource [yt-dc-biz-center.xml]
+2016-06-07 20:42:37,719-[INFO] Loading XML bean definitions from class path resource [spring-dubbo.xml]
+2016-06-07 20:42:37,959-[INFO] using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2016-06-07 20:42:40,339-[INFO] Starting ZkClient event thread.
+2016-06-07 20:42:40,356-[INFO] Client environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
+2016-06-07 20:42:40,357-[INFO] Client environment:host.name=zhs
+2016-06-07 20:42:40,358-[INFO] Client environment:java.version=1.7.0_79
+2016-06-07 20:42:40,360-[INFO] Client environment:java.vendor=Oracle Corporation
+2016-06-07 20:42:40,362-[INFO] Client environment:java.home=C:\Program Files\Java\jre7
+2016-06-07 20:42:40,363-[INFO] Client environment:java.class.path=bin/yt-dc-api.jar;bin/aopalliance-1.0.jar;bin/aspectjweaver-1.6.8.jar;lib/yy-orderPlatform-data.jar;lib/yy-web-backend.jar
+2016-06-07 20:42:40,364-[INFO] Client environment:java.library.path=C:\Windows\system32;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Java\jdk1.7.0_79\bin;C:\Program Files\Java\jdk1.7.0_79\jre\bin;C:\Program Files\TortoiseSVN\bin;D:\tools\JavaTools\apache-maven-3.2.1\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\VanDyke Software\Clients\;.
+2016-06-07 20:42:40,368-[INFO] Client environment:java.io.tmpdir=C:\Users\ZHENGH~1\AppData\Local\Temp\
+2016-06-07 20:42:40,369-[INFO] Client environment:java.compiler=<NA>
+2016-06-07 20:42:40,370-[INFO] Client environment:os.name=Windows 8.1
+2016-06-07 20:42:40,371-[INFO] Client environment:os.arch=amd64
+2016-06-07 20:42:40,372-[INFO] Client environment:os.version=6.3
+2016-06-07 20:42:40,373-[INFO] Client environment:user.name=zhenghuasheng
+2016-06-07 20:42:40,374-[INFO] Client environment:user.home=C:\Users\zhenghuasheng
+2016-06-07 20:42:40,375-[INFO] Client environment:user.dir=E:\other\project\make\yy-web
+2016-06-07 20:42:40,378-[INFO] Initiating client connection, connectString=zookeeper.com:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@7c51aec2
+2016-06-07 20:42:40,427-[INFO] Opening socket connection to server zookeeper.com/127.0.0.1:2181
+2016-06-07 20:42:40,432-[INFO] Socket connection established to zookeeper.com/127.0.0.1:2181, initiating session
+2016-06-07 20:42:40,468-[INFO] Session establishment complete on server zookeeper.com/127.0.0.1:2181, sessionid = 0x1552ab31db30002, negotiated timeout = 30000
+2016-06-07 20:42:40,472-[INFO] zookeeper state changed (SyncConnected)
+2016-06-07 20:42:40,563-[INFO]  [DUBBO] Register: consumer://10.16.2.77/com.order.server.UserServer?application=yy-web-backend-app&category=consumers&check=false&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=1340&revision=data&side=consumer&timestamp=1465303360120, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:40,705-[INFO]  [DUBBO] Subscribe: consumer://10.16.2.77/com.order.server.UserServer?application=yy-web-backend-app&category=providers,configurators,routers&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=1340&revision=data&side=consumer&timestamp=1465303360120, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:40,899-[INFO]  [DUBBO] Notify urls for subscribe url consumer://10.16.2.77/com.order.server.UserServer?application=yy-web-backend-app&category=providers,configurators,routers&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=1340&revision=data&side=consumer&timestamp=1465303360120, urls: [dubbo://10.16.2.77:30903/com.order.server.UserServer?anyhost=true&application=orderPlatform-app-service&cluster=failfast&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=3852&side=provider&timeout=15000&timestamp=1465300273112, empty://10.16.2.77/com.order.server.UserServer?application=yy-web-backend-app&category=configurators&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=1340&revision=data&side=consumer&timestamp=1465303360120, empty://10.16.2.77/com.order.server.UserServer?application=yy-web-backend-app&category=routers&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=1340&revision=data&side=consumer&timestamp=1465303360120], dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,328-[INFO]  [DUBBO] Successed connect to server /10.16.2.77:30903 from NettyClient 10.16.2.77 using dubbo version 2.5.3, channel is NettyChannel [channel=[id: 0x4fb36775, /10.16.2.77:50937 => /10.16.2.77:30903]], dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,331-[INFO]  [DUBBO] Start NettyClient zhs/10.16.2.77 connect to the server /10.16.2.77:30903, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,587-[INFO]  [DUBBO] Refer dubbo service com.order.server.UserServer from url zookeeper://zookeeper.com:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=yy-web-backend-app&check=false&cluster=failfast&dubbo=2.5.3&interface=com.order.server.UserServer&methods=getUserByPhone,getUserBykey,addUser,updateUser&pid=1340&revision=data&side=consumer&timeout=15000&timestamp=1465303360120, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,711-[INFO]  [DUBBO] Register: consumer://10.16.2.77/com.order.server.AuthServer?application=yy-web-backend-app&category=consumers&check=false&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=1340&revision=data&side=consumer&timestamp=1465303361669, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,805-[INFO]  [DUBBO] Subscribe: consumer://10.16.2.77/com.order.server.AuthServer?application=yy-web-backend-app&category=providers,configurators,routers&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=1340&revision=data&side=consumer&timestamp=1465303361669, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,982-[INFO]  [DUBBO] Notify urls for subscribe url consumer://10.16.2.77/com.order.server.AuthServer?application=yy-web-backend-app&category=providers,configurators,routers&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=1340&revision=data&side=consumer&timestamp=1465303361669, urls: [dubbo://10.16.2.77:30903/com.order.server.AuthServer?anyhost=true&application=orderPlatform-app-service&cluster=failfast&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=3852&side=provider&timeout=15000&timestamp=1465300274412, empty://10.16.2.77/com.order.server.AuthServer?application=yy-web-backend-app&category=configurators&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=1340&revision=data&side=consumer&timestamp=1465303361669, empty://10.16.2.77/com.order.server.AuthServer?application=yy-web-backend-app&category=routers&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=1340&revision=data&side=consumer&timestamp=1465303361669], dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:41,989-[INFO]  [DUBBO] Refer dubbo service com.order.server.AuthServer from url zookeeper://zookeeper.com:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=yy-web-backend-app&check=false&cluster=failfast&dubbo=2.5.3&interface=com.order.server.AuthServer&methods=createToken,parseToken&pid=1340&revision=data&side=consumer&timeout=15000&timestamp=1465303361669, dubbo version: 2.5.3, current host: 10.16.2.77
+2016-06-07 20:42:42,209-[INFO] Root WebApplicationContext: initialization completed in 5746 ms
+2016-06-07 20:42:42,300-[INFO] Initializing Spring FrameworkServlet 'dispatcher'
+2016-06-07 20:42:42,301-[INFO] FrameworkServlet 'dispatcher': initialization started
+2016-06-07 20:42:42,306-[INFO] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Jun 07 20:42:42 CST 2016]; parent: Root WebApplicationContext
+2016-06-07 20:42:42,309-[INFO] Loading XML bean definitions from class path resource [spring-mvc.xml]
+2016-06-07 20:42:42,848-[INFO] Mapped "{[/user/login.do],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.etong.pt.utility.PtResult com.order.web.controller.UserController.userLogin(java.lang.String,java.lang.String,java.lang.Integer)
+2016-06-07 20:42:42,850-[INFO] Mapped "{[/user/getToken.do],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.etong.pt.utility.PtResult com.order.web.controller.UserController.getUserToken(java.lang.String,java.lang.Integer)
+2016-06-07 20:42:42,852-[INFO] Mapped "{[/user/register.do],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.etong.pt.utility.PtResult com.order.web.controller.UserController.addUser(com.order.data.model.User)
+2016-06-07 20:42:42,854-[INFO] Mapped "{[/user/get.do],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.etong.pt.utility.PtResult com.order.web.controller.UserController.getUserbyKey(java.lang.Long)
+2016-06-07 20:42:42,912-[INFO] Hibernate Validator 4.2.0.Final
+2016-06-07 20:42:42,930-[DEBUG] Found javax.persistence.Persistence on classpath, but no method 'getPersistenceUtil'. Assuming JPA 1 environment. All properties will per default be traversable.
+2016-06-07 20:42:42,962-[DEBUG] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2016-06-07 20:42:42,965-[DEBUG] No META-INF/validation.xml found. Using annotation based configuration only
+2016-06-07 20:42:43,387-[INFO] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Jun 07 20:42:42 CST 2016]; parent: Root WebApplicationContext
+2016-06-07 20:42:43,509-[INFO] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Jun 07 20:42:42 CST 2016]; parent: Root WebApplicationContext
+2016-06-07 20:42:43,595-[INFO] Detected @ExceptionHandler methods in systemHandlerExceptionResolver
+2016-06-07 20:42:43,709-[INFO] FrameworkServlet 'dispatcher': initialization completed in 1407 ms
+2016-06-07 20:42:43,723-[INFO] Started SelectChannelConnector@0.0.0.0:8389
+2016-06-07 20:42:43,724-[INFO] <-------------易通平台数据中心服务启动成功-------------->

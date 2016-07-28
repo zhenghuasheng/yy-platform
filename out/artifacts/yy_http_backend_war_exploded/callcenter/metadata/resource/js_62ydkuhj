@@ -1,0 +1,15 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js_62ydkuhj",
+        "includeInBundle": true,
+        "url": "jquery.ui.widget.js"
+    },
+    "name": "js2",
+    "designerId": "6193add2-41e6-41cd-a6f6-374aa2e091ac"
+}

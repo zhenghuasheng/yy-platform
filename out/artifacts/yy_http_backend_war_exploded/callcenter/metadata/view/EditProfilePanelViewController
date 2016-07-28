@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editprofilepanel",
+        "designer|userClassName": "EditProfilePanelViewController"
+    },
+    "designerId": "d246f4a2-6120-4b9b-b85c-5b53f6c2347d"
+}

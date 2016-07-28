@@ -1,0 +1,21 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "integratedvehicle",
+        "designer|userClassName": "IntegratedVehicle",
+        "itemId": "IntegratedVehicle",
+        "title": "综合车务"
+    },
+    "name": "MyPanel9",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "aefaa711-54ca-4e45-85ab-04f65ab335c0",
+    "viewControllerInstanceId": "d93c219a-dfa4-4e76-9e02-75793cf2a9ac",
+    "viewModelInstanceId": "04303e1d-e402-4ec5-b7ae-ffbd38e12d52"
+}

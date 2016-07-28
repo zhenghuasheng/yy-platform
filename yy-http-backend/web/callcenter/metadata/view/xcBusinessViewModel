@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "xcbusiness",
+        "designer|userClassName": "xcBusinessViewModel"
+    },
+    "designerId": "4ff708eb-e2bc-4fc7-a24b-3e95f6c9b057"
+}

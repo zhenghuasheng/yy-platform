@@ -1,0 +1,290 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EticketManagerModel"
+    },
+    "name": "MyModel",
+    "designerId": "7e98e22b-9c26-4858-a717-b5f36ab5a31f",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_id"
+            },
+            "name": "MyInteger",
+            "designerId": "1de45c7e-2973-4aa5-8a4e-dc31c8212c53"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_name"
+            },
+            "name": "MyString10",
+            "designerId": "6a5b89e2-ab0e-42fc-87a1-722b9526e9bc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_type"
+            },
+            "name": "MyString11",
+            "designerId": "92b15e04-fed5-4aae-8af1-f9e7ceb67f19"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "f_starttime"
+            },
+            "name": "MyDate",
+            "designerId": "3cee6ec0-446d-4ed4-b97b-988c168fa828"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "f_endtime"
+            },
+            "name": "MyDate1",
+            "designerId": "2122721e-3ce1-4e89-9083-cf229960f271"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_oneuse"
+            },
+            "name": "MyString17",
+            "designerId": "6ebfc3bc-a792-40b9-84b5-5fc3a61344b1"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_oneget"
+            },
+            "name": "MyString18",
+            "designerId": "db1c4f79-0559-4cd6-a273-162ca6a107fa"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_getlimite"
+            },
+            "name": "MyString19",
+            "designerId": "093f1e66-8f22-404e-9e3d-9d95be04854c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_minspending"
+            },
+            "name": "MyString20",
+            "designerId": "5d739add-72c1-4022-ba01-ea8dbd6593cb"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_money"
+            },
+            "name": "MyString21",
+            "designerId": "3b0757f0-5c09-440d-a5a5-9fb558953238"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_rebate"
+            },
+            "name": "MyString22",
+            "designerId": "71c6c8b9-a3b7-4b93-b923-2f6b9e568cfc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_prenum"
+            },
+            "name": "MyString23",
+            "designerId": "63bf1dc1-a9f9-40c4-ad24-e62c82c2fde4"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_details"
+            },
+            "name": "MyString24",
+            "designerId": "941d7560-503f-4b75-b864-1beb2a19d9d9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_message"
+            },
+            "name": "MyString26",
+            "designerId": "9a66cb34-38a3-40f7-a2df-319cc18f6cd7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_image"
+            },
+            "name": "MyString27",
+            "designerId": "04ee250f-303e-4f27-8d3c-8b02c76af3d9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_sendway"
+            },
+            "name": "MyString28",
+            "designerId": "78c9a291-ecb7-4835-98a6-7e5d90eb6054"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_remind"
+            },
+            "name": "MyString29",
+            "designerId": "a1724003-984a-42fb-b6ea-3315f4728559"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_remindmessage"
+            },
+            "name": "MyString30",
+            "designerId": "0a326146-834e-47db-9eed-2ae7dc23e118"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_usetime"
+            },
+            "name": "MyString31",
+            "designerId": "bd8e1d6f-5bf7-45f6-92e7-a1911ded13ca"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_userule"
+            },
+            "name": "MyString32",
+            "designerId": "6755aa23-8b9a-4ec0-bd94-b7104829d00d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_useshop"
+            },
+            "name": "MyString33",
+            "designerId": "8160087e-47a8-413e-a854-e002751f1318"
+        }
+    ]
+}
