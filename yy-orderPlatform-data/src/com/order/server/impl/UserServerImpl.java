@@ -2,9 +2,9 @@ package com.order.server.impl;
 
 import com.etong.pt.utility.PtCommonError;
 import com.etong.pt.utility.PtResult;
-import com.google.code.ssm.Cache;
-import com.google.code.ssm.api.*;
-import com.google.code.ssm.providers.CacheException;
+import com.google.code.ssm.api.InvalidateSingleCache;
+import com.google.code.ssm.api.ParameterValueKeyProvider;
+import com.google.code.ssm.api.ReadThroughSingleCache;
 import com.order.common.UserStatus;
 import com.order.data.mapper.UserExample;
 import com.order.data.mapper.UserMapper;
@@ -13,9 +13,9 @@ import com.order.server.UserServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Created by zhenghuasheng on 2016/5/28.
@@ -62,7 +62,7 @@ public class UserServerImpl implements UserServer {
 
     @Override
     @ReadThroughSingleCache(namespace = USER_CACHE_NAMESPACE, expiration = 3000)
-    public PtResult getUserByPhone(@ParameterValueKeyProvider(order = 0) String phone,@ParameterValueKeyProvider(order = 1) Integer system) {
+    public PtResult getUserByPhone(@ParameterValueKeyProvider(order = 1) String phone,@ParameterValueKeyProvider(order = 2) Integer system) {
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
         criteria.andPhoneEqualTo(phone);
