@@ -1,15 +1,12 @@
 package com.order.web.service;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.etong.pt.utility.PtCommonError;
 import com.etong.pt.utility.PtResult;
+import com.order.common.MessageType;
 import com.order.data.model.TaskInfo;
 import com.order.data.model.User;
-import com.order.data.model.UserIntegrate;
 import com.order.server.TaskServer;
-import com.order.server.UserIntegrateServer;
 import com.order.server.UserServer;
 import com.order.web.interceptor.WebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +41,7 @@ public class TaskService {
         JSONObject messageBody = new JSONObject();
         messageBody.put("content",content);
         messageBody.put("userId", taskInfo.getCreatorId());
+        messageBody.put("messageType", MessageType.MESSAGE_TYPE_PACKETS);
         PtResult userResult = userServer.getUserBykey(taskInfo.getCreatorId());
         if (userResult.isSucceed()){
             User user = userResult.getObject();

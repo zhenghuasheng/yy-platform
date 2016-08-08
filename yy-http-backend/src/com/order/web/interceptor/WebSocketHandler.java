@@ -2,6 +2,7 @@ package com.order.web.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.etong.pt.utility.PtResult;
+import com.order.common.MessageType;
 import com.order.data.model.User;
 import com.order.web.service.UserService;
 import org.apache.commons.lang.StringUtils;
@@ -44,12 +45,16 @@ public class WebSocketHandler extends TextWebSocketHandler {
         User user = ptResult.getObject();
         String userName = user.getUserName();
         String userChat = user.getUserWchat();
-        /**封装消息体**/
+        /**封装文字消息体**/
+        JSONObject  contentJson = new JSONObject();
+        contentJson.put("messageContent",content);
+
         JSONObject messageBody = new JSONObject();
         messageBody.put("userName",userName);
         messageBody.put("userChat",userChat);
         messageBody.put("userId",userId);
-        messageBody.put("content",content);
+        messageBody.put("content",contentJson);
+        messageBody.put("messageType", MessageType.MESSAGE_TYPE_WORDS);
         this.sendMessageToUser(new TextMessage(messageBody.toJSONString()));
     }
 
