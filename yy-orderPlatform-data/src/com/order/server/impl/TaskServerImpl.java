@@ -161,6 +161,7 @@ public class TaskServerImpl implements TaskServer {
                 UserIntegrate userIntegrate = new UserIntegrate();
                 userIntegrate.setUserId(userId);
                 userIntegrate.setUserIntegrate(taskDetail.getPrice().doubleValue());
+                userIntegrateMapper.insertSelective(userIntegrate);
             }else {
                 UserIntegrate userIntegrate = integrates.get(0);
                 userIntegrate.setUserIntegrate(userIntegrate.getUserIntegrate() + taskDetail.getPrice().doubleValue());

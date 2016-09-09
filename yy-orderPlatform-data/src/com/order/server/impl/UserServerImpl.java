@@ -61,7 +61,7 @@ public class UserServerImpl implements UserServer {
     }
 
     @Override
-    @ReadThroughSingleCache(namespace = USER_CACHE_NAMESPACE, expiration = 3000)
+    @ReadThroughSingleCache(namespace = USER_CACHE_NAMESPACE, expiration = 60)
     public PtResult getUserByPhone(@ParameterValueKeyProvider(order = 1) String phone,@ParameterValueKeyProvider(order = 2) Integer system) {
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
