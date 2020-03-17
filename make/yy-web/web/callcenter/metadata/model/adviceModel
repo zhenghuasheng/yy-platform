@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "adviceModel"
+    },
+    "name": "MyModel",
+    "designerId": "3cd7945b-c28d-42fe-88f3-e4f06a449747",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_name"
+            },
+            "name": "MyField2",
+            "designerId": "6e8054a3-126b-4256-93f0-37e2c98a6666"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_phone"
+            },
+            "name": "MyField3",
+            "designerId": "6bac6c66-945e-4343-95b8-60690a478634"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_content"
+            },
+            "name": "MyField5",
+            "designerId": "6f09420c-cd97-4acf-960c-c4618d6de2c0"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "f_createtime"
+            },
+            "name": "MyDate2",
+            "designerId": "b5770204-5857-452d-84be-34cb6c93f631"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_read"
+            },
+            "name": "MyBoolean",
+            "designerId": "0c26e07c-8eed-4522-b73c-db8b96e83ac0"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_mid"
+            },
+            "name": "MyField18",
+            "designerId": "14177c56-7c3b-4bd2-86f5-d7e1f2c19ea9"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "columnrequestpanel",
+        "designer|userClassName": "ColumnRequestPanelViewModel"
+    },
+    "designerId": "7b26c66f-44c1-420e-a6c6-a896b84fa205"
+}

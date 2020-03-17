@@ -1,0 +1,819 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "bannermanagepanel",
+        "designer|userClassName": "BannerManagePanel",
+        "height": null,
+        "id": "BannerManagePanel",
+        "itemId": "BannerManagePanel",
+        "layout": "border",
+        "title": "Banner管理",
+        "titleCollapse": null,
+        "width": null
+    },
+    "name": "CarsetImagAddPanel1",
+    "designerId": "df688d66-f022-4f2c-a22c-a4540f26d087",
+    "viewControllerInstanceId": "94ed76c7-1044-4ca1-b082-95958f3b98a8",
+    "viewModelInstanceId": "e615753d-5d15-4998-af0b-e40407a16973",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "fit",
+                "layout|flex": 4,
+                "layout|region": "center",
+                "title": ""
+            },
+            "name": "MyPanel",
+            "designerId": "eaabda57-0859-485b-a12a-59cc747cbfb0",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "dock": null,
+                        "itemId": "BannerManageGridPanel",
+                        "store": "BannerManageStore",
+                        "title": ""
+                    },
+                    "name": "MyGridPanel1",
+                    "designerId": "d849af21-f3af-45d4-9364-6013a070ac0f",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "height": 38
+                            },
+                            "name": "MyToolbar",
+                            "designerId": "9ed9273f-cf2f-4d93-8f47-3e5c98e2de8c",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "f_stname",
+                                        "editable": false,
+                                        "fieldLabel": "系统",
+                                        "itemId": "systemSelector",
+                                        "labelAlign": "right",
+                                        "labelWidth": 50,
+                                        "layout|flex": null,
+                                        "margin": null,
+                                        "store": "BusinessSystemManagerStore",
+                                        "valueField": "f_stid",
+                                        "width": 250
+                                    },
+                                    "name": "MyComboBox",
+                                    "designerId": "952e96e9-0ced-4d5a-9658-02cf16271918",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSystemSelectorSelect",
+                                                "implHandler": [
+                                                    "        var bannerManagePanel=Ext.getCmp('BannerManagePanel');",
+                                                    "        var systemSelector =bannerManagePanel.down('#systemSelector');",
+                                                    "        var systemId=systemSelector.getValue();",
+                                                    "",
+                                                    "        if(systemId===null){",
+                                                    "            return;",
+                                                    "        }",
+                                                    "",
+                                                    "        var bannerManageStore=Ext.getStore('BannerManageStore');",
+                                                    "        var ajaxProxy=bannerManageStore.getProxy();",
+                                                    "        var url=Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                                    "",
+                                                    "        ajaxProxy.setUrl(url+\"/biz/app/banner/get.do?\"+\"appId=\"+systemId);",
+                                                    "        bannerManageStore.load();",
+                                                    ""
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSystemSelectorSelect",
+                                            "designerId": "ddcc5adb-8be0-4e00-a634-e7a4d64b9fd4"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": null,
+                                "text": "序号",
+                                "width": 50
+                            },
+                            "name": "MyRowNumberer1",
+                            "designerId": "1ae710b5-d458-4ed1-8699-e7c6de3fb69e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "desc",
+                                "text": "图片描述",
+                                "width": 160
+                            },
+                            "name": "MyColumn7",
+                            "designerId": "a2171aa3-3e7f-45b1-83ba-8a5264680323"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "editorid",
+                                "text": "操作人",
+                                "width": 150
+                            },
+                            "name": "MyColumn10",
+                            "designerId": "7fcb6054-c2c8-44a4-97d3-750aca21116e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "order",
+                                "text": "排序",
+                                "width": 50
+                            },
+                            "name": "MyColumn8",
+                            "designerId": "83eb2dfa-4bc2-41b3-95dc-71558a38d576"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "image",
+                                "text": "图片地址",
+                                "width": 160
+                            },
+                            "name": "MyColumn2",
+                            "designerId": "c9da3423-ba8b-4491-a7db-592104bd5f5c"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "操作"
+                            },
+                            "name": "MyActionColumn2",
+                            "designerId": "988e7b65-6a47-4d33-9097-ef100fae858f",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "altText": "删除",
+                                        "iconCls": "Bulletcross",
+                                        "tooltip": "删除"
+                                    },
+                                    "name": "MyActionColumnItem1",
+                                    "designerId": "7fce2b23-5441-418f-b22c-07201597e2fc",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "view",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "item",
+                                                    "e",
+                                                    "record",
+                                                    "row"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "                                        Ext.MessageBox.confirm('请确认', '您确认删除该条记录吗？',function(btn){",
+                                                    "",
+                                                    "                                            if(btn==='no'){",
+                                                    "                                                return;",
+                                                    "                                            }else if(btn==='yes'){",
+                                                    "",
+                                                    "                                                var id=record.data.bnid;",
+                                                    "                                                var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                                    "                                              ",
+                                                    "                                                Ext.Ajax.request({",
+                                                    "                                                    url:url+\"/biz/app/banner/delete.do\",",
+                                                    "                                                    params:{",
+                                                    "                                                        id:id",
+                                                    "                                                    },",
+                                                    "",
+                                                    "                                                    success:function(response){",
+                                                    "                                                        var text = response.responseText;",
+                                                    "                                                        var result = JSON.parse(text);",
+                                                    "",
+                                                    "                                                        if (result=== null) {",
+                                                    "                                                            Ext.Msg.alert('提示', '删除出错了，结果：' + result);",
+                                                    "                                                            return;",
+                                                    "                                                        }else if (result.succeed) {",
+                                                    "                                                            view.store.reload();",
+                                                    "                                                            Ext.Msg.alert('提示', '删除成功');",
+                                                    "                                                        }else {",
+                                                    "                                                            Ext.Msg.alert('提示', '删除出错了，错误：' + result.ptError);",
+                                                    "                                                            return;",
+                                                    "                                                        }",
+                                                    "                                                    },",
+                                                    "",
+                                                    "                                                    failure:function(){",
+                                                    "                                                        Ext.Msg.alert('提示','删除失败');",
+                                                    "",
+                                                    "                                                    },",
+                                                    "                                                });",
+                                                    "",
+                                                    "                                            }",
+                                                    "                                        });"
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "465fa5e4-b1bb-4f6d-af0e-90b749653e17"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView1",
+                            "designerId": "611e6ae2-4d9c-4178-b36a-235147220d2b"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBannerManageGridPanelRowDblClick",
+                                "implHandler": [
+                                    "        var bannerManagePanel = Ext.getCmp('BannerManagePanel');",
+                                    "        var bannerManageGridPanel = bannerManagePanel.down('#BannerManageGridPanel');",
+                                    "",
+                                    "        if (bannerManageGridPanel.selection === null) {",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        var data = record.data;",
+                                    "        var image = data.image;",
+                                    "        if(image===null){",
+                                    "            image=\"\";",
+                                    "        }",
+                                    "        var bannerImg=bannerManagePanel.down('#BannerImg');",
+                                    "        bannerImg.setSrc(image);",
+                                    "        bannerManagePanel.down('#id').setValue(data.bnid);",
+                                    "        bannerManagePanel.down('#orderField').setValue(data.order);",
+                                    "        bannerManagePanel.down('#urlField').setValue(data.url);",
+                                    "        bannerManagePanel.down('#docSelector').setValue(data.aid);",
+                                    "        bannerManagePanel.down('#descField').setValue(data.desc);",
+                                    "",
+                                    "        bannerManagePanel.down('#saveBtn').setDisabled(false);"
+                                ],
+                                "name": "rowdblclick",
+                                "scope": "me"
+                            },
+                            "name": "onBannerManageGridPanelRowDblClick",
+                            "designerId": "5ec4092c-e263-4db5-923f-033e2276551f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": true,
+                "autoScroll": true,
+                "collapsible": true,
+                "id": null,
+                "itemId": "imageShowPanel",
+                "layout|flex": 3,
+                "layout|region": "east",
+                "layout|split": true,
+                "title": "当前横幅图片",
+                "width": 150
+            },
+            "name": "MyPanel",
+            "designerId": "4e74d1a0-a1fb-4808-bc9f-197eb7175d5d",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "alt": "横幅图片",
+                        "border": "5 5 5 5",
+                        "frame": true,
+                        "height": 325,
+                        "id": "BannerImg",
+                        "itemId": "BannerImg",
+                        "shadow": null,
+                        "src": null,
+                        "title": "当前横幅图片",
+                        "weight": null,
+                        "width": 510
+                    },
+                    "name": "MyImg",
+                    "designerId": "2acea0c5-0828-407b-8a88-89b061dbd3f3"
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 20,
+                        "id": null,
+                        "itemId": "ImageUpdatePanel",
+                        "title": ""
+                    },
+                    "name": "MyPanel3",
+                    "designerId": "068095dc-1d07-405c-937d-41d7ad997558",
+                    "cn": [
+                        {
+                            "type": "Ext.ProgressBar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": true,
+                                "id": null,
+                                "itemId": "fileuploadProgressBar"
+                            },
+                            "name": "MyProgressBar",
+                            "designerId": "f23ca744-2866-48f7-af6f-cb0deb0cce0e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "buttonMargin": 10,
+                        "buttonText": "打开...",
+                        "fieldLabel": "图片",
+                        "id": "imageUploadFiled",
+                        "itemId": "imageUploadFiled",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "margin": 10,
+                        "width": 360
+                    },
+                    "name": "MyFileUpload1",
+                    "designerId": "541c10f9-25a2-4149-8fc6-d5254f035d25",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImageFieldUploadFiledRender",
+                                "implHandler": [
+                                    "        var bannerManagePanel=component.up('#BannerManagePanel');",
+                                    "",
+                                    "        var bannerImg=bannerManagePanel.down('#BannerImg');",
+                                    "        var fileuploadProgressBar=bannerManagePanel.down('#fileuploadProgressBar');",
+                                    "",
+                                    "",
+                                    "        var url =  'http://113.247.237.98:10002/upload?dir=dasheng';",
+                                    "",
+                                    "         $('#imageUploadFiled-button-fileInputEl').fileupload({",
+                                    "                url: url,",
+                                    "                dataType: 'json',",
+                                    "                acceptFileTypes:  /(\\.|\\/)(gif|jpe?g|png)$/i,",
+                                    "                done: function (e, data) {",
+                                    "                    $.each(data.result.files, function (index, file) {",
+                                    "",
+                                    "                        bannerImg.setSrc(file.url);",
+                                    "",
+                                    "                    });",
+                                    "                },",
+                                    "                progressall: function (e, data) {",
+                                    "                    var progress = parseInt(data.loaded / data.total * 100, 10);",
+                                    "                    fileuploadProgressBar.setValue(progress/100);",
+                                    "",
+                                    "                }",
+                                    "            }).prop('disabled', !$.support.fileInput)",
+                                    "                .parent().addClass($.support.fileInput ? undefined : 'disabled');"
+                                ],
+                                "name": "render",
+                                "scope": "me"
+                            },
+                            "name": "onImageFieldUploadFiledRender",
+                            "designerId": "2f3e6d0c-803b-4f48-9b86-d29e456d5f23"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "排序",
+                        "itemId": "orderField",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "margin": 10,
+                        "width": 300
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "b4f33925-5fa8-49a6-bb20-7e8a9869b377"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "超链接",
+                        "itemId": "urlField",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "margin": 10,
+                        "width": 300
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "7698f164-1c43-4ab9-9b8f-6ea778127267"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": null,
+                        "fieldLabel": "文档",
+                        "itemId": "docSelector",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "margin": 10,
+                        "store": null,
+                        "valueField": null,
+                        "width": 300
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "6abd73e1-ab00-44be-a4ec-3c29bf48f1df"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "描述",
+                        "height": 103,
+                        "itemId": "descField",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "margin": 10,
+                        "width": 300
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "59501e31-0eba-4b6c-b4b2-707d6147b7e6"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "主键",
+                        "hidden": true,
+                        "itemId": "id",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "margin": 10,
+                        "width": 300
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "11323437-5b5f-4aa0-acaf-5775afb28602"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "addBtn",
+                        "margin": "10 0 0 50",
+                        "padding": null,
+                        "text": "添加",
+                        "width": 53
+                    },
+                    "name": "MyButton6",
+                    "designerId": "e69fcbaa-37e4-4169-bf44-11a77f5ac6bb",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddBtnClick",
+                                "implHandler": [
+                                    "        var bannerManagePanel=button.up('#BannerManagePanel');",
+                                    "",
+                                    "        var bannerManageGridPanel=bannerManagePanel.down('#BannerManageGridPanel');",
+                                    "",
+                                    "        var bannerImg=bannerManagePanel.down('#BannerImg');",
+                                    "",
+                                    "        var systemSelector =bannerManagePanel.down('#systemSelector');",
+                                    "        var systemId=systemSelector.getValue();",
+                                    "",
+                                    "        if(systemId===null){",
+                                    "            Ext.Msg.alert('提示','未选择系统！！！');",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        var src=bannerImg.src;",
+                                    "        var order = bannerManagePanel.down('#orderField').getValue();",
+                                    "        var url = bannerManagePanel.down('#urlField').getValue();",
+                                    "        var doc = bannerManagePanel.down('#docSelector').getValue();",
+                                    "        var desc = bannerManagePanel.down('#descField').getValue();",
+                                    "",
+                                    "        var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                    "        var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                    "",
+                                    "        var data={",
+                                    "            image:src,",
+                                    "            url:url,",
+                                    "            aid:doc,",
+                                    "            order:order,",
+                                    "            editorid:userId,",
+                                    "            stid:systemId,",
+                                    "            desc:desc",
+                                    "",
+                                    "        };",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "        Ext.Ajax.request({",
+                                    "",
+                                    "            headers:{'Content-Type':'application/json'},",
+                                    "            url: url + '/biz/app/banner/add.do',",
+                                    "            params: JSON.stringify(data),",
+                                    "            success: function (response) {",
+                                    "                var text = response.responseText;",
+                                    "                var result = JSON.parse(text);",
+                                    "                if (result === null) {",
+                                    "                    Ext.Msg.alert('提示', '添加出错了，结果：' + text);",
+                                    "                    return;",
+                                    "                }",
+                                    "",
+                                    "",
+                                    "                if (result.succeed === true) {",
+                                    "                    Ext.Msg.alert('提示', '添加成功');",
+                                    "                    var bannerManageStore=Ext.getStore('BannerManageStore');",
+                                    "                    bannerManageStore.load();",
+                                    "",
+                                    "                } else {",
+                                    "                    Ext.Msg.alert('提示', '添加出错了，错误：' + result.errMsg);",
+                                    "                }",
+                                    "            }",
+                                    "        });"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAddBtnClick",
+                            "designerId": "dfc9b442-4072-4081-a0c5-cef89492d021"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "itemId": "saveBtn",
+                        "margin": "10 0 0 50",
+                        "padding": null,
+                        "text": "保存",
+                        "width": 53
+                    },
+                    "name": "MyButton",
+                    "designerId": "ae722e3c-2ce9-4ffb-9126-1ebc6eb6331f",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveBtnClick",
+                                "implHandler": [
+                                    "        var bannerManagePanel=button.up('#BannerManagePanel');",
+                                    "",
+                                    "        var id = bannerManagePanel.down('#id').getValue();",
+                                    "        var bannerImg=bannerManagePanel.down('#BannerImg');",
+                                    "        var src=bannerImg.src;",
+                                    "        var order = bannerManagePanel.down('#orderField').getValue();",
+                                    "        var url = bannerManagePanel.down('#urlField').getValue();",
+                                    "        var doc = bannerManagePanel.down('#docSelector').getValue();",
+                                    "        var desc = bannerManagePanel.down('#descField').getValue();",
+                                    "",
+                                    "        var data={",
+                                    "            bnid:id,",
+                                    "            image:src,",
+                                    "            url:url,",
+                                    "            aid:doc,",
+                                    "            order:order,",
+                                    "            desc:desc",
+                                    "",
+                                    "        };",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                                    "        Ext.Ajax.request({",
+                                    "",
+                                    "            headers:{'Content-Type':'application/json'},",
+                                    "            url: url + '/biz/app/banner/update.do',",
+                                    "            params: JSON.stringify(data),",
+                                    "            success: function (response) {",
+                                    "                var text = response.responseText;",
+                                    "                var result = JSON.parse(text);",
+                                    "                if (result === null) {",
+                                    "                    Ext.Msg.alert('提示', '保存出错了，结果：' + text);",
+                                    "                    return;",
+                                    "                }",
+                                    "",
+                                    "",
+                                    "                if (result.succeed === true) {",
+                                    "                    Ext.Msg.alert('提示', '保存成功');",
+                                    "                    var bannerManageStore=Ext.getStore('BannerManageStore');",
+                                    "                    bannerManageStore.load();",
+                                    "",
+                                    "                } else {",
+                                    "                    Ext.Msg.alert('提示', '保存出错了，错误：' + result.errMsg);",
+                                    "                }",
+                                    "            }",
+                                    "        });",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveBtnClick",
+                            "designerId": "09df9a0d-7de1-45be-9799-e06fd86f98a7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "resetBtn",
+                        "margin": "10 0 0 50",
+                        "padding": null,
+                        "text": "重置",
+                        "width": 53
+                    },
+                    "name": "MyButton1",
+                    "designerId": "6afcfc5f-18b9-4cb6-a922-dec10b7b1a63"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBannerManagePanelBeforeRender",
+                "implHandler": [
+                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                    "",
+                    "        var businessSystemManagerStore=Ext.getStore('BusinessSystemManagerStore');",
+                    "",
+                    "        var ajaxProxy=businessSystemManagerStore.getProxy();",
+                    "",
+                    "        ajaxProxy.setUrl(url + \"/biz/app/list.do\");",
+                    "",
+                    "        businessSystemManagerStore.load();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onBannerManagePanelBeforeRender",
+            "designerId": "9a50d91b-45b3-4e01-ace1-745401a22ec6"
+        }
+    ]
+}

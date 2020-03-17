@@ -1,0 +1,178 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyBorder": true,
+        "closable": true,
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "editprofilepanel",
+        "designer|userClassName": "EditProfilePanel",
+        "frame": true,
+        "height": 237,
+        "id": "editprofilePanel",
+        "itemId": "editprofilePanel",
+        "jsonSubmit": false,
+        "margin": "",
+        "title": "资料修改",
+        "titleCollapse": false,
+        "width": 363
+    },
+    "designerId": "54b4cb50-a8da-44db-bbfb-38216a5d1f6a",
+    "viewControllerInstanceId": "d246f4a2-6120-4b9b-b85c-5b53f6c2347d",
+    "viewModelInstanceId": "6d067c05-2280-4c45-9b5b-dffd9a0c53cf",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "姓  名",
+                "itemId": "name"
+            },
+            "name": "MyTextField",
+            "designerId": "e234881a-5f77-4fd5-880e-b9c48086b017"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "身份证",
+                "itemId": "idcard"
+            },
+            "name": "MyTextField1",
+            "designerId": "a50683ac-7085-453f-9918-158ec37d64f5"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "submitbtn",
+                "margin": "20 10 50 100",
+                "text": "提交",
+                "width": 53
+            },
+            "name": "MyButton2",
+            "designerId": "32800b47-653f-4a64-85de-7cb9b739ece9",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onSubmitbtnClick",
+                        "implHandler": [
+                            "var view = this.getView(),",
+                            "    editprofilePanel = button.up('#editprofilePanel');",
+                            "var nameField = editprofilePanel.down('#name');",
+                            "var idcardFild=editprofilePanel.down('#idcard');",
+                            "",
+                            "if(nameField.getValue()===''||idcardFild.getValue()===''){",
+                            "    Ext.Msg.alert('提示','请填写正确信息后提交');",
+                            "    return;",
+                            "}",
+                            "",
+                            "",
+                            "// Success",
+                            "var successCallback = function(resp, ops) {",
+                            "    var result=JSON.parse(resp.responseText);",
+                            "    if(result.flag===\"0\"){",
+                            "        Ext.Msg.alert(\"修改提示\",\"修改成功！\");",
+                            "    }else{",
+                            "         Ext.Msg.alert(\"修改提示\",\"修改失败！\");",
+                            "    }",
+                            "",
+                            "",
+                            "",
+                            "};",
+                            "",
+                            "// Failure",
+                            "var failureCallback = function(resp, ops) {",
+                            "",
+                            "    Ext.Msg.alert('Registration Failure', resp);",
+                            "",
+                            "};",
+                            "",
+                            "",
+                            "// TODO: Register using server-side authentication service",
+                            "var url = Ext.getStore('ConfigStore').getAt(1).get('UserServerUrl');",
+                            "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                            "var token=LoginSuccessStore.data.items[0].data.token;",
+                            "Ext.Ajax.request({",
+                            "    method:\"POST\",",
+                            "    url:url+\"/user/info/modify.do\",",
+                            "    params: {",
+                            "        name:nameField.getValue(),",
+                            "        idcard:idcardFild.getValue(),",
+                            "        token:token,",
+                            "",
+                            "",
+                            "    },",
+                            "    success: successCallback,",
+                            "    failure: failureCallback",
+                            "});"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onSubmitbtnClick",
+                    "designerId": "0401f630-7902-4735-a4d4-a1c5938c44f2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "resetbtn",
+                "margin": "10 10 50 10",
+                "text": "重置",
+                "width": 57
+            },
+            "name": "MyButton3",
+            "designerId": "208ffad7-5328-47c1-802e-13bcbc5c7a69",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onResetbtnClick",
+                        "implHandler": [
+                            " var editprofilePanel = button.up('#editprofilePanel');",
+                            "editprofilePanel.reset();"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onResetbtnClick",
+                    "designerId": "c0a492b8-c5b2-4997-a75e-14df90fe3dfb"
+                }
+            ]
+        }
+    ]
+}

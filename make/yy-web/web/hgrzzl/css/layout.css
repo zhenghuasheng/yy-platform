@@ -1,0 +1,20 @@
+.inputField {
+    /*width: 300px;*/
+    height: 40px;
+}
+
+.navbar-nav > li > a {
+    line-height: 30px;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+
+.navbar-header {
+    height: 64px;
+}
+
+.margintop {
+    margin-top: 30px;
+}

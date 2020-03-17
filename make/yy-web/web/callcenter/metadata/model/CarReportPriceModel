@@ -1,0 +1,160 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarReportPriceModel"
+    },
+    "name": "MyModel",
+    "designerId": "c42d970e-3188-419a-ac40-0e650600c3c0",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_cartype"
+            },
+            "name": "MyField",
+            "designerId": "d9fdd9fc-3de0-4fe0-aa43-9916caf5f9f5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_carbrand"
+            },
+            "name": "MyField12",
+            "designerId": "5fe15c4f-b126-4029-be11-fb4542001d59"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_carset"
+            },
+            "name": "MyField16",
+            "designerId": "c09c5bc8-53c2-4e4d-acd9-4f212e455991"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_price"
+            },
+            "name": "MyField1",
+            "designerId": "c3aae816-1d32-429c-887d-81c5e5ad496e"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "f_enquirytime"
+            },
+            "name": "MyDate",
+            "designerId": "7444b190-62d8-4b96-8de0-514f5135913c"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "timestamp",
+                "name": "f_validtime"
+            },
+            "name": "MyDate1",
+            "designerId": "75513ecd-7eb6-4eae-8511-a4d600a0e7da"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_ncname"
+            },
+            "name": "MyField6",
+            "designerId": "8e9f6391-0e3a-4976-b33a-0aeb6dba2adb"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_salephone"
+            },
+            "name": "MyField8",
+            "designerId": "413988e9-687f-46ac-b2cb-a680b4859af1"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_saleman"
+            },
+            "name": "MyField7",
+            "designerId": "eb850966-35eb-48e3-99b9-a43b4ccfc3e3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userName"
+            },
+            "name": "MyField9",
+            "designerId": "afe1da92-1578-4cfe-a04a-eeed6bb5ec40"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "f_color"
+            },
+            "name": "MyField25",
+            "designerId": "d7ccc12f-0bae-48ac-991f-d6a60b20469e"
+        }
+    ]
+}

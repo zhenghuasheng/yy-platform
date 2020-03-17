@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarReportPriceStore",
+        "model": "CarReportPriceModel",
+        "storeId": "CarReportPriceStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "912cbcbf-85eb-4cc4-a49a-da3da581c22d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy",
+            "designerId": "cac5dddc-e782-4007-b3b4-414f379a751c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.carEnquiryList"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "b64b1bf0-8e34-4e1d-bb76-4a49fe43de98"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EticketGiveMagStore",
+        "model": "EticketGiveMagModel",
+        "storeId": "EticketGiveMagStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "fb42f7f9-aa97-43ff-b7c2-0ae41da6e99d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy6",
+            "designerId": "33430cef-0711-487c-8346-5c53bdda44d0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.eticketInitList",
+                        "totalProperty": "object.total"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "1ad65771-dfb3-413a-96f7-338af7bc85cd"
+                }
+            ]
+        }
+    ]
+}

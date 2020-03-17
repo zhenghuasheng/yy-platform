@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "carsetconfigpanel",
+        "designer|userClassName": "CarsetConfigPanelViewController"
+    },
+    "designerId": "848232fc-40ea-40e0-826a-64a58501bbc6"
+}

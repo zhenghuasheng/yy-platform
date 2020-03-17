@@ -1,0 +1,698 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "hgcardirectsalepanel",
+        "designer|userClassName": "HgCarDirectsalePanel",
+        "height": 518,
+        "itemId": "HgCarDirectsalePanel",
+        "title": "直销车辆添加",
+        "width": 697
+    },
+    "name": "MyPanel1",
+    "designerId": "ab49e559-8349-4f1e-a1c0-6d9803ef7990",
+    "viewControllerInstanceId": "9f84ca25-8f40-4faf-a9e2-a381cb720344",
+    "viewModelInstanceId": "b2a3c346-8372-464f-99ac-e2bbc2aa7d85",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "bodyPadding": 10,
+                "designer|uiInterfaceName": "default-framed",
+                "frame": true,
+                "height": 473,
+                "itemId": "HgCarDirectsaleForm",
+                "layout": "auto",
+                "title": "",
+                "width": 691
+            },
+            "name": "MyForm",
+            "designerId": "089b0c50-ba6b-48c9-b30f-07a5e540dbd4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "editable": false,
+                        "fieldLabel": "车辆品牌",
+                        "itemId": "CarBrand",
+                        "labelAlign": null,
+                        "labelWidth": 70,
+                        "store": "CarBrandStord",
+                        "valueField": "id",
+                        "width": 300
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "0fc21945-0341-48e2-80a9-061980a1d9d5",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCarBrandSelect",
+                                "implHandler": [
+                                    "        var brandId=records[0].data.id;",
+                                    "",
+                                    "        var carsetStore=Ext.getStore('CarsetStore');",
+                                    "        ",
+                                    "        var ajaxProxy=carsetStore.getProxy();",
+                                    "",
+                                    "        var url=Ext.getStore('ConfigStore').getAt(0).get('CarBrandServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/car/queryCarset?id=\"+brandId);",
+                                    "        carsetStore.load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onCarBrandSelect",
+                            "designerId": "2c178f56-ba0b-4588-bc69-4b36b32ff48b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "fieldLabel": "车系",
+                        "itemId": "Carset",
+                        "labelWidth": 70,
+                        "store": "CarsetStore",
+                        "valueField": "id",
+                        "width": 300
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "5c9d46e5-7502-47f8-97a2-adf16d8e9ae1",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCarsetSelect",
+                                "implHandler": [
+                                    "var carsetId=records[0].data.id;",
+                                    "        if(carsetId===0){",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        var carTypeStore=Ext.getStore('CarTypeStore');",
+                                    "",
+                                    "        var ajaxProxy=carTypeStore.getProxy();",
+                                    "",
+                                    "        var url=Ext.getStore('ConfigStore').getAt(0).get('CarBrandServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/car/queryCar?id=\"+carsetId);",
+                                    "        carTypeStore.load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onCarsetSelect",
+                            "designerId": "c6b4e959-8004-43c8-afe3-8024bcd983b9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "editable": false,
+                        "fieldLabel": "车辆型号",
+                        "itemId": "Cartype",
+                        "labelWidth": 70,
+                        "store": "CarTypeStore",
+                        "valueField": "id",
+                        "width": 300
+                    },
+                    "name": "MyComboBox3",
+                    "designerId": "c6a88bf8-599f-4f94-b7dc-381119bd1460",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCartypeSelect",
+                                "implHandler": [
+                                    "    var carTypeId=records[0].data.id;",
+                                    "        if(carTypeId===null){",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        /**1,根据carTypeId获取颜色信息**/",
+                                    "        var CarColorStore=Ext.getStore('CarColorStore');",
+                                    "        var ajaxProxy=CarColorStore.getProxy();",
+                                    "",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/hg/carenquiry/color/get.do?cartypeid=\"+carTypeId);",
+                                    "        CarColorStore.load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onCartypeSelect",
+                            "designerId": "1752a694-ff84-4702-a6c9-c6115bdf168e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "name",
+                        "editable": false,
+                        "fieldLabel": "车辆来源",
+                        "itemId": "VehicleSourceField",
+                        "labelWidth": 70,
+                        "store": "VehicleSourceStore",
+                        "valueField": "id",
+                        "width": 300
+                    },
+                    "name": "MyComboBox4",
+                    "designerId": "e58f6f06-10fe-41cf-9e28-81832509b74f",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onVehicleSourceFieldSelect",
+                                "implHandler": [
+                                    "",
+                                    "if(records.length<1){",
+                                    "    return;",
+                                    "}",
+                                    "     var HgCarDirectsalePanel=combo.up('#HgCarDirectsalePanel');",
+                                    "     var FinancialpurchaseGroup=HgCarDirectsalePanel.down('#FinancialpurchaseGroup');",
+                                    "if(records[0].data.id===0){/**融资车辆**/",
+                                    "",
+                                    "",
+                                    "",
+                                    "    FinancialpurchaseGroup.setValue({FinancialpurchaseRadio:1});",
+                                    "",
+                                    "    FinancialpurchaseGroup.setDisabled(true);",
+                                    "",
+                                    "}else{",
+                                    "    FinancialpurchaseGroup.setDisabled(false);",
+                                    "    FinancialpurchaseGroup.reset();",
+                                    "}"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onVehicleSourceFieldSelect",
+                            "designerId": "e4f349ae-d5a8-45c4-8dff-0d5901622eae"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "CartypeImagContainer",
+                        "layout": "column"
+                    },
+                    "name": "MyContainer3",
+                    "designerId": "450d9da3-9b31-462a-a8df-7e7c19969c84",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.File",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "buttonText": "查找...",
+                                "fieldLabel": "车辆图片",
+                                "id": "ImageUploadField",
+                                "itemId": "ImageUploadField",
+                                "labelWidth": 70,
+                                "width": 298
+                            },
+                            "name": "MyFileUpload",
+                            "designerId": "231a5948-f80d-4ae8-bcb7-3800458cb7f3",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onImageUploadFieldRender",
+                                        "implHandler": [
+                                            "var HgCarDirectsalePanel=component.up('#HgCarDirectsalePanel');",
+                                            "",
+                                            "var ImageUrlField=HgCarDirectsalePanel.down('#ImageUrlField');",
+                                            "",
+                                            "var domId=ImageUrlField.inputId;",
+                                            "",
+                                            "var url =  'http://113.247.237.98:10002/upload';",
+                                            "",
+                                            " $('#ImageUploadField-button-fileInputEl').fileupload({",
+                                            "        url: url,",
+                                            "        dataType: 'json',",
+                                            "        acceptFileTypes:  /(\\.|\\/)(gif|jpe?g|png)$/i,",
+                                            "        done: function (e, data) {",
+                                            "            $.each(data.result.files, function (index, file) {",
+                                            "",
+                                            "                HgCarDirectsalePanel.imagUrl=file.url;",
+                                            "",
+                                            "//                 $(\"#img_logo\")[0].src = file.url;",
+                                            "                $('#'+domId).val(file.url);",
+                                            "            });",
+                                            "        },",
+                                            "        progressall: function (e, data) {",
+                                            "            var progress = parseInt(data.loaded / data.total * 100, 10);",
+                                            "            $('#progress .progress-bar').css(",
+                                            "                'width',",
+                                            "                progress + '%'",
+                                            "            );",
+                                            "        }",
+                                            "    }).prop('disabled', !$.support.fileInput)",
+                                            "        .parent().addClass($.support.fileInput ? undefined : 'disabled');"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "name": "onImageUploadFieldRender",
+                                    "designerId": "73851657-258e-498b-9f1d-2f59176cfee5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "图片url",
+                                "hidden": true,
+                                "itemId": "ImageUrlField"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "eb2eb085-d243-44e1-bd07-20bc84f539d1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": null,
+                        "fieldLabel": "金融方案购车",
+                        "frame": true,
+                        "itemId": "FinancialpurchaseGroup",
+                        "labelWidth": 90,
+                        "margin": "10 0 0 0 "
+                    },
+                    "name": "MyRadioGroup",
+                    "designerId": "dbaf2211-92b3-4a9c-bf4e-90dd45ffad4a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "designer|displayName": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "margin": "0 0 0 20",
+                                "name": "FinancialpurchaseRadio"
+                            },
+                            "name": "MyRadio",
+                            "designerId": "37018bb2-7b7f-4537-93c8-63755265bc3f"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "designer|displayName": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "margin": "0 0 0 50",
+                                "name": "FinancialpurchaseRadio"
+                            },
+                            "name": "MyRadio1",
+                            "designerId": "242a40e6-2006-4765-98ef-e28dc7ff6aee"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRadiogroupChange",
+                                "implHandler": [
+                                    "var HgCarDirectsalePanel=field.up('#HgCarDirectsalePanel');",
+                                    "",
+                                    "var FinancialContentsField=HgCarDirectsalePanel.down('#FinancialContentsField');",
+                                    "",
+                                    "var DayPaymentField=HgCarDirectsalePanel.down('#DayPaymentField');",
+                                    "",
+                                    "",
+                                    "var GuidepriceField=HgCarDirectsalePanel.down('#GuidepriceField');",
+                                    "",
+                                    "var CarColorField= HgCarDirectsalePanel.down('#CarColorField');",
+                                    "",
+                                    "if(newValue.FinancialpurchaseRadio==='1'){",
+                                    "    FinancialContentsField.show();",
+                                    "    DayPaymentField.show();",
+                                    "",
+                                    "    GuidepriceField.hide();",
+                                    "    CarColorField.hide();",
+                                    "",
+                                    "}else{",
+                                    "",
+                                    "    FinancialContentsField.hide();",
+                                    "    DayPaymentField.hide();",
+                                    "",
+                                    "    GuidepriceField.show();",
+                                    "    CarColorField.show();",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onRadiogroupChange",
+                            "designerId": "17b080bf-9547-4b1f-ad8e-d5cb301a8a51"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "金融方案",
+                        "fieldLabel": "金融方案",
+                        "frame": true,
+                        "height": 141,
+                        "itemId": "FinancialContentsField",
+                        "labelWidth": 70,
+                        "margin": "10 0 0 0",
+                        "width": 450
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "0e351fe7-6eb4-4f95-87e1-fbeb20d8a2f3"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "日供",
+                        "fieldLabel": "日供(元)",
+                        "hidden": true,
+                        "itemId": "DayPaymentField",
+                        "labelWidth": 70,
+                        "minValue": 0,
+                        "width": 300
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "703181bf-7bb9-4424-913c-070a1fad3dfa"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "直销价(万)",
+                        "fieldLabel": "指导价(万)",
+                        "hidden": true,
+                        "itemId": "GuidepriceField",
+                        "labelWidth": 70,
+                        "minValue": 0,
+                        "width": 300
+                    },
+                    "name": "MyNumberField1",
+                    "designerId": "da8b6fb2-1829-4a4d-bdeb-9aa3a5e53545"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "车辆颜色",
+                        "fieldLabel": "车辆颜色",
+                        "hidden": true,
+                        "itemId": "CarColorField",
+                        "labelWidth": 70,
+                        "store": "CarColorStore",
+                        "width": 300
+                    },
+                    "name": "MyComboBox5",
+                    "designerId": "218c2f73-c3db-4b60-a5ee-62e527d22f02"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "提交",
+                        "itemId": "submitBtn",
+                        "margin": "10 0 0 60",
+                        "text": "提交",
+                        "width": 56
+                    },
+                    "name": "MyButton1",
+                    "designerId": "9858ddba-d547-4037-b837-c6429b28221c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSubmitBtnClick",
+                                "implHandler": [
+                                    "var HgCarDirectsalePanel=button.up('#HgCarDirectsalePanel');",
+                                    "",
+                                    "var FinancialpurchaseGroup=HgCarDirectsalePanel.down('#FinancialpurchaseGroup');",
+                                    "",
+                                    "var ImageUrlField=HgCarDirectsalePanel.down('#ImageUrlField');",
+                                    "if(ImageUrlField.getValue()===null||ImageUrlField.getValue()===''){",
+                                    "    Ext.Msg.alert('提示','请上传车型图！');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "var CarBrandField=HgCarDirectsalePanel.down('#CarBrand');",
+                                    "",
+                                    "var CarsetField=HgCarDirectsalePanel.down('#Carset');",
+                                    "",
+                                    "var CartypeField=HgCarDirectsalePanel.down('#Cartype');",
+                                    "",
+                                    "var VehicleSourceField=HgCarDirectsalePanel.down('#VehicleSourceField');",
+                                    "",
+                                    "var CarBrand=CarBrandField.getValue();",
+                                    "var carsetId=CarsetField.getValue();",
+                                    "var carId=CartypeField.getValue();",
+                                    "var type=VehicleSourceField.getValue();",
+                                    "",
+                                    "if(CarBrand===null||CarBrand===''||carsetId===null||carsetId===''||carId===null||carId===''||type===null||type===''){",
+                                    "    Ext.Msg.alert('提示','请输入必要的车辆信息！');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "",
+                                    "var FinancialContentsField=HgCarDirectsalePanel.down('#FinancialContentsField');",
+                                    "var dayPaymentField=HgCarDirectsalePanel.down('#DayPaymentField');",
+                                    "var GuidepriceField=HgCarDirectsalePanel.down('#GuidepriceField');",
+                                    "var CarColorField= HgCarDirectsalePanel.down('#CarColorField');",
+                                    "",
+                                    "var financialPlan=FinancialContentsField.getValue();",
+                                    "var directPrice=GuidepriceField.getValue();",
+                                    "var dayPay=dayPaymentField.getValue();",
+                                    "var color=CarColorField.getValue();",
+                                    "",
+                                    "var Financialpurchase=FinancialpurchaseGroup.getValue().FinancialpurchaseRadio;",
+                                    "",
+                                    "if(Financialpurchase===undefined){",
+                                    "     Ext.Msg.alert('提示','请选择是否为金融购车！');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "if(Financialpurchase==='1'){",
+                                    "    if(financialPlan===null||financialPlan===''||dayPay===null||dayPay===''){",
+                                    "        Ext.Msg.alert('提示','请输入必要信息！');",
+                                    "        return;",
+                                    "    }",
+                                    "}else{",
+                                    "    if(directPrice===null||directPrice===''||color===null||color===''){",
+                                    "    Ext.Msg.alert('提示','请输入必要信息！');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "}",
+                                    "",
+                                    "",
+                                    " /**获取LoginSuccessJsonStore中的data**/",
+                                    "var LoginSuccessStore = Ext.getStore('LoginSuccessJsonStore');",
+                                    "var userId=LoginSuccessStore.data.items[0].data.userId;",
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('OrderServerUrl');",
+                                    "Ext.Ajax.request({",
+                                    "    url: url + '/hg/car/direct/add.do',",
+                                    "    params: {",
+                                    "",
+                                    "        carsetId:carsetId,",
+                                    "        carId:carId,",
+                                    "        color:color,",
+                                    "        directPrice:directPrice*10000,",
+                                    "        financialPlan:financialPlan,",
+                                    "        dayPay:dayPay,",
+                                    "        image:ImageUrlField.getValue(),",
+                                    "        type:type,",
+                                    "        operatorId:userId",
+                                    "",
+                                    "    },",
+                                    "    success: function (response) {",
+                                    "        var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "        if (result === null) {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，结果：' + text);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (result.succeed === true) {",
+                                    "            Ext.Msg.alert('提示', '保存成功');",
+                                    "",
+                                    "            CarBrandField.reset();",
+                                    "            CarsetField.reset();",
+                                    "            ImageUrlField.reset();",
+                                    "            CartypeField.reset();",
+                                    "            VehicleSourceField.reset();",
+                                    "            FinancialContentsField.reset();",
+                                    "            dayPaymentField.reset();",
+                                    "            GuidepriceField.reset();",
+                                    "            CarColorField.reset();",
+                                    "",
+                                    "        } else {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.errMsg);",
+                                    "        }",
+                                    "    }",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSubmitBtnClick",
+                            "designerId": "c9a36df6-ad2d-4f76-ae2b-4f54f3ebe74e"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onHgCarDirectsaleFormRender",
+                        "implHandler": [
+                            "  var carBrandStore = Ext.getStore('CarBrandStord');",
+                            "",
+                            "   if(carBrandStore.data.length>0){",
+                            "       return;",
+                            "   }",
+                            "  var ajaxProxy = carBrandStore.getProxy();",
+                            "  var url = Ext.getStore('ConfigStore').getAt(0).get('CarBrandServerUrl');",
+                            "  ajaxProxy.setUrl(url + \"/car/queryBrand\");",
+                            "  carBrandStore.load();"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "name": "onHgCarDirectsaleFormRender",
+                    "designerId": "596aab88-448d-48a7-84a0-1ae4dc8ccf3e"
+                }
+            ]
+        }
+    ]
+}

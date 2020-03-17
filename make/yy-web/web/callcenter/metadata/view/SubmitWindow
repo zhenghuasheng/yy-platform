@@ -1,0 +1,382 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "submitwin",
+        "designer|userClassName": "SubmitWindow",
+        "height": null,
+        "id": "hgSubmitWindow",
+        "modal": true,
+        "title": "融资申请提交",
+        "width": null
+    },
+    "name": "MyWindow",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "f2440777-02fe-4a9f-90c1-642adbebe3d6",
+    "viewControllerInstanceId": "677ca549-175c-4ecc-bf50-718c65ad8814",
+    "viewModelInstanceId": "30c8568f-40f1-407f-b0d1-85582497b6e5",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "submitContainer"
+            },
+            "name": "MyContainer20",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "219480c9-ecd5-436e-ad61-d251b108d952",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "margin": 10
+                    },
+                    "name": "MyContainer22",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "3957628e-5c5e-4618-aaa6-4eb8e7bc5d27",
+                    "cn": [
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|columns": 2,
+                                "layout": "table",
+                                "margin": ""
+                            },
+                            "name": "MyContainer21",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "6c0e5a93-2070-44dc-9f99-03a7b01aa6e7",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|uiInterfaceName": "default-framed",
+                                        "frame": true,
+                                        "height": 400,
+                                        "itemId": "deptGridPanel",
+                                        "store": "DeptStore",
+                                        "title": "部门",
+                                        "width": 237
+                                    },
+                                    "name": "MyGridPanel1",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "cf46f3c9-d4da-437b-8c98-bc604f2aa0f6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "id",
+                                                "hidden": true,
+                                                "text": "部门ID",
+                                                "width": ""
+                                            },
+                                            "name": "MyColumn8",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "836d3c52-6c8f-4f35-8e2f-385dc8048f12"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "name",
+                                                "text": "部门名称",
+                                                "width": 200
+                                            },
+                                            "name": "MyColumn6",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "862bc238-8851-4972-a213-f96e5922e831"
+                                        },
+                                        {
+                                            "type": "Ext.view.Table",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView1",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "acea5653-7436-4e2f-b193-d8aedff9ae3c"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onDeptGridPanelSelectionChange",
+                                                "implHandler": [
+                                                    "        if (selected.length === 1){",
+                                                    "            var bizManStore = Ext.getStore('BizManStore');",
+                                                    "            var ajaxProxy = bizManStore.getProxy();",
+                                                    "            var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                                    "            ajaxProxy.setUrl(url + \"/action/hg/bizman.do?deptId=\" + selected[0].id);",
+                                                    "            bizManStore.load();",
+                                                    "        } else {",
+                                                    "            bizManStore.removeAll();",
+                                                    "        }"
+                                                ],
+                                                "name": "selectionchange",
+                                                "scope": "me"
+                                            },
+                                            "name": "onDeptGridPanelSelectionChange",
+                                            "designerId": "20facfe6-9335-4b8b-a396-9a85215882fb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|uiInterfaceName": "default-framed",
+                                        "frame": true,
+                                        "height": 400,
+                                        "itemId": "bizManGridPanel",
+                                        "store": "BizManStore",
+                                        "title": "人员",
+                                        "width": 295
+                                    },
+                                    "name": "MyGridPanel2",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "3048066f-07d7-4cc8-9317-ee57da397726",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "name",
+                                                "text": "姓名"
+                                            },
+                                            "name": "MyColumn7",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "71e84c81-41a7-46af-a9e1-4a91a1553e03"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dataIndex": "phone",
+                                                "text": "电话",
+                                                "width": 150
+                                            },
+                                            "name": "MyColumn9",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "1b732f70-1671-445f-8810-d9935a2ae186"
+                                        },
+                                        {
+                                            "type": "Ext.view.Table",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyGridView2",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "c7bc943f-2350-442b-bbb6-e98e1eaabf30"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "备注",
+                                "labelWidth": 60,
+                                "margin": "20 0 0 0",
+                                "width": 530
+                            },
+                            "name": "MyTextArea",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "7ef4765a-72e1-4a1f-8e98-a9cd6563bee0"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "layout": "hbox",
+                                "margin": "20 0 0 0"
+                            },
+                            "name": "MyContainer23",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "fcd62842-a739-4084-8b9a-e37936d198df",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "介绍人",
+                                        "labelWidth": 60,
+                                        "width": 200
+                                    },
+                                    "name": "MyTextField14",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "521fb978-8028-4c78-a21d-9c8232ffae7c"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "submitBtn",
+                                        "margin": "0 0 0 200",
+                                        "text": "提交申请",
+                                        "width": 129
+                                    },
+                                    "name": "MyButton8",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "a811fc74-6edf-423d-9aa1-50476a75fe19",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onSubmitBtnClick",
+                                                "implHandler": [
+                                                    "var hgSubmitWindow = Ext.getCmp('hgSubmitWindow');",
+                                                    "var bizManGrid = hgSubmitWindow.down('#bizManGridPanel');",
+                                                    "",
+                                                    "if (bizManGrid.selection === null) {",
+                                                    "    Ext.Msg.alert('错误', '请选择要分配的业务员');",
+                                                    "    return;",
+                                                    "}",
+                                                    "",
+                                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                                    "Ext.Ajax.request({",
+                                                    "    url: url + '/action/hg/accept.do',",
+                                                    "    params: {",
+                                                    "        id: hgSubmitWindow.requestId,",
+                                                    "        bizman: bizManGrid.selection.data.phone",
+                                                    "    },",
+                                                    "",
+                                                    "    success: function (response) {",
+                                                    "        var text = response.responseText;",
+                                                    "        var result = JSON.parse(text);",
+                                                    "",
+                                                    "        if (result === null) {",
+                                                    "            Ext.Msg.alert('提示', '申请提交出错了，结果：' + text);",
+                                                    "            return;",
+                                                    "        }",
+                                                    "",
+                                                    "        if (result.errCode === 0) {",
+                                                    "            Ext.Msg.alert('提示', '申请提交成功');",
+                                                    "        } else {",
+                                                    "            Ext.Msg.alert('提示', '申请提交出错了，错误：' + result.errMsg);",
+                                                    "        }",
+                                                    "    }",
+                                                    "});",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onSubmitBtnClick",
+                                            "designerId": "94b3661e-2d46-4ab1-96ed-2afdc8e6a499"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

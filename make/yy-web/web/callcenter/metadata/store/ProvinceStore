@@ -1,0 +1,77 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "ProvinceStore",
+        "storeId": "ProvinceStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "1c0f6ab8-403e-411d-acac-3d8c33e60499",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/region/province.do"
+            },
+            "name": "MyAjaxProxy3",
+            "designerId": "be97eae3-81d8-4dbc-8bd2-b840510f6f04",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "object.provinceList"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "12bb7242-e667-4187-9c9e-59097149a02e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "provinceID"
+                ],
+                "name": "id"
+            },
+            "name": "MyInteger1",
+            "designerId": "928f03ad-f5a6-4d09-b48c-3aa0b92722e8"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": [
+                    "provinceName"
+                ],
+                "name": "text"
+            },
+            "name": "MyString5",
+            "designerId": "87634666-c885-4c59-bd42-dd8156146583"
+        }
+    ]
+}

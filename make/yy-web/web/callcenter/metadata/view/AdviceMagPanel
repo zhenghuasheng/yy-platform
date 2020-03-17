@@ -1,0 +1,320 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "adviceMagPanel",
+        "designer|userClassName": "AdviceMagPanel",
+        "height": 527,
+        "id": "adviceMagPanel",
+        "itemId": "adviceMagPanel",
+        "layout": "fit",
+        "title": "反馈意见管理",
+        "width": 739
+    },
+    "name": "MyPanel",
+    "designerId": "ab21a58a-68d0-4ddc-bd10-c253829d100f",
+    "viewControllerInstanceId": "a48dbc7f-af84-4cc7-8d75-3cd3d1ec53d9",
+    "viewModelInstanceId": "aa11141e-ab56-44c2-bf54-97f0a6c30c75",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "b8f190bb-1ce3-42f2-9461-9ffbf3911c30",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "refreshBtn",
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "刷新",
+                        "width": 64
+                    },
+                    "name": "MyButton",
+                    "designerId": "d7553e83-dd2b-4a27-be05-c8ac4de97e9c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "implHandler": [
+                                    "this.onAdvicemagGridPanelRend(null,null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "f52e2cec-aa5b-4938-9086-9831e569d0a9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowDeselect": true,
+                "columnLines": true,
+                "height": 316,
+                "itemId": "advicemagGridPanel",
+                "store": "AdviceStore",
+                "title": null
+            },
+            "name": "MyGridPanel1",
+            "designerId": "0ae99094-b188-4eac-8704-40b30c88a7e6",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "string",
+                        "text": "序号",
+                        "width": 90
+                    },
+                    "name": "MyRowNumberer",
+                    "designerId": "bce1ff7d-d8b0-471d-979e-64b43dcb8777"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_name",
+                        "designer|displayName": "姓名",
+                        "itemId": "username",
+                        "text": "姓名"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "6eedf9c4-9ba9-46be-944f-b0f7a66a73d7"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_phone",
+                        "designer|displayName": "电话号码",
+                        "itemId": "userphone",
+                        "text": "电话号码",
+                        "width": 165
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "73ecd3f4-2b55-4980-bf17-14758eec99a3"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_read",
+                        "designer|displayName": "是否已阅",
+                        "falseText": "未阅",
+                        "itemId": "readed",
+                        "text": "是否已阅",
+                        "trueText": "已阅"
+                    },
+                    "name": "MyBooleanColumn",
+                    "designerId": "4c86cee1-c09b-44a1-899f-06518f40cc3d"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_createtime",
+                        "designer|displayName": "反馈时间",
+                        "format": "Y-m-d H:i:s",
+                        "itemId": "restime",
+                        "text": "反馈时间",
+                        "width": 165
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "c7a9d926-e7da-4fbf-8f5a-68eda9c22fbe"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_content",
+                        "designer|displayName": "反馈内容",
+                        "itemId": "rescontent",
+                        "text": "反馈内容",
+                        "width": 165
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "0c99fa54-3fdc-4ee6-90a1-d75bb49b0028"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView1",
+                    "designerId": "f08c75a8-be0c-422f-bb7e-fc8689cb14c2"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": null,
+                        "displayInfo": true,
+                        "dock": "bottom",
+                        "firstText": "首页",
+                        "frame": true,
+                        "lastText": "最后一页",
+                        "nextText": "下一页",
+                        "prevText": "上一页",
+                        "refreshText": "刷新",
+                        "store": "AdviceStore",
+                        "width": 360
+                    },
+                    "name": "MyPagingToolbar1",
+                    "designerId": "888cd5ae-5a88-477d-a737-f1c84626c59a"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAdvicemagGridPanelRend",
+                        "implHandler": [
+                            "  var AdviceStore = Ext.getStore('AdviceStore');",
+                            "",
+                            "  var ajaxProxy = AdviceStore.getProxy();",
+                            "  var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                            "",
+                            "  ajaxProxy.setUrl(url + \"/biz/res/list.do\");",
+                            "  AdviceStore.load();"
+                        ],
+                        "name": "render",
+                        "scope": "me"
+                    },
+                    "name": "onAdvicemagGridPanelRend",
+                    "designerId": "eae4325b-0f6b-4208-8c55-c1e0f98f2101"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onAdvicemagGridPanelRowDblClick",
+                        "implHandler": [
+                            "//1，详情窗口显示",
+                            "var AdviceReadWindow=new CallCenterApp.view.AdviceReadWindow();",
+                            "",
+                            "AdviceReadWindow.show();",
+                            "",
+                            "var adviceContentText = AdviceReadWindow.down('#adviceContentText');",
+                            "",
+                            "adviceContentText.setData('<font style=\"line-height:1.5;\" color=\"blue\">'+record.data.f_content+'<font/>');",
+                            "",
+                            "//2,反馈状态修改",
+                            "",
+                            "if(!record.data.f_read){",
+                            "    ",
+                            "    var url = Ext.getStore('ConfigStore').getAt(0).get('OrderUrl');",
+                            "    Ext.Ajax.request({",
+                            "    url: url + '/biz/res/modify.do',",
+                            "        params: {",
+                            "            f_rpid:record.data.f_rpid,",
+                            "            f_read:true",
+                            "",
+                            "        },",
+                            "        success: function (response) {",
+                            "        var text = response.responseText;",
+                            "        var result = JSON.parse(text);",
+                            "",
+                            "        if (result === null) {",
+                            "            Ext.Msg.alert('提示', '保存出错了，结果：' + text);",
+                            "            return;",
+                            "        }",
+                            "",
+                            "        if (result.succeed === true) {",
+                            "           ",
+                            "        } else {",
+                            "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.errMsg);",
+                            "        }",
+                            "    }",
+                            "    });",
+                            "    ",
+                            "}",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "name": "onAdvicemagGridPanelRowDblClick",
+                    "designerId": "6d93c08f-0343-46a6-8a2a-30a0ee96aa17"
+                }
+            ]
+        }
+    ]
+}

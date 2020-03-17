@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "bottompricesubmitpanel",
+        "designer|userClassName": "BottomPriceSubmitPanelViewController"
+    },
+    "designerId": "d8e582aa-e180-48b9-97d2-01c167b671f9"
+}

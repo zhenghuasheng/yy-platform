@@ -1,0 +1,653 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "closable": true,
+        "designer|userAlias": "sqdstpanel",
+        "designer|userClassName": "SqdStatusPanel",
+        "height": null,
+        "itemId": "sqdStatusPanel",
+        "layout": "fit",
+        "padding": null,
+        "title": "社区店预约查询",
+        "width": null
+    },
+    "name": "InsStatusPanel1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "0af7367f-1bdf-4118-ac43-555733ebc29f",
+    "viewControllerInstanceId": "aaec338a-6b06-4c6c-9895-27e9223a4ba1",
+    "viewModelInstanceId": "13f81809-24c0-4348-b476-6742c87ccea8",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "SqdStatusPanelContainer",
+                "layout": "border"
+            },
+            "name": "MyContainer2",
+            "designerId": "632c1e03-19af-419e-af93-94f511a4a021",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "id": "SqdStatusGridPanel",
+                        "itemId": "SqdStatusGridPanel",
+                        "layout|flex": 12,
+                        "layout|region": "center",
+                        "store": "SqdStatusStore",
+                        "title": ""
+                    },
+                    "name": "MyGridPanel1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e74efe29-4b5e-472a-b9ad-9eab355eafc6",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "index",
+                                "text": "序号",
+                                "width": 50
+                            },
+                            "name": "MyRowNumberer2",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f4fb6623-3e9d-44f9-bcb4-3168fbe169cf"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "text": "姓名"
+                            },
+                            "name": "MyColumn5",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9e914394-b28d-4684-a4ae-550b779283ae"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "phone",
+                                "text": "电话",
+                                "width": 150
+                            },
+                            "name": "MyColumn7",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4242dbac-3282-49ae-a097-6887c7e11418"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "platenum",
+                                "text": "车牌号"
+                            },
+                            "name": "MyColumn1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "953e41e3-188e-4d87-948f-247bcb0cd2e3"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "subtime",
+                                "text": "提交时间",
+                                "width": 180
+                            },
+                            "name": "MyColumn9",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ef51b814-15f8-4919-b1dc-f9561db4934b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "ordertime",
+                                "format": "Y-m-d",
+                                "text": "预约时间",
+                                "width": 180
+                            },
+                            "name": "MyDateColumn3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "25825fa6-f400-4b87-a828-6b2c9315abac"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "f_status",
+                                "text": "状态"
+                            },
+                            "name": "MyColumn8",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "e63d4dba-bf90-4e50-bbf8-ee62b0e4e298",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "if(value===0){",
+                                            "    return \"待处理\";",
+                                            "}else if(value===1){",
+                                            "    return \"处理中\";",
+                                            "}else if(value===2){",
+                                            "    return \"已接受\";",
+                                            "}else if(value===3){",
+                                            "    return \"被驳回\";",
+                                            "}else if(value===4){",
+                                            "    return \"已出单\";",
+                                            "}else if(value===5){",
+                                            "    return \"已送单\";",
+                                            "}else if(value===6){",
+                                            "    return \"业务完成\";",
+                                            "}else if(value===7){",
+                                            "    return \"完成咨询\";",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "ffb72548-b91c-48bd-8ba7-92833cf37d8a"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "name",
+                                        "editable": false,
+                                        "itemId": "sqdStatusComboBox",
+                                        "readOnly": false,
+                                        "selectOnFocus": true,
+                                        "store": "StatusStore",
+                                        "valueField": "id"
+                                    },
+                                    "name": "MyComboBox9",
+                                    "designerId": "98f86272-cf30-4cc5-9ad0-95e30e596b96"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "source",
+                                "text": "来源",
+                                "width": 150
+                            },
+                            "name": "MyColumn3",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "afc65fdb-3dc8-4a33-9815-c2c8175aaf0f"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "17a7dc43-00b5-40ff-95ef-133d86557130"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "clicksToEdit": 1
+                            },
+                            "name": "MyCellEditingPlugin3",
+                            "designerId": "0d67d306-42c5-4544-a442-8f4142a9d04c"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSqdStatusGridPanelSelect",
+                                "implHandler": [
+                                    "var record=record.data;",
+                                    "",
+                                    "var SqdStatusPropertyPanel=Ext.getCmp('SqdStatusPropertyPanel');",
+                                    "",
+                                    "SqdStatusPropertyPanel.setSource({",
+                                    "    f_name:record.f_name,",
+                                    "",
+                                    "    f_phone:record.f_phone,",
+                                    "",
+                                    "    f_platenum:record.f_platenum,",
+                                    "",
+                                    "    f_idcard:record.f_idcard,",
+                                    "",
+                                    "    f_engineno:record.f_engineno,",
+                                    "",
+                                    "    appletime:record.appletime,",
+                                    "",
+                                    "    bespeakdate:record.bespeakdate,",
+                                    "",
+                                    "    f_bespeaktime:record.f_bespeaktime,",
+                                    "",
+                                    "    f_brand_model:record.f_brand_model,",
+                                    "",
+                                    "    f_mileage:(record.f_mileage===undefined)?undefined:record.f_mileage+'公里',",
+                                    "",
+                                    "    f_repairproject:record.f_repairproject,",
+                                    "",
+                                    "    f_shopaddress:record.f_shopaddress,",
+                                    "",
+                                    "    f_shopcode:record.f_shopcode,",
+                                    "",
+                                    "    f_source:record.f_source,",
+                                    "",
+                                    "    f_sourcename:record.f_sourcename,",
+                                    "",
+                                    "    status:record.status,",
+                                    "",
+                                    "    f_desc:record.f_desc",
+                                    "},{",
+                                    "    f_name:{",
+                                    "        displayName:'姓名',",
+                                    "    },",
+                                    "    f_phone:{",
+                                    "        displayName:'手机号码',",
+                                    "    },",
+                                    "    f_platenum:{",
+                                    "        displayName:'车牌号码',",
+                                    "    },",
+                                    "    f_idcard:{",
+                                    "        displayName:'身份证号码',",
+                                    "    },",
+                                    "    f_engineno:{",
+                                    "        displayName:'发动机号码',",
+                                    "    },",
+                                    "    appletime:{",
+                                    "        displayName:'提交时间',",
+                                    "    },",
+                                    "    bespeakdate:{",
+                                    "        displayName:'预约日期',",
+                                    "    },",
+                                    "    f_bespeaktime:{",
+                                    "        displayName:'预约时间',",
+                                    "    },",
+                                    "    f_brand_model:{",
+                                    "        displayName:'车辆型号',",
+                                    "    },",
+                                    "    f_mileage:{",
+                                    "        displayName:'行驶里程',",
+                                    "    },",
+                                    "    f_repairproject:{",
+                                    "        displayName:'维修项目',",
+                                    "    },",
+                                    "    f_shopaddress:{",
+                                    "        displayName:'店铺地址',",
+                                    "    },",
+                                    "    f_shopcode:{",
+                                    "        displayName:'店铺编号',",
+                                    "    },",
+                                    "    f_source:{",
+                                    "        displayName:'来源信息',",
+                                    "    },",
+                                    "    f_sourcename:{",
+                                    "        displayName:'来源名称',",
+                                    "    },",
+                                    "    status:{",
+                                    "        displayName:'状态',",
+                                    "    },",
+                                    "    f_desc:{",
+                                    "        displayName:'备注',",
+                                    "    },",
+                                    "",
+                                    "",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onSqdStatusGridPanelSelect",
+                            "designerId": "b6dcfb8b-19b2-4ebd-b168-e38b5a947a01"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.property.Grid",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animCollapse": true,
+                        "collapsible": true,
+                        "designer|uiInterfaceName": "default-framed",
+                        "frame": true,
+                        "id": "SqdStatusPropertyPanel",
+                        "itemId": "SqdStatusPropertyPanel",
+                        "layout|flex": 5,
+                        "layout|region": "east",
+                        "layout|split": true,
+                        "sortableColumns": false,
+                        "source": null,
+                        "title": "属性",
+                        "titleCollapse": true,
+                        "width": 150
+                    },
+                    "name": "MyPropertyGrid",
+                    "designerId": "d125f9ac-4938-4318-8dff-0a8ae1423203"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "a920f15c-f88e-4a6a-8e41-308f03670851",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "refreshBtn",
+                        "layout|flex": null,
+                        "text": "刷新"
+                    },
+                    "name": "MyButton8",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "1d909a06-5942-48ce-a40b-2af413b3bb49",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshBtnClick",
+                                "implHandler": [
+                                    "        var sqdStatusStore = Ext.getStore('SqdStatusStore');",
+                                    "        var ajaxProxy = sqdStatusStore.getProxy();",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/action/sqd/list.do?system=ytadmin@7788\");",
+                                    "        sqdStatusStore.load();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRefreshBtnClick",
+                            "designerId": "f07f23b7-792d-4be5-8ac8-2bc719aed34c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "copyBtn",
+                        "layout|flex": null,
+                        "text": "复制"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "337c3d8b-b155-4c6a-9484-2e9ccf21d33d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCopyBtnClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onCopyBtnClick",
+                            "designerId": "cdc151ea-4e7b-45e3-b7dd-aa6396ac518b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "saveBtn",
+                        "layout|flex": null,
+                        "text": "保存"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "f33c2aaa-bb2c-4ab6-bf7b-3e8df3525803",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveBtnClick",
+                                "implHandler": [
+                                    "var sqdStatusPanel=button.up('#sqdStatusPanel');",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "var SqdStatusStore = Ext.getStore('SqdStatusStore');",
+                                    "var records = SqdStatusStore.getModifiedRecords().slice(0);",
+                                    "    if(records.length<1){",
+                                    "        return;",
+                                    "    }",
+                                    "Ext.MessageBox.confirm('请确认', '您确认修改吗？', function(btn){",
+                                    "     if(btn==='no'){",
+                                    "         return;",
+                                    "     }else if(btn==='yes'){",
+                                    "",
+                                    "var jsonArray = [];",
+                                    "Ext.each(records,function(item){",
+                                    "    var f_bsid=item.data.f_bsid;",
+                                    "    var f_status=item.data.f_status;",
+                                    "    jsonArray.push({f_bsid:f_bsid,f_status:f_status});",
+                                    "            });",
+                                    " Ext.Ajax.request({",
+                                    "",
+                                    "     url:url+\"/action/sqd/update.do\",",
+                                    "     params:{",
+                                    "         status:JSON.stringify(jsonArray),",
+                                    "     },",
+                                    "",
+                                    "     success:function(response){",
+                                    "       var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "        if (result=== null) {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，结果：' + result);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (result[0].succeed) {",
+                                    "",
+                                    "            alert('保存成功');",
+                                    "            var SqdStatusStore = Ext.getStore('SqdStatusStore');",
+                                    "        var ajaxProxy = SqdStatusStore.getProxy();",
+                                    "        var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "        ajaxProxy.setUrl(url + \"/action/sqd/list.do?system=ytadmin@7788\");",
+                                    "        SqdStatusStore.load();",
+                                    "",
+                                    "        } else {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.ptError);",
+                                    "            return;",
+                                    "        }",
+                                    "                },",
+                                    "",
+                                    "    failure:function(){",
+                                    "       Ext.Msg.alert('提示','失败');",
+                                    "                },",
+                                    "            });",
+                                    "",
+                                    "     }",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSaveBtnClick",
+                            "designerId": "edfd14f7-bbcb-41d9-968f-f2899817ac6c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSqdStatusPanelRender",
+                "implHandler": [
+                    "        this.onRefreshBtnClick(null, null, null);"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "name": "onSqdStatusPanelRender",
+            "designerId": "0b0e4246-d016-434d-8b6a-4b1d81d5cd9f"
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "SqdStatusStore",
+                "width": 360
+            },
+            "name": "MyPagingToolbar1",
+            "designerId": "ff2a3f52-5584-45bd-9507-3d94abc20ea6"
+        }
+    ]
+}

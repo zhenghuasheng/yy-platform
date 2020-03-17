@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "rightclickmenu",
+        "designer|userClassName": "RightClickMenuViewModel"
+    },
+    "designerId": "35dc9f02-cb41-4b78-89a5-b8ce85128a29"
+}

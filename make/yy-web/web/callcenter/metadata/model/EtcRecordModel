@@ -1,0 +1,106 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EtcRecordModel"
+    },
+    "name": "MyModel",
+    "designerId": "359b4020-6926-44a0-b036-8fae52f39526",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "inoptime"
+            },
+            "name": "MyString1",
+            "designerId": "806d43ce-fdde-457f-9634-d72eefc5500f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "instationname"
+            },
+            "name": "MyString2",
+            "designerId": "4d81c90d-d10f-40ba-822a-8e302b2cd63a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "stationname"
+            },
+            "name": "MyString3",
+            "designerId": "b34f8e0b-ce0e-4cae-88bb-2d6f24d883ea"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "optime"
+            },
+            "name": "MyString4",
+            "designerId": "a2600461-f4b8-45d5-aece-1a53a8418c7e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "etcmoney"
+            },
+            "name": "MyString5",
+            "designerId": "2f2bfc23-d7d5-4cdf-8754-9b9b842e9c17"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "balance"
+            },
+            "name": "MyString6",
+            "designerId": "8ae27318-c41c-4827-9dde-c80ef0749b00"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "invehplate"
+            },
+            "name": "MyString7",
+            "designerId": "95157c93-7894-4438-ae2d-9ccc2e627f58"
+        }
+    ]
+}

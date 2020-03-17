@@ -1,0 +1,294 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "closable": true,
+        "designer|userAlias": "insrtpanel",
+        "designer|userClassName": "InsRequestPanel",
+        "height": null,
+        "itemId": "insRequestPanel",
+        "padding": null,
+        "title": "保险申请",
+        "width": null
+    },
+    "name": "EtcRequestPanel1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "1e3352ef-70f4-4d12-aaee-92e191abf49d",
+    "viewControllerInstanceId": "bfa493a7-5ced-487f-ac49-e6f3a37c4c22",
+    "viewModelInstanceId": "3a7b9b68-289b-470a-966f-eec7b3c369f2",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "emptyText": "必需填写",
+                "fieldLabel": "姓名",
+                "itemId": "nameField",
+                "labelWidth": 60,
+                "margin": 10,
+                "padding": null,
+                "width": 380
+            },
+            "name": "MyTextField8",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "ebe1a9ae-7251-49da-8f49-f891b888f00c"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "emptyText": "必需填写",
+                "fieldLabel": "电话",
+                "itemId": "phoneField",
+                "labelWidth": 60,
+                "margin": 10,
+                "padding": null,
+                "regex": "/^1(3|5|8)[0-9]{9}$/",
+                "regexText": "手机号码为11位",
+                "width": 380
+            },
+            "name": "MyTextField9",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "64b41801-c442-434f-9b68-6e13eb5e6ffc"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "emptyText": "必需填写",
+                "fieldLabel": "身份证",
+                "itemId": "idCardField",
+                "labelWidth": 60,
+                "margin": 10,
+                "padding": null,
+                "regex": "/(^\\d{15}$)|(^\\d{17}([0-9]|X)$)/",
+                "regexText": "中国的身份证为15位或18(加上X)位",
+                "width": 380
+            },
+            "name": "MyTextField11",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "071f283b-1f2f-4a55-951f-bbe4bc8fdbef"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "emptyText": "必需填写",
+                "fieldLabel": "车牌号",
+                "itemId": "plateNumField",
+                "labelWidth": 60,
+                "margin": 10,
+                "padding": null,
+                "regex": "/^[\\u4e00-\\u9fa5]{1}[A-Z]{1}[A-Z_0-9]{5}$/",
+                "regexText": "车牌号为省份简称加字母数字",
+                "width": 380
+            },
+            "name": "MyTextField14",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "d5d03d41-a885-4660-bbe5-f409d3f4ded7"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowBlank": false,
+                "emptyText": "必需填写",
+                "fieldLabel": "发动机号",
+                "itemId": "engineNumField",
+                "labelWidth": 60,
+                "margin": 10,
+                "padding": null,
+                "regexText": null,
+                "width": 380
+            },
+            "name": "MyTextField15",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "1cdffd2d-6b14-4226-bf2a-23b509af2e97"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "备注",
+                "itemId": "descField",
+                "labelWidth": 60,
+                "margin": 10,
+                "padding": null,
+                "width": 380
+            },
+            "name": "MyTextField10",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "24936fda-36f0-4f7b-9020-cae6e359ad90"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|snapToGrid": 5,
+                "layout": "absolute"
+            },
+            "name": "MyContainer12",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "d4d478b3-1fd3-49ec-8813-43eb5cec5058",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 35,
+                        "itemId": "submitBtn",
+                        "layout|x": 260,
+                        "layout|y": 10,
+                        "text": "提交资料",
+                        "width": 100
+                    },
+                    "name": "MyButton11",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e7fc7235-56eb-46c8-8694-33341ad70599",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSubmitBtnClick",
+                                "implHandler": [
+                                    "var insRequestPanel = button.up('#insRequestPanel');",
+                                    "var nameField = insRequestPanel.down('#nameField');",
+                                    "var phoneField = insRequestPanel.down('#phoneField');",
+                                    "var idCardField = insRequestPanel.down('#idCardField');",
+                                    "var plateNumField = insRequestPanel.down('#plateNumField');",
+                                    "var engineNumField = insRequestPanel.down('#engineNumField');",
+                                    "var descField = insRequestPanel.down('#descField');",
+                                    "",
+                                    "if (!nameField.validate() || !phoneField.validate() || !idCardField.validate() || !plateNumField.validate() || !engineNumField.validate()) {",
+                                    "    Ext.Msg.alert('Status', '请正确填写信息.');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "",
+                                    "var data = {'f_name' : nameField.getValue(),",
+                                    "            'f_phone' : phoneField.getValue(),",
+                                    "            'f_idcard':idCardField.getValue(),",
+                                    "            'f_platenum':plateNumField.getValue(),",
+                                    "            'f_engineno':engineNumField.getValue(),",
+                                    "            'f_system':100,",
+                                    "            'f_desc' : descField.getValue()",
+                                    "           };",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    headers:{'Content-Type':'application/json'},",
+                                    "    url: url + '/action/insurance/submit.do',",
+                                    "    params: JSON.stringify(data),",
+                                    "    //{",
+                                    "",
+                                    "    //         name: nameField.getValue(),",
+                                    "    //         phone: phoneField.getValue(),",
+                                    "    //         idcard: idCardField.getValue(),",
+                                    "    //         platenum: plateNumField.getValue(),",
+                                    "    //         enginenum: engineNumField.getValue(),",
+                                    "    //         system: '100',",
+                                    "    //         desc: descField.getValue()",
+                                    "    // },",
+                                    "",
+                                    "    success: function (response) {",
+                                    "        var text = response.responseText;",
+                                    "        var result = JSON.parse(text);",
+                                    "",
+                                    "        if (result === null) {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，结果：' + text);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        if (result.succeed=== true) {",
+                                    "            Ext.Msg.alert('提示', '保存成功');",
+                                    "        } else {",
+                                    "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.ptError);",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "        nameField.reset();",
+                                    "        phoneField.reset();",
+                                    "        idCardField.reset();",
+                                    "        plateNumField.reset();",
+                                    "        engineNumField.reset();",
+                                    "        descField.reset();",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onSubmitBtnClick",
+                            "designerId": "e91cc762-2595-4673-881e-98929de93ff8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

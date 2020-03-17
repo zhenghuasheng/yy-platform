@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "carbrandmanagepanel",
+        "designer|userClassName": "CarBrandManagePanelViewModel"
+    },
+    "designerId": "cdf31132-1586-455b-adab-fe6cd657fb80"
+}

@@ -1,0 +1,1632 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "insurancerequestpanel",
+        "designer|userClassName": "InsuranceRequestPanel",
+        "height": 594,
+        "itemId": "insurancerequestpanel",
+        "title": "投保申请",
+        "width": 645
+    },
+    "name": "MyPanel12",
+    "designerId": "24adb465-675a-4681-8cdb-cc3e321baa4a",
+    "viewControllerInstanceId": "fb1e50ae-866e-4c66-921b-acfa474de7e7",
+    "viewModelInstanceId": "2cd41981-d7e0-4e81-a74a-ee0fc2010396",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "保险人基本信息",
+                "height": 131,
+                "itemId": "baseInfoContainer",
+                "layout": "column",
+                "width": 554
+            },
+            "name": "MyContainer25",
+            "designerId": "11831459-7a95-448c-89a8-6e6a8f446563",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "被保险人姓名",
+                        "fieldLabel": "被保险人姓名",
+                        "itemId": "name",
+                        "name": "name"
+                    },
+                    "name": "MyTextField16",
+                    "designerId": "3cb92ed6-0440-4e44-9c0a-f4c78ae4969e"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "手机号码",
+                        "fieldLabel": "手机号码",
+                        "itemId": "phone",
+                        "name": "phone",
+                        "regex": "/^1(3|5|8)[0-9]{9}$/",
+                        "regexText": "手机号码为11位"
+                    },
+                    "name": "MyTextField18",
+                    "designerId": "9889698a-8751-4c60-9a6b-440057baceba"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "车牌号码",
+                        "fieldLabel": "车牌号码",
+                        "itemId": "platNum",
+                        "name": "platNum",
+                        "regex": "/^[\\u4e00-\\u9fa5]{1}[A-Z]{1}[A-Z_0-9]{5}$/",
+                        "regexText": "车牌号为省份简称加字母数字"
+                    },
+                    "name": "MyTextField19",
+                    "designerId": "addd5a7a-35c0-41db-b2c6-72d532dc05e7"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "车辆初登日期",
+                        "fieldLabel": "车辆初登日期",
+                        "format": "Y-m-d",
+                        "itemId": "firstRegisterDate",
+                        "name": "firstRegisterDate"
+                    },
+                    "name": "MyDateField3",
+                    "designerId": "103baf0b-a809-496c-b534-f0934c798b40"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "车辆型号",
+                        "fieldLabel": "车辆型号",
+                        "itemId": "carType",
+                        "name": "carType"
+                    },
+                    "name": "MyTextField21",
+                    "designerId": "39422b66-626c-41b4-b2b1-886b1cbfd854"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "车架号",
+                        "fieldLabel": "车架号",
+                        "itemId": "frameNumber",
+                        "name": "frameNumber"
+                    },
+                    "name": "MyTextField22",
+                    "designerId": "c7aa164c-4418-45c5-b921-85f51e0f3676"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "出单日期",
+                        "fieldLabel": "出单日期",
+                        "format": "Y-m-d",
+                        "itemId": "generationDate",
+                        "name": "generationDate"
+                    },
+                    "name": "MyDateField4",
+                    "designerId": "c9766fcc-fe54-4b6f-9801-eb7f0df75414"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "发动机号码",
+                        "fieldLabel": "发动机号码",
+                        "itemId": "engineNumber",
+                        "name": "engineNumber"
+                    },
+                    "name": "MyTextField23",
+                    "designerId": "47e4c461-7a62-4f01-8197-b242ac28cbed"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "保险公司",
+                        "displayField": "name",
+                        "fieldLabel": "保险公司",
+                        "itemId": "insuranceCompany",
+                        "name": "insuranceCompany",
+                        "store": "InsuranceCompany",
+                        "valueField": "id"
+                    },
+                    "name": "MyComboBox5",
+                    "designerId": "63e158e2-fbb7-449b-b426-a4e992807190"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "身份证号码",
+                        "itemId": "idCard",
+                        "name": "idCard"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "e63f45be-cc81-4da3-955e-dc0bb1abc165"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "投保头信息",
+                "frame": false,
+                "height": 34,
+                "itemId": "insuranceInfoHeadContainer",
+                "layout": "border",
+                "width": 553
+            },
+            "name": "MyContainer26",
+            "designerId": "235c7f4f-8132-4474-aad5-ee333c1524f9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "保险选择",
+                        "fieldLabel": "",
+                        "layout|region": "center",
+                        "layout|split": false,
+                        "value": "保险选择"
+                    },
+                    "name": "MyDisplayField",
+                    "designerId": "a7840a4d-ecf3-4201-8748-d3b343240334"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "投保种类",
+                        "fieldLabel": "",
+                        "layout|region": "west",
+                        "value": "投保险种",
+                        "width": 150
+                    },
+                    "name": "MyDisplayField1",
+                    "designerId": "8151febd-7e8a-4b76-ac97-46f09e8fba57"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "保险费",
+                        "fieldLabel": "",
+                        "layout|region": "east",
+                        "value": "保险费",
+                        "width": 128
+                    },
+                    "name": "MyDisplayField2",
+                    "designerId": "c156fa1b-a41f-488d-bd65-7cb658057829"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "投保详细信息",
+                "height": 338,
+                "itemId": "insuranceInfoContainer",
+                "layout": "column",
+                "width": 637
+            },
+            "name": "MyContainer27",
+            "designerId": "1907fed3-4796-48d6-b651-13b7fcdb2e18",
+            "cn": [
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "车损",
+                        "fieldLabel": "车损",
+                        "itemId": "cdwFiled",
+                        "labelStyle": null,
+                        "labelWidth": null,
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup10",
+                    "designerId": "7ef516d4-8ec8-46ea-840b-3853c3f4c766",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "cdw",
+                                "overflowX": null,
+                                "padding": null
+                            },
+                            "name": "MyRadio16",
+                            "designerId": "0a30a93b-c00d-4b34-a773-99db8c0c24aa"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "cdw",
+                                "width": 150
+                            },
+                            "name": "MyRadio17",
+                            "designerId": "9ce9adb3-047c-4287-88d8-1c937dd806a5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "车损保险费",
+                        "fieldLabel": "",
+                        "itemId": "cdwMoney",
+                        "name": "cdwMoney",
+                        "width": 200
+                    },
+                    "name": "MyNumberField8",
+                    "designerId": "0192cfff-d6ad-42b3-a6e0-a1bd043365fb",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCdwMoneyBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(component.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onCdwMoneyBlur",
+                            "designerId": "5cf4e2d9-b2d8-4dc8-90b9-010b8ef6414c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "三责",
+                        "fieldLabel": "三责",
+                        "itemId": "tpliFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup11",
+                    "designerId": "eece991f-69f1-437e-bf9b-630933ca0ec9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "20万",
+                                "fieldLabel": null,
+                                "inputValue": "2",
+                                "name": "tpli"
+                            },
+                            "name": "MyRadio18",
+                            "designerId": "775e30f4-1f98-41c4-a963-3cc4356988b4"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "30万",
+                                "fieldLabel": "",
+                                "inputValue": "3",
+                                "name": "tpli"
+                            },
+                            "name": "MyRadio20",
+                            "designerId": "73c9d56f-eef3-4c8a-bc98-50c08cdfa12f"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "50万",
+                                "fieldLabel": null,
+                                "inputValue": "5",
+                                "name": "tpli"
+                            },
+                            "name": "MyRadio19",
+                            "designerId": "f52ca71e-1856-4606-952d-1295004205d1"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "100万",
+                                "fieldLabel": null,
+                                "inputValue": "10",
+                                "name": "tpli"
+                            },
+                            "name": "MyRadio21",
+                            "designerId": "b072d09d-e821-43c2-bd23-feb1e2052c32"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "tpliMoney",
+                        "name": "tpliMoney",
+                        "width": 200
+                    },
+                    "name": "MyNumberField9",
+                    "designerId": "afe6b0af-f802-4c1a-b89e-0726af07a190",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTpliMoneyBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onTpliMoneyBlur",
+                            "designerId": "9fdc784e-dc3c-487b-b1bb-6e5a94ab7cff"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "司机座位",
+                        "itemId": "dsiFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup12",
+                    "designerId": "a82d61f5-b7b3-4c15-97a7-a3342aae6efc",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "不购买",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "dsi"
+                            },
+                            "name": "MyRadio22",
+                            "designerId": "99427b9a-8179-455d-9f2a-644b7fb5bf21"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "1万/人",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "dsi"
+                            },
+                            "name": "MyRadio23",
+                            "designerId": "dce040bd-8445-4d26-ae5f-a66fd67c9f5c"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "2万/人",
+                                "fieldLabel": null,
+                                "inputValue": "2",
+                                "name": "dsi"
+                            },
+                            "name": "MyRadio24",
+                            "designerId": "a831d8eb-31d9-4275-bce7-8d352c489bc3"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "5万/人",
+                                "fieldLabel": null,
+                                "inputValue": "5",
+                                "name": "dsi"
+                            },
+                            "name": "MyRadio25",
+                            "designerId": "d9b07a3f-a24b-4544-a6e5-fd579f0a251a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "dsiMoney",
+                        "name": "dsiMoney",
+                        "width": 200
+                    },
+                    "name": "MyNumberField10",
+                    "designerId": "47fbafee-9548-465a-b3e0-404e1043804e",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDsiMoneyBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onDsiMoneyBlur",
+                            "designerId": "6c1ff886-e9cd-4769-b0a1-22d84658a76d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "乘客座位",
+                        "itemId": "psiFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup13",
+                    "designerId": "959e9560-ae74-4ccf-b29e-18732258a115",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "不购买",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "itemId": "psi",
+                                "name": "psi"
+                            },
+                            "name": "MyRadio26",
+                            "designerId": "de2e88df-0e24-44e6-b164-ff678f373dcd"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "1万/人",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "psi"
+                            },
+                            "name": "MyRadio27",
+                            "designerId": "221e8632-69bd-45b6-9a43-0850efe52973"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "2万/人",
+                                "fieldLabel": null,
+                                "inputValue": "2",
+                                "name": "psi"
+                            },
+                            "name": "MyRadio28",
+                            "designerId": "778ca8a4-2943-43f7-abcf-6184b348506f"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "5万/人",
+                                "fieldLabel": null,
+                                "inputValue": "5",
+                                "name": "psi"
+                            },
+                            "name": "MyRadio29",
+                            "designerId": "f21650ff-1b5d-4c97-be3c-e82e37b3c27a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "psiMoney",
+                        "name": "psiMoney",
+                        "width": 200
+                    },
+                    "name": "MyNumberField11",
+                    "designerId": "0ff4e66c-5358-4f40-8711-3f5cbe2290ad",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPsiMoneyBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onPsiMoneyBlur",
+                            "designerId": "370206b6-89d7-4f1e-ad29-aabdec05dfba"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "盗抢险",
+                        "itemId": "theftinsureFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup14",
+                    "designerId": "3652e224-efb7-48e8-9f06-e36cf11ec919",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "theftinsure"
+                            },
+                            "name": "MyRadio30",
+                            "designerId": "9295cc94-c8d4-4155-be96-6c93a546fa52"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "theftinsure"
+                            },
+                            "name": "MyRadio31",
+                            "designerId": "56bebf86-af30-4f2f-8089-85b243ceace2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "theftfee",
+                        "name": "theftfee",
+                        "width": 200
+                    },
+                    "name": "MyNumberField12",
+                    "designerId": "2aefcbcb-eaa3-4948-82a3-8f01d650e3c7",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTheftfeeBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onTheftfeeBlur",
+                            "designerId": "aca76f43-08b0-4fda-aa8c-8f3230b9215e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "玻璃险(国产)",
+                        "itemId": "domesticglassFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup15",
+                    "designerId": "7606df06-3d2d-45a9-af11-147e8f297717",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "domesticglass"
+                            },
+                            "name": "MyRadio32",
+                            "designerId": "7ebf9543-09c9-4376-b4ae-46b6d600f85b"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "domesticglass"
+                            },
+                            "name": "MyRadio33",
+                            "designerId": "6c3f5b17-8a3c-4498-95d9-27c3070cec10"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "domesticglassfee",
+                        "width": 200
+                    },
+                    "name": "MyNumberField13",
+                    "designerId": "6bbd2039-c180-4bbc-bef7-ebdcad4d7635",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDomesticglassfeeBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onDomesticglassfeeBlur",
+                            "designerId": "483677d4-88bc-4602-8801-77f606ade0bc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "玻璃险(进口)",
+                        "itemId": "importglassFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup16",
+                    "designerId": "fbacf429-f7a4-481d-b192-87063249c8e5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "importglass"
+                            },
+                            "name": "MyRadio32",
+                            "designerId": "53a70c4d-f910-4f24-b55b-c21aeb419fd5"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "importglass"
+                            },
+                            "name": "MyRadio33",
+                            "designerId": "26328b34-4b74-43ba-8127-8dbc3c313be0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "importglassfee",
+                        "width": 200
+                    },
+                    "name": "MyNumberField14",
+                    "designerId": "bea9b07b-ed54-497a-ba94-ccd68064d79d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onImportglassfeeBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onImportglassfeeBlur",
+                            "designerId": "e6cd8315-5218-45c1-b487-9b8a64240752"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "指定专修厂",
+                        "itemId": "repairdepotFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup17",
+                    "designerId": "d0db9fe7-d6f0-482a-a076-1a0b0211fead",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "itemId": "repairdepot",
+                                "name": "repairdepot"
+                            },
+                            "name": "MyRadio34",
+                            "designerId": "c3b1cab2-298a-46c4-a7de-d5f803bed1e3"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "repairdepot"
+                            },
+                            "name": "MyRadio35",
+                            "designerId": "825e8c66-27fa-42ca-a7ad-7d17f1328450"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "repairdepotfee",
+                        "width": 200
+                    },
+                    "name": "MyNumberField15",
+                    "designerId": "cab8258f-0e95-4f20-9be8-2ac6c46630dd",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRepairdepotfeeBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                          theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                          importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onRepairdepotfeeBlur",
+                            "designerId": "8db8e937-3c5e-41cc-814e-9e49a83073a1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "不计免赔",
+                        "itemId": "abatementFiled",
+                        "width": 350
+                    },
+                    "name": "MyRadioGroup18",
+                    "designerId": "e81b67e9-57ca-47bb-9f5e-8ed5ee2d4f77",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "是",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "abatement"
+                            },
+                            "name": "MyRadio36",
+                            "designerId": "e7838cca-b886-4532-823e-ae06ca24fcb1"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "否",
+                                "fieldLabel": null,
+                                "inputValue": "0",
+                                "name": "abatement"
+                            },
+                            "name": "MyRadio37",
+                            "designerId": "2d966d07-cab1-4b23-ad5a-f0e8cb39dd33"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "itemId": "abatementfee",
+                        "name": "abatementfee",
+                        "width": 200
+                    },
+                    "name": "MyNumberField16",
+                    "designerId": "ada4a0ca-32fd-4fce-bf00-faa6ecda6ebc",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAbatementfeeBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                                    "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                                    "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                                    "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                                    "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                                    "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                                    "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                                    "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                                    "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                                    "",
+                                    "var insurancefeeFiled=insurancerequestpanel.down('#insurancefee');",
+                                    "",
+                                    "insurancefeeFiled.setValue(cdwMoneyField.getValue()+tpliMoneyField.getValue()+",
+                                    "                           dsiMoneyFiled.getValue()+psiMoneyFiled.getValue()+",
+                                    "                           theftfeeFiled.getValue()+domesticglassfeeFiled.getValue()+",
+                                    "                           importglassfee.getValue()+repairdepotfeeFiled.getValue()+",
+                                    "                           abatementfeeFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onAbatementfeeBlur",
+                            "designerId": "9d5a3973-6edd-45cb-8a2e-af6046d039b3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "商业险合计(元)",
+                        "itemId": "insurancefee",
+                        "name": "insurancefee",
+                        "width": 359
+                    },
+                    "name": "MyNumberField17",
+                    "designerId": "52d157f5-9266-494e-b636-9652238f7a31"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "交强险保费",
+                        "itemId": "compulsoryfee",
+                        "name": "compulsoryfee",
+                        "width": 304
+                    },
+                    "name": "MyNumberField18",
+                    "designerId": "eed9d16f-3704-43d8-bd63-5915ecbbfb44",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCompulsoryfeeBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var insurancefeeFiled= insurancerequestpanel.down('#insurancefee');",
+                                    "var compulsoryfeeFiled= insurancerequestpanel.down('#compulsoryfee');",
+                                    "var revenueFiled= insurancerequestpanel.down('#revenue');",
+                                    "var totalfeeFiled= insurancerequestpanel.down('#totalfee');",
+                                    "totalfeeFiled.setValue(insurancefeeFiled.getValue()+compulsoryfeeFiled.getValue()+",
+                                    "                      revenueFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onCompulsoryfeeBlur",
+                            "designerId": "72ad5556-e697-4c1f-b60b-af583846f660"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "车船税",
+                        "inputType": "number",
+                        "itemId": "revenue",
+                        "minValue": 0,
+                        "name": "revenue",
+                        "selectOnFocus": true,
+                        "width": 249
+                    },
+                    "name": "MyNumberField19",
+                    "designerId": "85618bea-8916-48f1-87ed-21088874cdf6",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRevenueBlur",
+                                "implHandler": [
+                                    "var insurancerequestpanel=component.up('#insurancerequestpanel');",
+                                    "var insurancefeeFiled= insurancerequestpanel.down('#insurancefee');",
+                                    "var compulsoryfeeFiled= insurancerequestpanel.down('#compulsoryfee');",
+                                    "var revenueFiled= insurancerequestpanel.down('#revenue');",
+                                    "var totalfeeFiled= insurancerequestpanel.down('#totalfee');",
+                                    "totalfeeFiled.setValue(insurancefeeFiled.getValue()+compulsoryfeeFiled.getValue()+",
+                                    "                      revenueFiled.getValue());"
+                                ],
+                                "name": "blur",
+                                "scope": "me"
+                            },
+                            "name": "onRevenueBlur",
+                            "designerId": "5f61e7f1-1e3c-4ef3-a387-1d6a61a53630"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "保险费用合计",
+                        "itemId": "totalfee",
+                        "name": "totalfee",
+                        "width": 361
+                    },
+                    "name": "MyNumberField20",
+                    "designerId": "e631508a-a252-4558-a7c0-779c0bc6a27d"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "客户签名",
+                        "itemId": "custname",
+                        "width": 316
+                    },
+                    "name": "MyTextField24",
+                    "designerId": "7fbab48d-c990-4208-88df-5e22e935e5ab"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "经办人签名",
+                        "itemId": "operator",
+                        "width": 278
+                    },
+                    "name": "MyTextField25",
+                    "designerId": "ff1e25ef-d142-40a1-b818-d8699d142a47"
+                }
+            ]
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "InsuranceSaveButton",
+                "text": "保存提交"
+            },
+            "name": "MyButton12",
+            "designerId": "df827359-a75b-4a32-b060-88dd60d61e3b",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onInsuranceSaveButtonClick",
+                        "implHandler": [
+                            "/**基本信息*/",
+                            "var insurancerequestpanel = button.up('#insurancerequestpanel');",
+                            "var nameField = insurancerequestpanel.down('#name');",
+                            "var phoneField = insurancerequestpanel.down('#phone');",
+                            "var platNumField = insurancerequestpanel.down('#platNum');",
+                            "var firstRegisterDateField = insurancerequestpanel.down('#firstRegisterDate');",
+                            "var carTypeField = insurancerequestpanel.down('#carType');",
+                            "var frameNumberField = insurancerequestpanel.down('#frameNumber');",
+                            "var generationDateField = insurancerequestpanel.down('#generationDate');",
+                            "var engineNumberField = insurancerequestpanel.down('#engineNumber');",
+                            "var insuranceCompanyField = insurancerequestpanel.down('#insuranceCompany');",
+                            "var idCardField=insurancerequestpanel.down('#idCard');",
+                            "",
+                            "/**保险详细*/",
+                            "var cdwFiled= insurancerequestpanel.down('#cdwFiled');",
+                            "var cdwMoneyField = insurancerequestpanel.down('#cdwMoney');",
+                            "",
+                            "var tpliFiled = insurancerequestpanel.down('#tpliFiled');",
+                            "var tpliMoneyField = insurancerequestpanel.down('#tpliMoney');",
+                            "",
+                            "var dsiFiled= insurancerequestpanel.down('#dsiFiled');",
+                            "var dsiMoneyFiled= insurancerequestpanel.down('#dsiMoney');",
+                            "",
+                            "var psiFiled= insurancerequestpanel.down('#psiFiled');",
+                            "var psiMoneyFiled= insurancerequestpanel.down('#psiMoney');",
+                            "",
+                            "var theftinsureFiled= insurancerequestpanel.down('#theftinsureFiled');",
+                            "var theftfeeFiled= insurancerequestpanel.down('#theftfee');",
+                            "",
+                            "var domesticglassFiled= insurancerequestpanel.down('#domesticglassFiled');",
+                            "var domesticglassfeeFiled= insurancerequestpanel.down('#domesticglassfee');",
+                            "",
+                            "var importglassFiled= insurancerequestpanel.down('#importglassFiled');",
+                            "var importglassfee= insurancerequestpanel.down('#importglassfee');",
+                            "",
+                            "var repairdepotFiled= insurancerequestpanel.down('#repairdepotFiled');",
+                            "var repairdepotfeeFiled= insurancerequestpanel.down('#repairdepotfee');",
+                            "",
+                            "var abatementFiled= insurancerequestpanel.down('#abatementFiled');",
+                            "var abatementfeeFiled= insurancerequestpanel.down('#abatementfee');",
+                            "",
+                            "var insurancefeeFiled= insurancerequestpanel.down('#insurancefee');",
+                            "var compulsoryfeeFiled= insurancerequestpanel.down('#compulsoryfee');",
+                            "var revenueFiled= insurancerequestpanel.down('#revenue');",
+                            "",
+                            "var totalfeeFiled= insurancerequestpanel.down('#totalfee');",
+                            "var custnameFiled= insurancerequestpanel.down('#custname');",
+                            "var operatorFiled= insurancerequestpanel.down('#operator');",
+                            "",
+                            "",
+                            "if (!nameField.validate() || !phoneField.validate() || !platNumField.validate() || !engineNumberField.validate()) {",
+                            "    Ext.Msg.alert('Status', '请正确填写信息.');",
+                            "    return;",
+                            "}",
+                            "",
+                            "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                            "",
+                            "var generationDate = generationDateField.getValue();",
+                            "generationDate = (generationDate === null) ? 0 : generationDate.getTime()/1000;",
+                            "",
+                            "var firstRegisterDate = firstRegisterDateField.getValue();",
+                            "firstRegisterDate = (firstRegisterDate === null) ? 0 : firstRegisterDate.getTime()/1000;",
+                            "var data = {'f_name' : nameField.getValue(),",
+                            "            'f_phone' : phoneField.getValue(),",
+                            "            'f_platenum':platNumField.getValue(),",
+                            "            'f_idcard':idCardField.getValue(),",
+                            "            'f_engineno':engineNumberField.getValue(),",
+                            "            'f_system':100,",
+                            "            'f_vehicletype':carTypeField.getValue(),",
+                            "            'f_insurer':insuranceCompanyField.getValue(),",
+                            "            'f_effecttime':generationDate,",
+                            "            'f_vehicleregister':firstRegisterDate,",
+                            "            'f_cdw':cdwFiled.getValue().cdw,",
+                            "            'f_cdwfee':cdwMoneyField.getValue(),",
+                            "            'f_tpli':tpliFiled.getValue().tpli,",
+                            "            'f_tplifee':tpliMoneyField.getValue(),",
+                            "            'f_dsi':dsiFiled.getValue().dsi,",
+                            "            'f_dsifee':dsiMoneyFiled.getValue(),",
+                            "            'f_psi':psiFiled.getValue().psi,",
+                            "            'f_psifee':psiMoneyFiled.getValue(),",
+                            "            'f_theftinsure':theftinsureFiled.getValue().theftinsure,",
+                            "            'f_theftfee':theftfeeFiled.getValue(),",
+                            "            'f_domesticglass':domesticglassFiled.getValue().domesticglass,",
+                            "            'f_domesticglassfee':domesticglassfeeFiled.getValue(),",
+                            "            'f_importglass':importglassFiled.getValue().importglass,",
+                            "            'f_importglassfee':importglassfee.getValue(),",
+                            "            'f_repairdepot':repairdepotFiled.getValue().repairdepot,",
+                            "            'f_repairdepotfee':repairdepotfeeFiled.getValue(),",
+                            "            'f_abatement':abatementFiled.getValue().abatement,",
+                            "            'f_abatementfee':abatementfeeFiled.getValue(),",
+                            "            'f_insurancefee':insurancefeeFiled.getValue(),",
+                            "            'f_compulsoryfee':compulsoryfeeFiled.getValue(),",
+                            "            'f_revenue':revenueFiled.getValue(),",
+                            "            'f_totalfee':totalfeeFiled.getValue(),",
+                            "            'f_custname':custnameFiled.getValue(),",
+                            "            'f_operator':operatorFiled.getValue(),",
+                            "            'f_sourcename':\"\",",
+                            "           };",
+                            "",
+                            "Ext.Ajax.request({",
+                            "    headers:{'Content-Type':'application/json'},",
+                            "    url: url + '/action/insurance/submit.do',",
+                            "    params: JSON.stringify(data),",
+                            "    success: function (response) {",
+                            "        var text = response.responseText;",
+                            "        var result = JSON.parse(text);",
+                            "",
+                            "        if (result === null) {",
+                            "            Ext.Msg.alert('提示', '保存出错了，结果：' + text);",
+                            "            return;",
+                            "        }",
+                            "",
+                            "        if (result.succeed=== true) {",
+                            "            Ext.Msg.alert('提示', '保存成功');",
+                            "        } else {",
+                            "            Ext.Msg.alert('提示', '保存出错了，错误：' + result.ptError);",
+                            "            return;",
+                            "        }",
+                            "",
+                            "    }",
+                            "});"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "name": "onInsuranceSaveButtonClick",
+                    "designerId": "793077fc-827d-48bf-b820-cfdae4620043"
+                }
+            ]
+        }
+    ]
+}

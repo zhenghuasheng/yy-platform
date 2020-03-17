@@ -1,0 +1,416 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "container|align": "stretch",
+        "designer|userAlias": "eticketconsumepanel",
+        "designer|userClassName": "EticketConsumePanel",
+        "height": 574,
+        "id": "EticketConsumePanel",
+        "itemId": "EticketConsumePanel",
+        "layout": "vbox",
+        "title": "消费记录查询",
+        "width": 715
+    },
+    "name": "MyPanel3",
+    "designerId": "b5a5342c-9b1c-4ffc-8e43-1a90b73ccbc1",
+    "viewControllerInstanceId": "a520c097-8db7-4975-8c23-a8875d53136d",
+    "viewModelInstanceId": "13d7ae37-38e8-4ba1-8cd5-ccf26235b3c1",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "name": "MyToolbar",
+            "designerId": "81a1de5c-9d0d-429f-9681-ba890cbba199",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "shopName",
+                        "fieldLabel": "店铺名称",
+                        "id": "EticketShopInfo",
+                        "itemId": "EticketShopInfo",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "store": "limitUseShopStore",
+                        "valueField": "shopId"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "835780d6-e6ca-49b5-aaf3-b06493d43fa5",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onEticketShopInfoSelect",
+                                "implHandler": [
+                                    " var shopId=records[0].data.shopId;",
+                                    " var EticketConsumerStore = Ext.getStore('EticketConsumerStore');",
+                                    " var ajaxProxy = EticketConsumerStore.getProxy();",
+                                    " var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    " ajaxProxy.setUrl(url + \"/action/cons/list.do?f_useshop=\"+shopId);",
+                                    " EticketConsumerStore.load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onEticketShopInfoSelect",
+                            "designerId": "42a3189f-1e8a-4632-b440-907a287cce16"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 243,
+                "id": "EticketConsumerGridpanel",
+                "store": "EticketConsumerStore",
+                "title": ""
+            },
+            "name": "MyGridPanel2",
+            "designerId": "e8a4a9c4-5bcf-481c-92b7-e08d7fc582a5",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "string",
+                        "text": "序号",
+                        "width": 50
+                    },
+                    "name": "MyRowNumberer3",
+                    "designerId": "51f00ea2-6b5f-40f3-9fe2-b1d2a141a098"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_name",
+                        "text": "优惠券名称",
+                        "width": 213
+                    },
+                    "name": "MyColumn11",
+                    "designerId": "e7dcc96d-a0e8-4334-8449-d1e320862cea"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "eticketCount",
+                        "text": "消费数量"
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "40f675de-f2e1-4d31-a76a-004244b959b6"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "f_id",
+                        "text": "优惠券编号"
+                    },
+                    "name": "MyColumn14",
+                    "designerId": "42441453-1a5e-44e7-afef-fe9dee1b01ec"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "f_type",
+                        "text": "优惠券类型"
+                    },
+                    "name": "MyColumn22",
+                    "designerId": "0cb816d6-bb50-4c77-90ae-245360690d8f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "f_money",
+                        "text": "金额"
+                    },
+                    "name": "MyColumn15",
+                    "designerId": "edbae817-573d-4438-98a1-d41897574eca"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "f_rebate",
+                        "text": "折扣"
+                    },
+                    "name": "MyColumn16",
+                    "designerId": "46d2438c-12ba-4746-9594-c3e717de57e6"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView2",
+                    "designerId": "793bc6a6-5659-4083-809f-715c5b30510a"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ignoreRightMouseSelection": true
+                    },
+                    "name": "MyRowSelectionModel",
+                    "designerId": "b38d3565-6d39-4185-a05f-5988c34ac80b"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onEticketConsumerGridpanelRowDblClick",
+                        "implHandler": [
+                            "var EticketConsumePanel=tableview.up('#EticketConsumePanel');",
+                            "",
+                            "var EticketShopInfo=EticketConsumePanel.down('#EticketShopInfo');",
+                            "",
+                            "var shopId=EticketShopInfo.getValue();",
+                            "",
+                            "var id=record.data.f_id;",
+                            "",
+                            " var EticketInitDetailStore=Ext.getStore('EticketInitDetailStore');",
+                            "var ajaxProxy=EticketInitDetailStore.getProxy();",
+                            "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                            "",
+                            " ajaxProxy.setUrl(url + \"/action/eticket/detail.do?shopId=\"+shopId+\"&ticketid=\"+id);",
+                            "",
+                            "EticketInitDetailStore.load();",
+                            ""
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "name": "onEticketConsumerGridpanelRowDblClick",
+                    "designerId": "247177ea-e883-4351-9dad-2c5fbc6b7c30"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 247,
+                "store": "EticketInitDetailStore",
+                "title": "优惠券详情",
+                "width": 719
+            },
+            "name": "MyGridPanel3",
+            "designerId": "8acaa5c7-853e-46a5-bd12-fe204f2ac360",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.RowNumberer",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "string",
+                        "text": "序号",
+                        "width": 101
+                    },
+                    "name": "MyRowNumberer4",
+                    "designerId": "002242ea-a4ca-4712-acc8-7f1ba91c186b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_code",
+                        "text": "优惠券SN",
+                        "width": 208
+                    },
+                    "name": "MyColumn17",
+                    "designerId": "4c6d01a7-329c-4e34-9ce6-967d06b174b3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "custName",
+                        "text": "客户姓名"
+                    },
+                    "name": "MyColumn24",
+                    "designerId": "245b1cc3-cfb5-465b-9c18-fd83b0372283"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_phone",
+                        "text": "客户电话",
+                        "width": 137
+                    },
+                    "name": "MyColumn18",
+                    "designerId": "0e4a7c99-db3e-43a4-b489-82fb4a8b0c18"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "f_ticketid",
+                        "hidden": true,
+                        "text": "优惠券类型ID"
+                    },
+                    "name": "MyColumn19",
+                    "designerId": "66f7ab64-1fd8-4f1a-a125-eee4f87cce00"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "f_useshop",
+                        "hidden": true,
+                        "text": "店铺ID"
+                    },
+                    "name": "MyColumn20",
+                    "designerId": "f56de259-4d7b-4214-a11a-34871a5cc9ec"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_orderid",
+                        "text": "关联订单",
+                        "width": 159
+                    },
+                    "name": "MyColumn21",
+                    "designerId": "bec30ac4-ec55-4e4b-a30b-2be1cfa8d268"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "center",
+                        "dataIndex": "f_usetime",
+                        "format": "Y-m-d H:i:s",
+                        "text": "使用时间",
+                        "width": 139
+                    },
+                    "name": "MyDateColumn",
+                    "designerId": "0385fb27-dbe6-4622-a4fd-18a764564f65"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView3",
+                    "designerId": "529d3a65-71f9-4a77-8451-ffc1093f8318"
+                }
+            ]
+        }
+    ]
+}

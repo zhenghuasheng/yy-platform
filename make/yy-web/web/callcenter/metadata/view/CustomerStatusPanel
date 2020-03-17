@@ -1,0 +1,238 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "closable": true,
+        "designer|userAlias": "ctstatuspanel",
+        "designer|userClassName": "CustomerStatusPanel",
+        "height": null,
+        "itemId": "customerStatusPanel",
+        "padding": null,
+        "title": "客户数据查询",
+        "width": null
+    },
+    "name": "EtcStatusPanel1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "ad6dc3dc-b8a8-4d30-8a64-e6c8562d7379",
+    "viewControllerInstanceId": "ddba4d3a-90a9-4602-bca8-b15dfb3295dc",
+    "viewModelInstanceId": "93183db8-5e9d-478a-9b41-08a6f07827a5",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "hbox"
+            },
+            "name": "MyContainer",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "8a3c6f09-807e-4b43-9ca1-461a58d8a018",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "",
+                        "fieldLabel": "电话",
+                        "itemId": "phoneField",
+                        "labelWidth": 60,
+                        "width": 300
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "4cbec106-b83b-4304-ab63-e5fb307632e5"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "findBtn",
+                        "text": "查询"
+                    },
+                    "name": "MyButton",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7662fe12-8f58-45e9-aa30-efa043365cdd",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onFindBtnClick",
+                                "implHandler": [
+                                    "var ctStatusPanel = button.up('#customerStatusPanel');",
+                                    "var phoneField = ctStatusPanel.down('#phoneField');",
+                                    "var etcPropGrid = ctStatusPanel.down('#etcPropGrid');",
+                                    "var hgPropGrid = ctStatusPanel.down('#hgPropGrid');",
+                                    "",
+                                    "if (!phoneField.validate()) {",
+                                    "    Ext.Msg.alert('Status', '请正确填写信息.');",
+                                    "    return;",
+                                    "}",
+                                    "",
+                                    "",
+                                    "var url = Ext.getStore('ConfigStore').getAt(0).get('WebServerUrl');",
+                                    "etcPropGrid.setSource(null);",
+                                    "hgPropGrid.setSource(null);",
+                                    "",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: url + '/action/etc/customer.do',",
+                                    "    params: {",
+                                    "        phone: phoneField.getValue()",
+                                    "    },",
+                                    "",
+                                    "    success: function (response) {",
+                                    "        var result = JSON.parse(response.responseText);",
+                                    "",
+                                    "        if (result.errCode !== 0) {",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "",
+                                    "        etcPropGrid.setSource(result.records[0]);",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: url + '/action/hg/customer.do',",
+                                    "    params: {",
+                                    "        phone: phoneField.getValue()",
+                                    "    },",
+                                    "",
+                                    "    success: function (response) {",
+                                    "        var result = JSON.parse(response.responseText);",
+                                    "",
+                                    "        if (!result.succeed) {",
+                                    "            return;",
+                                    "        }",
+                                    "",
+                                    "",
+                                    "        hgPropGrid.setSource(result.object.hgCustomerInfo);",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onFindBtnClick",
+                            "designerId": "0fe9eed8-0b3f-4eb5-a210-1c42ec2405f9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.property.Grid",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": false,
+                "collapsible": true,
+                "itemId": "basicPropGrid",
+                "nameField": null,
+                "title": "基本资料",
+                "valueField": null
+            },
+            "name": "MyPropertyGrid",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "aa3efed5-dcf7-4bc5-adc6-7ddf1e3a2c38"
+        },
+        {
+            "type": "Ext.grid.property.Grid",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsed": false,
+                "collapsible": true,
+                "itemId": "hgPropGrid",
+                "nameField": null,
+                "title": "弘高资料",
+                "valueField": null
+            },
+            "name": "MyPropertyGrid2",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "449af51d-76d1-43f4-ac21-dc894adbed1c"
+        },
+        {
+            "type": "Ext.grid.property.Grid",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "itemId": "etcPropGrid",
+                "nameField": null,
+                "title": "ETC资料",
+                "valueField": null
+            },
+            "name": "MyPropertyGrid1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "9a33eb24-f872-4ab8-91a9-24eafffef1c6"
+        },
+        {
+            "type": "Ext.grid.property.Grid",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapsible": true,
+                "itemId": "insPropGrid",
+                "nameField": null,
+                "title": "保险资料",
+                "valueField": null
+            },
+            "name": "MyPropertyGrid3",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "8b83aead-9a3f-4a7a-8093-1ac532db382f"
+        }
+    ]
+}
